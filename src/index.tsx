@@ -968,6 +968,12 @@ app.get('/in-app-purchases.html', async (c) => {
   return c.html(inAppPurchasesHtml);
 })
 
+// Intimacy Challenges (Adult Content - Age Verified)
+app.get('/intimacy-challenges.html', async (c) => {
+  const { intimacyChallengesHtml } = await import('./pages/intimacy-challenges');
+  return c.html(intimacyChallengesHtml);
+})
+
 // Analytics API Routes
 app.route('/api/analytics', analyticsApi)
 
