@@ -7,10 +7,10 @@ export const renderer = jsxRenderer(({ children }) => {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Better Together - Relationship Intelligence Platform</title>
-        <meta name="description" content="Transform your relationship into your greatest success story through intelligent connection tracking and shared goal achievement." />
-        <meta name="keywords" content="relationship, couples, love, goals, tracking, psychology, connection, intimacy, challenges" />
+        <meta name="description" content="The world's first AI-powered relationship assistant that talks with you, schedules meaningful experiences for your partner, and intelligently suggests personalized activities to deepen your bond." />
+        <meta name="keywords" content="AI relationship coach, relationship assistant, smart scheduling, couple activities, love languages, relationship psychology, AI dating, partner planning, relationship goals, intelligent suggestions" />
         <meta property="og:title" content="Better Together - Relationship Intelligence Platform" />
-        <meta property="og:description" content="Transform your relationship into your greatest success story through intelligent connection tracking and shared goal achievement." />
+        <meta property="og:description" content="The world's first AI-powered relationship assistant that talks with you, schedules experiences for your partner, and suggests personalized activities to deepen your bond." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         
