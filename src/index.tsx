@@ -947,12 +947,12 @@ app.get('/', (c) => {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Transform Your Relationship Into Your
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600"> Greatest Success Story</span>
+              Your AI Relationship Coach That
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600"> Plans, Schedules & Grows</span> Your Love
             </h1>
             
             <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-              The only platform that combines relationship psychology, intelligent tracking, and gamified challenges to help couples build stronger, more connected relationships through data-driven insights.
+              The world's first AI-powered relationship assistant that talks with you, schedules meaningful experiences for your partner, and intelligently suggests personalized activities to deepen your bond and accelerate growth together.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -1023,31 +1023,31 @@ app.get('/', (c) => {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6">
-                <i className="fas fa-chart-line text-white text-2xl"></i>
+                <i className="fas fa-robot text-white text-2xl"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">Relationship Analytics</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">AI Relationship Assistant</h3>
               <p className="text-gray-600 leading-relaxed">
-                Track connection scores, satisfaction levels, and relationship health with comprehensive data-driven insights and trend analysis.
+                Talk naturally to your AI coach that understands your relationship, suggests personalized experiences, and automatically schedules meaningful activities in both partners' calendars.
               </p>
             </div>
             
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-6">
-                <i className="fas fa-target text-white text-2xl"></i>
+                <i className="fas fa-calendar-plus text-white text-2xl"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">Shared Goals</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Smart Scheduling</h3>
               <p className="text-gray-600 leading-relaxed">
-                Set and achieve meaningful relationship goals together, from daily habits to major milestones, with progress tracking and celebrations.
+                AI automatically finds optimal times, suggests location-based experiences, and adds personalized activities to your partner's calendar with thoughtful reminders and context.
               </p>
             </div>
             
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
-                <i className="fas fa-trophy text-white text-2xl"></i>
+                <i className="fas fa-lightbulb text-white text-2xl"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">Gamified Growth</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Intelligent Suggestions</h3>
               <p className="text-gray-600 leading-relaxed">
-                Complete challenges, earn achievements, and unlock new levels of intimacy with our psychology-based gamification system.
+                Get personalized recommendations for date ideas, conversation topics, gifts, and growth opportunities based on your relationship patterns and love languages.
               </p>
             </div>
           </div>
@@ -1184,6 +1184,153 @@ app.get('/', (c) => {
         </div>
       </section>
 
+      {/* AI-Powered Features */}
+      <section className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-indigo-100 rounded-full text-indigo-800 text-sm font-medium mb-6">
+              <i className="fas fa-brain mr-2"></i>
+              AI-Powered Relationship Intelligence
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Your Personal AI Relationship Coach
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Talk to your AI assistant like a friend. It learns your relationship patterns and proactively creates meaningful experiences for both partners.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="space-y-8">
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center mr-4">
+                    <i className="fas fa-comments text-white text-xl"></i>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">Natural Conversation</h3>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  "Hey, plan a romantic evening for Sarah next Friday. She loves Italian food and we haven't been on a date in 2 weeks."
+                </p>
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg">
+                  <p className="text-sm text-indigo-800">
+                    <strong>AI Response:</strong> "Perfect! I found a highly-rated Italian restaurant 15 minutes from home. I've scheduled dinner for 7 PM and added a note about her love for tiramisu. Should I also book the jazz bar you both enjoyed for after dinner?"
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-4">
+                    <i className="fas fa-calendar-heart text-white text-xl"></i>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">Smart Partner Scheduling</h3>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  AI automatically adds thoughtful activities to your partner's calendar with personalized context and preparation reminders.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center p-3 bg-purple-50 rounded-lg">
+                    <i className="fas fa-heart text-purple-500 mr-3"></i>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900">Surprise Date Night</div>
+                      <div className="text-sm text-gray-600">Friday 7:00 PM • Bella Vista Restaurant</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center p-3 bg-pink-50 rounded-lg">
+                    <i className="fas fa-gift text-pink-500 mr-3"></i>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900">Preparation Reminder</div>
+                      <div className="text-sm text-gray-600">Friday 5:30 PM • Wear the dress you love</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Intelligent Experience Suggestions</h3>
+              <div className="space-y-6">
+                <div className="border-l-4 border-blue-500 pl-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Based on Your Patterns</h4>
+                  <p className="text-gray-600 text-sm mb-3">
+                    "You both rated hiking dates 9/10 and it's been 3 weeks since your last outdoor activity."
+                  </p>
+                  <div className="bg-blue-50 p-3 rounded-lg">
+                    <p className="text-blue-800 text-sm">
+                      <strong>Suggestion:</strong> Weekend hiking at Blue Ridge Trail + picnic lunch (weather will be perfect Saturday)
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Love Language Optimization</h4>
+                  <p className="text-gray-600 text-sm mb-3">
+                    "Alex's primary love language is 'Acts of Service' and he's been stressed about work deadlines."
+                  </p>
+                  <div className="bg-purple-50 p-3 rounded-lg">
+                    <p className="text-purple-800 text-sm">
+                      <strong>Suggestion:</strong> Surprise him by organizing his home office and preparing his favorite meal for when he gets home
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="border-l-4 border-pink-500 pl-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Growth Opportunities</h4>
+                  <p className="text-gray-600 text-sm mb-3">
+                    "Your communication scores have been lower lately. Here's a research-backed approach."
+                  </p>
+                  <div className="bg-pink-50 p-3 rounded-lg">
+                    <p className="text-pink-800 text-sm">
+                      <strong>Suggestion:</strong> Try the "Daily Appreciation" challenge - 5 minutes of gratitude sharing after dinner for 2 weeks
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                What Makes Our AI Different
+              </h3>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="fas fa-user-check text-white text-2xl"></i>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Relationship Context</h4>
+                <p className="text-gray-600 text-sm">
+                  Understands your unique dynamic, history, preferences, and current relationship phase to provide hyper-personalized suggestions.
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="fas fa-sync-alt text-white text-2xl"></i>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Proactive Planning</h4>
+                <p className="text-gray-600 text-sm">
+                  Doesn't wait for you to ask. Notices patterns, anticipates needs, and suggests experiences before relationships hit rough patches.
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-violet-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i className="fas fa-heart-pulse text-white text-2xl"></i>
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">Emotional Intelligence</h4>
+                <p className="text-gray-600 text-sm">
+                  Reads between the lines of your check-ins, recognizes emotional patterns, and suggests interventions that strengthen your bond.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Comprehensive Features */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1197,54 +1344,54 @@ app.get('/', (c) => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Enhanced User Profiles */}
-            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+            {/* AI Conversation Engine */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-indigo-500">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mr-4">
-                  <i className="fas fa-user-circle text-pink-600 text-xl"></i>
+                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-comment-dots text-indigo-600 text-xl"></i>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">Enhanced User Profiles</h3>
+                <h3 className="text-lg font-semibold text-gray-900">AI Conversation Engine</h3>
               </div>
               <ul className="text-gray-600 space-y-2 text-sm">
-                <li>• Primary & secondary love languages</li>
-                <li>• Relationship preferences & goals</li>
-                <li>• Profile photos & nicknames</li>
-                <li>• Timezone & contact information</li>
-                <li>• Custom preference settings</li>
+                <li>• Natural language relationship coaching</li>
+                <li>• Context-aware conversation understanding</li>
+                <li>• Personalized advice and suggestions</li>
+                <li>• Relationship pattern recognition</li>
+                <li>• Proactive intervention recommendations</li>
               </ul>
             </div>
 
-            {/* Shared Calendar */}
-            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+            {/* AI Smart Scheduling */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-purple-500">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                  <i className="fas fa-calendar-heart text-purple-600 text-xl"></i>
+                  <i className="fas fa-magic text-purple-600 text-xl"></i>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">Shared Calendar</h3>
+                <h3 className="text-lg font-semibold text-gray-900">AI Smart Scheduling</h3>
               </div>
               <ul className="text-gray-600 space-y-2 text-sm">
-                <li>• Important dates & anniversaries</li>
-                <li>• Recurring celebrations</li>
-                <li>• Custom milestones</li>
-                <li>• Smart reminders</li>
-                <li>• Birthday & holiday tracking</li>
+                <li>• Automatic calendar integration for both partners</li>
+                <li>• Intelligent optimal time-finding</li>
+                <li>• Contextual activity suggestions</li>
+                <li>• Location-based experience recommendations</li>
+                <li>• Preparation reminders and gift ideas</li>
               </ul>
             </div>
 
-            {/* Goal Tracking */}
-            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+            {/* Intelligent Experience Suggestions */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-blue-500">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                  <i className="fas fa-bullseye text-blue-600 text-xl"></i>
+                  <i className="fas fa-sparkles text-blue-600 text-xl"></i>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">Goal Tracking</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Intelligent Experience Suggestions</h3>
               </div>
               <ul className="text-gray-600 space-y-2 text-sm">
-                <li>• Weekly, monthly & milestone goals</li>
-                <li>• Progress tracking & visualization</li>
-                <li>• Target dates & completion celebrations</li>
-                <li>• Custom goal categories</li>
-                <li>• Achievement notifications</li>
+                <li>• Personalized date ideas based on preferences</li>
+                <li>• Love language-optimized activities</li>
+                <li>• Growth opportunity recommendations</li>
+                <li>• Local event and experience discovery</li>
+                <li>• Timing optimization for maximum impact</li>
               </ul>
             </div>
 
@@ -1333,6 +1480,40 @@ app.get('/', (c) => {
               </ul>
             </div>
 
+            {/* Enhanced User Profiles */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-user-circle text-pink-600 text-xl"></i>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">Enhanced User Profiles</h3>
+              </div>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• Primary & secondary love languages</li>
+                <li>• Relationship preferences & goals</li>
+                <li>• Profile photos & nicknames</li>
+                <li>• Calendar integration & availability</li>
+                <li>• AI learning from interaction patterns</li>
+              </ul>
+            </div>
+
+            {/* Goal Tracking */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-bullseye text-green-600 text-xl"></i>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">Goal Tracking</h3>
+              </div>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• Weekly, monthly & milestone goals</li>
+                <li>• Progress tracking & visualization</li>
+                <li>• AI-suggested next steps</li>
+                <li>• Custom goal categories</li>
+                <li>• Achievement celebrations</li>
+              </ul>
+            </div>
+
             {/* Privacy & Security */}
             <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
               <div className="flex items-center mb-4">
@@ -1343,8 +1524,8 @@ app.get('/', (c) => {
               </div>
               <ul className="text-gray-600 space-y-2 text-sm">
                 <li>• End-to-end data encryption</li>
-                <li>• Private relationship data</li>
-                <li>• Secure authentication</li>
+                <li>• Private AI conversations</li>
+                <li>• Secure calendar integration</li>
                 <li>• GDPR compliant</li>
                 <li>• Data export options</li>
               </ul>
