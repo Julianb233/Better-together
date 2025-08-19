@@ -1805,126 +1805,126 @@ app.get('/', (c) => {
       <section id="pricing" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 bg-red-100 text-red-800 rounded-full text-sm font-semibold mb-6">
-              <i className="fas fa-crown mr-2"></i>
-              Premium-Only Platform • No Free Tier
+            <div className="inline-flex items-center px-6 py-3 bg-pink-100 text-pink-800 rounded-full text-sm font-semibold mb-6">
+              <i className="fas fa-heart mr-2"></i>
+              Join 50,000+ Couples Growing Stronger
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Annual-First Pricing Strategy
+              Choose Your Relationship Journey
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Save 33% with annual billing. All features included. Per-user pricing scales with your relationship needs.
+              Every great relationship is an investment. Choose how you want to grow together and unlock your full potential as a couple.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Annual Plan (Recommended) */}
-            <div className="bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl p-8 relative text-white transform scale-105">
+            {/* Better Together Plan (Most Popular) */}
+            <div className="bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl p-8 relative text-white transform scale-105">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <div className="bg-yellow-400 text-yellow-900 px-4 py-1 rounded-full text-sm font-medium">
-                  RECOMMENDED
+                  MOST POPULAR
                 </div>
               </div>
               <div className="text-center">
-                <h3 className="text-2xl font-semibold mb-2">Annual Premium</h3>
+                <h3 className="text-2xl font-semibold mb-2">Better Together Plan</h3>
                 <div className="mb-6">
                   <span className="text-5xl font-bold">$240</span>
-                  <span className="text-emerald-200">/year</span>
-                  <div className="text-lg text-emerald-100 mt-2">
-                    Just $20/month per user
+                  <span className="text-pink-200">/year</span>
+                  <div className="text-lg text-pink-100 mt-2">
+                    Just $20/month per person
                   </div>
                 </div>
-                <div className="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-lg mb-6">
-                  <span className="font-bold">Save $120 per year!</span>
+                <div className="bg-pink-100 text-pink-800 px-4 py-2 rounded-lg mb-6">
+                  <span className="font-bold">Complete relationship transformation</span>
                 </div>
                 <ul className="space-y-3 mb-8 text-left">
                   <li className="flex items-center">
-                    <i className="fas fa-crown text-yellow-300 mr-3"></i>
-                    <span>VIP AI Coach Access</span>
+                    <i className="fas fa-robot text-blue-300 mr-3"></i>
+                    <span>Personal AI Relationship Coach</span>
                   </li>
                   <li className="flex items-center">
                     <i className="fas fa-heart text-rose-300 mr-3"></i>
-                    <span>Premium Intimacy Challenges</span>
+                    <span>Intimacy & Connection Challenges</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-calendar-alt text-blue-300 mr-3"></i>
-                    <span>Smart Scheduling Pro</span>
+                    <i className="fas fa-calendar-heart text-purple-300 mr-3"></i>
+                    <span>Smart Date Planning</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-gamepad text-purple-300 mr-3"></i>
+                    <i className="fas fa-gamepad text-indigo-300 mr-3"></i>
                     <span>All Relationship Games</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-box-heart text-pink-300 mr-3"></i>
-                    <span>Monthly Surprise Box</span>
+                    <i className="fas fa-users text-amber-300 mr-3"></i>
+                    <span>Private Couples Community</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-gift text-green-300 mr-3"></i>
-                    <span>$50 Partner Gifting Credits</span>
+                    <i className="fas fa-gift text-pink-300 mr-3"></i>
+                    <span>$50 Surprise Credits</span>
                   </li>
                 </ul>
-                <button className="w-full bg-white text-emerald-600 py-4 rounded-lg font-semibold hover:bg-emerald-50 transition-colors text-lg">
-                  Start Annual Premium
+                <button className="w-full bg-white text-pink-600 py-4 rounded-lg font-semibold hover:bg-pink-50 transition-colors text-lg">
+                  Transform Our Relationship
                 </button>
               </div>
             </div>
 
-            {/* Monthly Plan */}
+            {/* Try It Out Plan */}
             <div className="bg-white rounded-2xl border-2 border-gray-300 p-8 relative">
               <div className="absolute -top-3 -right-3">
-                <div className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
-                  33% More
+                <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                  No Commitment
                 </div>
               </div>
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">Monthly Premium</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-2">Try It Out Plan</h3>
                 <div className="mb-6">
                   <span className="text-5xl font-bold text-gray-900">$30</span>
                   <span className="text-gray-600">/month</span>
                   <div className="text-lg text-gray-600 mt-2">
-                    Per user • Cancel anytime
+                    Per person • Explore first
                   </div>
                 </div>
-                <div className="bg-red-50 text-red-700 px-4 py-2 rounded-lg mb-6">
-                  <span className="font-bold">$120 more annually</span>
+                <div className="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg mb-6">
+                  <span className="font-bold">Perfect for getting started</span>
                 </div>
                 <ul className="space-y-3 mb-8 text-left">
                   <li className="flex items-center">
-                    <i className="fas fa-check text-gray-500 mr-3"></i>
-                    <span className="text-gray-600">Basic AI Coach Access</span>
+                    <i className="fas fa-check text-gray-600 mr-3"></i>
+                    <span className="text-gray-600">Essential AI Coach</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-check text-gray-500 mr-3"></i>
-                    <span className="text-gray-600">Standard Intimacy Challenges</span>
+                    <i className="fas fa-check text-gray-600 mr-3"></i>
+                    <span className="text-gray-600">Basic Connection Tools</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-check text-gray-500 mr-3"></i>
-                    <span className="text-gray-600">Smart Scheduling Basic</span>
+                    <i className="fas fa-check text-gray-600 mr-3"></i>
+                    <span className="text-gray-600">Simple Date Planning</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-check text-gray-500 mr-3"></i>
-                    <span className="text-gray-600">Core Relationship Games</span>
+                    <i className="fas fa-check text-gray-600 mr-3"></i>
+                    <span className="text-gray-600">Starter Games</span>
                   </li>
                   <li className="flex items-center text-gray-400">
-                    <i className="fas fa-times text-red-500 mr-3"></i>
-                    <span>No Monthly Surprise Box</span>
+                    <i className="fas fa-minus text-gray-400 mr-3"></i>
+                    <span>Limited features</span>
                   </li>
                   <li className="flex items-center text-gray-400">
-                    <i className="fas fa-times text-red-500 mr-3"></i>
-                    <span>No Gifting Credits</span>
+                    <i className="fas fa-minus text-gray-400 mr-3"></i>
+                    <span>Email support only</span>
                   </li>
                 </ul>
                 <button className="w-full bg-gray-600 text-white py-4 rounded-lg font-semibold hover:bg-gray-700 transition-colors text-lg">
-                  Start Monthly Plan
+                  Try It Out First
                 </button>
               </div>
             </div>
           </div>
 
           <div className="text-center mt-12">
-            <a href="/premium-pricing.html" className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-semibold">
+            <a href="/premium-pricing.html" className="inline-flex items-center text-pink-600 hover:text-pink-700 font-semibold">
               <i className="fas fa-gift mr-2"></i>
-              View Partner Gifting Options & Couples Packages
+              Surprise Your Partner & View Couples Packages
               <i className="fas fa-arrow-right ml-2"></i>
             </a>
           </div>

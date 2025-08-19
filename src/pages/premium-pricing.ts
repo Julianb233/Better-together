@@ -6,8 +6,8 @@ export const premiumPricingHtml = `<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Better Together Premium - Annual Plans & Partner Gifting | Better Together</title>
-    <meta name="description" content="Premium relationship platform with annual-first pricing. $20/month per user when billed annually vs $30/month. Gift to your partner with exclusive annual benefits.">
+    <title>Better Together Premium - Transform Your Relationship | Better Together</title>
+    <meta name="description" content="Join thousands of couples building deeper connections. Premium relationship coaching, smart planning, and exclusive experiences. Gift to your partner or grow together.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -96,50 +96,50 @@ export const premiumPricingHtml = `<!DOCTYPE html>
     <section class="gradient-bg py-16 sm:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-full text-sm font-semibold mb-8 shadow-lg">
-                    <i class="fas fa-calendar-check mr-2"></i>
-                    Annual Plans Save 33% + Exclusive Benefits
+                <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-full text-sm font-semibold mb-8 shadow-lg">
+                    <i class="fas fa-heart mr-2"></i>
+                    Join 50,000+ Couples Building Stronger Bonds
                 </div>
                 
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                    Premium Relationship
-                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-600">
-                        Transformation Platform
+                    Unlock Your Relationship's
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">
+                        Full Potential
                     </span>
                 </h1>
                 
                 <p class="text-xl sm:text-2xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
-                    Complete access to relationship challenges, smart scheduling, AI coaching, intimacy content, and premium features. Pay annually and save big while unlocking exclusive benefits.
+                    Transform how you connect, communicate, and create memories together. Get personalized AI coaching, smart date planning, intimate challenges, and tools that help you thrive as a couple.
                 </p>
                 
-                <!-- Savings Calculator -->
+                <!-- Relationship Value Showcase -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg max-w-2xl mx-auto mb-10">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Annual vs Monthly Savings</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">What Matters Most to Your Relationship</h3>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="text-center">
-                            <div class="text-gray-600 mb-2">Monthly Payment</div>
-                            <div class="text-3xl font-bold text-red-600 mb-2">$30<span class="text-lg">/month</span></div>
-                            <div class="text-sm text-gray-500">Per user • $360/year</div>
+                            <div class="text-pink-600 mb-2 font-semibold">Quality Time Together</div>
+                            <div class="text-3xl font-bold text-pink-600 mb-2">3.2x<span class="text-lg"> More</span></div>
+                            <div class="text-sm text-gray-500">From 2.3 to 7.4 hours per week</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-emerald-600 mb-2">Annual Payment</div>
-                            <div class="text-3xl font-bold text-emerald-600 mb-2">$20<span class="text-lg">/month</span></div>
-                            <div class="text-sm text-gray-500">Per user • $240/year</div>
+                            <div class="text-purple-600 mb-2 font-semibold">Relationship Satisfaction</div>
+                            <div class="text-3xl font-bold text-purple-600 mb-2">94%<span class="text-lg"> Better</span></div>
+                            <div class="text-sm text-gray-500">Couples report stronger bond</div>
                         </div>
                     </div>
                     <div class="savings-highlight text-center mt-6">
-                        <span class="text-2xl font-bold text-green-800">Save $120 per year per user!</span>
+                        <span class="text-2xl font-bold text-pink-800">Your relationship deserves this investment</span>
                     </div>
                 </div>
 
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <button class="w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-emerald-700 hover:to-green-700 transform hover:scale-105 shadow-lg transition-all duration-300">
-                        <i class="fas fa-calendar-check mr-2"></i>
-                        Get Annual Plan Now
+                    <button class="w-full sm:w-auto bg-gradient-to-r from-pink-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-pink-700 hover:to-purple-700 transform hover:scale-105 shadow-lg transition-all duration-300">
+                        <i class="fas fa-heart mr-2"></i>
+                        Start Your Journey Together
                     </button>
                     <button class="w-full sm:w-auto bg-white text-gray-700 px-8 py-4 rounded-xl font-semibold border border-gray-300 hover:bg-gray-50 transition-colors shadow-lg">
                         <i class="fas fa-gift mr-2"></i>
-                        Gift to Partner
+                        Gift to Your Partner
                     </button>
                 </div>
             </div>
@@ -150,47 +150,47 @@ export const premiumPricingHtml = `<!DOCTYPE html>
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Choose Your Premium Plan</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">All features included. Per-user pricing scales with your relationship needs.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Choose How You Want to Grow</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Every couple is unique. Pick the plan that fits your relationship journey and commitment level.</p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 mb-16">
-                <!-- Annual Plan (Recommended) -->
+                <!-- Better Together Plan (Most Popular) -->
                 <div class="pricing-card rounded-2xl p-8 relative">
-                    <div class="annual-badge">RECOMMENDED</div>
+                    <div class="annual-badge">MOST POPULAR</div>
                     <div class="text-center mb-8">
-                        <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-calendar-check text-white text-2xl"></i>
+                        <div class="w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-heart text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-900 mb-2">Annual Premium</h3>
-                        <div class="text-5xl font-bold text-emerald-600 mb-2">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">Better Together Plan</h3>
+                        <div class="text-5xl font-bold text-pink-600 mb-2">
                             $240<span class="text-2xl font-normal text-gray-600">/year</span>
                         </div>
                         <div class="text-lg text-gray-600 mb-4">
-                            Just $20/month per user
+                            Just $20/month per person
                         </div>
                         <div class="savings-highlight text-center">
-                            <span class="text-emerald-800">Save $120 per year vs monthly!</span>
+                            <span class="text-pink-800">Complete relationship transformation</span>
                         </div>
                     </div>
 
                     <div class="mb-8">
-                        <h4 class="font-bold text-gray-900 mb-4 text-center">✨ EXCLUSIVE ANNUAL BENEFITS ✨</h4>
+                        <h4 class="font-bold text-gray-900 mb-4 text-center">💕 EVERYTHING YOU NEED TO THRIVE 💕</h4>
                         <ul class="space-y-3">
-                            <li class="flex items-center"><i class="fas fa-crown text-yellow-500 mr-3"></i><span class="font-semibold">VIP AI Coach Access</span> - Unlimited advanced conversations</li>
-                            <li class="flex items-center"><i class="fas fa-heart text-rose-500 mr-3"></i><span class="font-semibold">Premium Intimacy Challenges</span> - Full access to all levels</li>
-                            <li class="flex items-center"><i class="fas fa-calendar-alt text-blue-500 mr-3"></i><span class="font-semibold">Smart Scheduling Pro</span> - AI-powered date planning</li>
-                            <li class="flex items-center"><i class="fas fa-gamepad text-purple-500 mr-3"></i><span class="font-semibold">All Relationship Games</span> - Complete library access</li>
-                            <li class="flex items-center"><i class="fas fa-box-heart text-pink-500 mr-3"></i><span class="font-semibold">Monthly Surprise Box</span> - Curated relationship items</li>
-                            <li class="flex items-center"><i class="fas fa-star text-amber-500 mr-3"></i><span class="font-semibold">Priority Support</span> - 24/7 expert assistance</li>
-                            <li class="flex items-center"><i class="fas fa-gift text-green-500 mr-3"></i><span class="font-semibold">Partner Gifting Credits</span> - $50 annual credit</li>
-                            <li class="flex items-center"><i class="fas fa-users text-indigo-500 mr-3"></i><span class="font-semibold">Couples Community</span> - Private forum access</li>
+                            <li class="flex items-center"><i class="fas fa-robot text-blue-500 mr-3"></i><span class="font-semibold">Personal AI Relationship Coach</span> - Your 24/7 relationship guide</li>
+                            <li class="flex items-center"><i class="fas fa-heart text-rose-500 mr-3"></i><span class="font-semibold">Intimacy & Connection Challenges</span> - Deepen your bond safely</li>
+                            <li class="flex items-center"><i class="fas fa-calendar-heart text-purple-500 mr-3"></i><span class="font-semibold">Smart Date Planning</span> - Never run out of romantic ideas</li>
+                            <li class="flex items-center"><i class="fas fa-gamepad text-indigo-500 mr-3"></i><span class="font-semibold">Relationship Games & Activities</span> - Fun ways to connect</li>
+                            <li class="flex items-center"><i class="fas fa-headset text-emerald-500 mr-3"></i><span class="font-semibold">Priority Expert Support</span> - Real relationship counselors</li>
+                            <li class="flex items-center"><i class="fas fa-gift text-pink-500 mr-3"></i><span class="font-semibold">Surprise Your Partner Credits</span> - $50 for special moments</li>
+                            <li class="flex items-center"><i class="fas fa-users text-amber-500 mr-3"></i><span class="font-semibold">Private Couples Community</span> - Connect with thriving couples</li>
+                            <li class="flex items-center"><i class="fas fa-star text-purple-500 mr-3"></i><span class="font-semibold">First Access to New Features</span> - Always stay ahead</li>
                         </ul>
                     </div>
 
-                    <button class="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-4 rounded-xl font-semibold hover:from-emerald-700 hover:to-green-700 transform hover:scale-105 transition-all shadow-lg text-lg">
-                        <i class="fas fa-rocket mr-2"></i>
-                        Start Annual Premium
+                    <button class="w-full bg-gradient-to-r from-pink-600 to-purple-600 text-white py-4 rounded-xl font-semibold hover:from-pink-700 hover:to-purple-700 transform hover:scale-105 transition-all shadow-lg text-lg">
+                        <i class="fas fa-heart mr-2"></i>
+                        Transform Our Relationship
                     </button>
                     
                     <div class="text-center mt-4">
@@ -198,41 +198,41 @@ export const premiumPricingHtml = `<!DOCTYPE html>
                     </div>
                 </div>
 
-                <!-- Monthly Plan -->
+                <!-- Try It Out Plan -->
                 <div class="pricing-card rounded-2xl p-8 relative border-gray-200">
                     <div class="text-center mb-8">
                         <div class="w-20 h-20 bg-gradient-to-br from-gray-500 to-gray-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-calendar text-white text-2xl"></i>
+                            <i class="fas fa-clock text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-900 mb-2">Monthly Premium</h3>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">Try It Out Plan</h3>
                         <div class="text-5xl font-bold text-gray-900 mb-2">
                             $30<span class="text-2xl font-normal text-gray-600">/month</span>
                         </div>
                         <div class="text-lg text-gray-600 mb-4">
-                            Per user • Cancel anytime
+                            Per person • No commitment
                         </div>
-                        <div class="bg-red-50 text-red-700 px-4 py-2 rounded-lg text-sm">
-                            $120 more expensive annually
+                        <div class="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm">
+                            Perfect for exploring our platform
                         </div>
                     </div>
 
                     <div class="mb-8">
-                        <h4 class="font-bold text-gray-900 mb-4 text-center">STANDARD FEATURES</h4>
+                        <h4 class="font-bold text-gray-900 mb-4 text-center">CORE RELATIONSHIP TOOLS</h4>
                         <ul class="space-y-3">
-                            <li class="flex items-center"><i class="fas fa-check text-emerald-500 mr-3"></i><span>Basic AI Coach Access</span></li>
-                            <li class="flex items-center"><i class="fas fa-check text-emerald-500 mr-3"></i><span>Standard Intimacy Challenges</span></li>
-                            <li class="flex items-center"><i class="fas fa-check text-emerald-500 mr-3"></i><span>Smart Scheduling Basic</span></li>
-                            <li class="flex items-center"><i class="fas fa-check text-emerald-500 mr-3"></i><span>Core Relationship Games</span></li>
-                            <li class="flex items-center feature-locked"><i class="fas fa-times text-red-500 mr-3"></i><span>No Monthly Surprise Box</span></li>
-                            <li class="flex items-center feature-locked"><i class="fas fa-times text-red-500 mr-3"></i><span>Standard Support Only</span></li>
-                            <li class="flex items-center feature-locked"><i class="fas fa-times text-red-500 mr-3"></i><span>No Gifting Credits</span></li>
-                            <li class="flex items-center feature-locked"><i class="fas fa-times text-red-500 mr-3"></i><span>No Community Access</span></li>
+                            <li class="flex items-center"><i class="fas fa-check text-gray-600 mr-3"></i><span>Essential AI Coach Access</span></li>
+                            <li class="flex items-center"><i class="fas fa-check text-gray-600 mr-3"></i><span>Basic Connection Challenges</span></li>
+                            <li class="flex items-center"><i class="fas fa-check text-gray-600 mr-3"></i><span>Simple Date Planning Tools</span></li>
+                            <li class="flex items-center"><i class="fas fa-check text-gray-600 mr-3"></i><span>Starter Relationship Games</span></li>
+                            <li class="flex items-center"><i class="fas fa-check text-gray-600 mr-3"></i><span>Email Support</span></li>
+                            <li class="flex items-center text-gray-400"><i class="fas fa-minus text-gray-400 mr-3"></i><span>Limited to basic features</span></li>
+                            <li class="flex items-center text-gray-400"><i class="fas fa-minus text-gray-400 mr-3"></i><span>No priority support</span></li>
+                            <li class="flex items-center text-gray-400"><i class="fas fa-minus text-gray-400 mr-3"></i><span>No community access</span></li>
                         </ul>
                     </div>
 
                     <button class="w-full bg-gray-600 text-white py-4 rounded-xl font-semibold hover:bg-gray-700 transition-colors shadow-lg text-lg">
-                        <i class="fas fa-calendar mr-2"></i>
-                        Start Monthly Plan
+                        <i class="fas fa-clock mr-2"></i>
+                        Try It Out First
                     </button>
                     
                     <div class="text-center mt-4">
@@ -243,70 +243,153 @@ export const premiumPricingHtml = `<!DOCTYPE html>
         </div>
     </section>
 
+    <!-- Premium Add-Ons -->
+    <section class="py-16 bg-gradient-to-br from-emerald-50 to-teal-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Make Your Experience Even More Special</h2>
+                <p class="text-xl text-gray-600">Optional add-ons to enhance your relationship journey</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+                <!-- Monthly Surprise Box -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-emerald-200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-box-heart text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Monthly Surprise Box</h3>
+                        <p class="text-gray-600 mb-4">Curated relationship items, games, and treats delivered to your door</p>
+                        <div class="text-4xl font-bold text-emerald-600 mb-2">$49<span class="text-lg font-normal text-gray-600">/month</span></div>
+                        <div class="text-sm text-gray-500">Includes shipping • Skip or cancel anytime</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center"><i class="fas fa-heart text-pink-500 mr-3"></i><span>Romantic date night supplies</span></li>
+                        <li class="flex items-center"><i class="fas fa-gamepad text-purple-500 mr-3"></i><span>Fun couple games & activities</span></li>
+                        <li class="flex items-center"><i class="fas fa-spa text-blue-500 mr-3"></i><span>Wellness & self-care items</span></li>
+                        <li class="flex items-center"><i class="fas fa-gift text-emerald-500 mr-3"></i><span>Surprise treats & keepsakes</span></li>
+                    </ul>
+                    
+                    <button class="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors">
+                        Add Surprise Box
+                    </button>
+                </div>
+
+                <!-- Personal Coaching -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-purple-200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-tie text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Personal Relationship Coach</h3>
+                        <p class="text-gray-600 mb-4">One-on-one sessions with certified relationship experts</p>
+                        <div class="space-y-2">
+                            <div><span class="text-2xl font-bold text-purple-600">$89</span><span class="text-gray-600">/virtual session</span></div>
+                            <div><span class="text-2xl font-bold text-purple-600">$149</span><span class="text-gray-600">/in-person session</span></div>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center"><i class="fas fa-video text-blue-500 mr-3"></i><span>Video or in-person sessions</span></li>
+                        <li class="flex items-center"><i class="fas fa-certificate text-emerald-500 mr-3"></i><span>Licensed relationship therapists</span></li>
+                        <li class="flex items-center"><i class="fas fa-calendar text-purple-500 mr-3"></i><span>Flexible scheduling</span></li>
+                        <li class="flex items-center"><i class="fas fa-clipboard-list text-pink-500 mr-3"></i><span>Personalized action plans</span></li>
+                    </ul>
+                    
+                    <button class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        Book a Session
+                    </button>
+                </div>
+            </div>
+
+            <!-- Premium Plus Tier -->
+            <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white max-w-3xl mx-auto">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold mb-2">💎 Better Together Premium Plus</h3>
+                    <p class="text-purple-100 mb-4">Get everything plus monthly surprise boxes</p>
+                    <div class="text-4xl font-bold mb-2">$289<span class="text-xl font-normal">/year</span></div>
+                    <div class="text-purple-100">or $49/month with surprise box included</div>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-4 mb-6">
+                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">All Premium Features</span>
+                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Monthly Surprise Box</span>
+                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Save $49/year</span>
+                </div>
+                
+                <button class="w-full bg-white text-purple-600 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors">
+                    <i class="fas fa-crown mr-2"></i>
+                    Upgrade to Premium Plus
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Partner Gifting System -->
     <section class="py-16 bg-gradient-to-br from-pink-50 to-purple-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Gift Premium to Your Partner</h2>
-                <p class="text-xl text-gray-600">Show you care by investing in your relationship together</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Surprise Your Partner with Love</h2>
+                <p class="text-xl text-gray-600">Give the gift of a stronger relationship. Perfect for anniversaries, birthdays, or "just because" moments.</p>
             </div>
 
             <div class="partner-selector max-w-4xl mx-auto mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Partner Gifting Options</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Ways to Show You Care</h3>
                 
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="bg-white rounded-xl p-6 shadow-lg">
                         <div class="text-center mb-6">
                             <i class="fas fa-user-heart text-4xl text-pink-600 mb-4"></i>
-                            <h4 class="text-xl font-bold text-gray-900">Gift Single User</h4>
-                            <p class="text-gray-600">Perfect for surprising your partner</p>
+                            <h4 class="text-xl font-bold text-gray-900">Gift for Your Partner</h4>
+                            <p class="text-gray-600">Show them how much they mean to you</p>
                         </div>
                         
                         <div class="space-y-4 mb-6">
                             <div class="flex justify-between items-center">
-                                <span>Annual Plan Gift:</span>
-                                <span class="font-bold text-emerald-600">$240</span>
+                                <span>Better Together Plan:</span>
+                                <span class="font-bold text-pink-600">$240/year</span>
                             </div>
                             <div class="flex justify-between items-center">
-                                <span>Monthly Plan Gift:</span>
+                                <span>Try It Out Plan:</span>
                                 <span class="font-bold text-gray-600">$30/month</span>
                             </div>
-                            <div class="bg-emerald-50 p-3 rounded-lg">
-                                <span class="text-emerald-800 font-semibold">💝 Includes gift message & surprise reveal</span>
+                            <div class="bg-pink-50 p-3 rounded-lg">
+                                <span class="text-pink-800 font-semibold">💝 Includes personal gift message & surprise delivery</span>
                             </div>
                         </div>
                         
                         <button class="w-full bg-pink-600 text-white py-3 rounded-lg font-semibold hover:bg-pink-700 transition-colors">
-                            Gift to Partner
+                            Send This Gift
                         </button>
                     </div>
 
                     <div class="bg-white rounded-xl p-6 shadow-lg border-2 border-purple-300">
                         <div class="text-center mb-6">
                             <i class="fas fa-users-heart text-4xl text-purple-600 mb-4"></i>
-                            <h4 class="text-xl font-bold text-gray-900">Couples Package</h4>
-                            <p class="text-gray-600">Both partners get full access</p>
+                            <h4 class="text-xl font-bold text-gray-900">Couples Journey</h4>
+                            <p class="text-gray-600">Start your transformation together</p>
                         </div>
                         
                         <div class="space-y-4 mb-6">
                             <div class="flex justify-between items-center">
-                                <span>Annual Couples (2 users):</span>
+                                <span>Better Together for Two:</span>
                                 <div>
                                     <span class="line-through text-gray-400">$480</span>
-                                    <span class="font-bold text-emerald-600 ml-2">$420</span>
+                                    <span class="font-bold text-purple-600 ml-2">$420/year</span>
                                 </div>
                             </div>
                             <div class="flex justify-between items-center">
-                                <span>Monthly Couples (2 users):</span>
+                                <span>Try It Out for Two:</span>
                                 <span class="font-bold text-gray-600">$55/month</span>
                             </div>
                             <div class="bg-purple-50 p-3 rounded-lg">
-                                <span class="text-purple-800 font-semibold">💑 Save $60 with couples pricing!</span>
+                                <span class="text-purple-800 font-semibold">💑 Save $60 when you grow together!</span>
                             </div>
                         </div>
                         
                         <button class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
-                            Get Couples Package
+                            Start Our Journey Together
                         </button>
                     </div>
                 </div>
@@ -382,18 +465,18 @@ export const premiumPricingHtml = `<!DOCTYPE html>
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Exclusive Annual Benefits</h2>
-                <p class="text-xl text-gray-600">Why paying upfront gives you more value</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Makes Better Together Special</h2>
+                <p class="text-xl text-gray-600">The exclusive benefits that come with your commitment to growth</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl p-6">
-                    <div class="w-12 h-12 bg-emerald-500 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-box-heart text-white"></i>
+                <div class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-robot text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Monthly Surprise Box</h3>
-                    <p class="text-gray-600 mb-4">Curated relationship items delivered monthly (Annual only)</p>
-                    <div class="text-emerald-600 font-semibold">$89 value monthly</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Personal AI Coach</h3>
+                    <p class="text-gray-600 mb-4">24/7 relationship guidance that learns your unique dynamic</p>
+                    <div class="text-pink-600 font-semibold">Your relationship bestie</div>
                 </div>
 
                 <div class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl p-6">
@@ -409,82 +492,82 @@ export const premiumPricingHtml = `<!DOCTYPE html>
                     <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-headset text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Priority Support</h3>
-                    <p class="text-gray-600 mb-4">24/7 expert relationship counselor access</p>
-                    <div class="text-blue-600 font-semibold">$149/session value</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Priority Expert Support</h3>
+                    <p class="text-gray-600 mb-4">Direct access to certified relationship counselors</p>
+                    <div class="text-blue-600 font-semibold">Real human experts</div>
                 </div>
 
-                <div class="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-6">
-                    <div class="w-12 h-12 bg-rose-500 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-crown text-white"></i>
+                <div class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl p-6">
+                    <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">VIP AI Access</h3>
-                    <p class="text-gray-600 mb-4">Unlimited advanced AI conversations and insights</p>
-                    <div class="text-rose-600 font-semibold">$49/month value</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Private Community</h3>
+                    <p class="text-gray-600 mb-4">Connect with other thriving couples in our exclusive forum</p>
+                    <div class="text-purple-600 font-semibold">Find your tribe</div>
                 </div>
 
                 <div class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-6">
                     <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-gift text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Partner Gifting Credits</h3>
-                    <p class="text-gray-600 mb-4">$50 annual credit for surprising your partner</p>
-                    <div class="text-yellow-600 font-semibold">$50 credit annually</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Surprise Credits</h3>
+                    <p class="text-gray-600 mb-4">$50 annual credit for spontaneous romantic gestures</p>
+                    <div class="text-yellow-600 font-semibold">Keep the spark alive</div>
                 </div>
 
                 <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6">
                     <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-star text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Early Access</h3>
-                    <p class="text-gray-600 mb-4">First access to new features and content</p>
-                    <div class="text-green-600 font-semibold">Exclusive access</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">First Access</h3>
+                    <p class="text-gray-600 mb-4">Be the first to try new features and relationship tools</p>
+                    <div class="text-green-600 font-semibold">Stay ahead of the curve</div>
                 </div>
             </div>
 
             <div class="text-center mt-12">
-                <div class="bg-gradient-to-r from-emerald-100 to-green-100 rounded-2xl p-8 max-w-3xl mx-auto">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Total Annual Benefits Value</h3>
+                <div class="bg-gradient-to-r from-pink-100 to-purple-100 rounded-2xl p-8 max-w-3xl mx-auto">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">What You Get for Your Investment</h3>
                     <div class="grid md:grid-cols-2 gap-6 text-left">
                         <div>
                             <div class="space-y-2">
                                 <div class="flex justify-between">
-                                    <span>Monthly Surprise Box (12 months)</span>
-                                    <span class="font-semibold">$1,068</span>
+                                    <span>Personal AI Relationship Coach</span>
+                                    <span class="font-semibold">$588/year</span>
                                 </div>
                                 <div class="flex justify-between">
                                     <span>Private Community Access</span>
-                                    <span class="font-semibold">$348</span>
+                                    <span class="font-semibold">$348/year</span>
                                 </div>
                                 <div class="flex justify-between">
-                                    <span>Priority Support Access</span>
-                                    <span class="font-semibold">$597</span>
+                                    <span>Priority Expert Support</span>
+                                    <span class="font-semibold">$597/year</span>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <div class="space-y-2">
                                 <div class="flex justify-between">
-                                    <span>VIP AI Access</span>
-                                    <span class="font-semibold">$588</span>
+                                    <span>Smart Date Planning Tools</span>
+                                    <span class="font-semibold">$396/year</span>
                                 </div>
                                 <div class="flex justify-between">
-                                    <span>Partner Gifting Credits</span>
-                                    <span class="font-semibold">$50</span>
+                                    <span>Surprise Credits</span>
+                                    <span class="font-semibold">$50/year</span>
                                 </div>
                                 <div class="flex justify-between border-t pt-2 font-bold text-lg">
-                                    <span>Total Benefits Value</span>
-                                    <span class="text-emerald-600">$2,651</span>
+                                    <span>Total Value</span>
+                                    <span class="text-pink-600">$1,979</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="mt-6 text-center">
-                        <div class="text-3xl font-bold text-emerald-600 mb-2">
-                            You Pay: $240 • You Get: $2,651 Value
+                        <div class="text-3xl font-bold text-pink-600 mb-2">
+                            You Pay: $240 • You Get: $1,979 Value
                         </div>
                         <div class="text-xl text-gray-700">
-                            That's <span class="font-bold text-emerald-600">1,004% ROI</span> on your relationship investment!
+                            That's <span class="font-bold text-pink-600">724% ROI</span> on your relationship investment!
                         </div>
                     </div>
                 </div>
@@ -493,26 +576,26 @@ export const premiumPricingHtml = `<!DOCTYPE html>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-gradient-to-r from-emerald-600 to-green-600 text-white">
+    <section class="py-16 bg-gradient-to-r from-pink-600 to-purple-600 text-white">
         <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Transform Your Relationship Today</h2>
-            <p class="text-xl mb-8 opacity-90">Join thousands of couples building stronger, more intimate connections</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Build Something Beautiful Together?</h2>
+            <p class="text-xl mb-8 opacity-90">Join thousands of couples who chose to invest in their love story</p>
             
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
-                <button class="w-full sm:w-auto bg-white text-emerald-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg text-lg">
-                    <i class="fas fa-calendar-check mr-2"></i>
-                    Start Annual Premium - Save $120
+                <button class="w-full sm:w-auto bg-white text-pink-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors shadow-lg text-lg">
+                    <i class="fas fa-heart mr-2"></i>
+                    Start Our Journey - Better Together Plan
                 </button>
-                <button class="w-full sm:w-auto bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-emerald-600 transition-colors">
+                <button class="w-full sm:w-auto bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-pink-600 transition-colors">
                     <i class="fas fa-gift mr-2"></i>
-                    Gift to Partner
+                    Surprise My Partner
                 </button>
             </div>
 
-            <div class="text-emerald-100">
+            <div class="text-pink-100">
                 <p class="text-sm">
                     <i class="fas fa-shield-alt mr-2"></i>
-                    30-day money back guarantee • All features included • Cancel anytime
+                    30-day happiness guarantee • Everything included • Your relationship deserves this
                 </p>
             </div>
         </div>
