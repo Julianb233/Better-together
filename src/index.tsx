@@ -911,6 +911,7 @@ import { aiCoachHtml } from './pages/ai-coach'
 import { mobileUIHtml } from './pages/mobile-ui'
 import { smartSchedulingHtml } from './pages/smart-scheduling'
 import { intelligentSuggestionsHtml } from './pages/intelligent-suggestions'
+import { iphoneExamplesHtml } from './pages/iphone-examples'
 
 app.get('/ai-coach.html', (c) => {
   return c.html(aiCoachHtml)
@@ -926,6 +927,10 @@ app.get('/smart-scheduling.html', (c) => {
 
 app.get('/intelligent-suggestions.html', (c) => {
   return c.html(intelligentSuggestionsHtml)
+})
+
+app.get('/iphone-examples.html', (c) => {
+  return c.html(iphoneExamplesHtml)
 })
 
 // =============================================================================
@@ -946,7 +951,7 @@ app.get('/', (c) => {
             <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
               <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">Features</a>
               <a href="/mobile-ui.html" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">iOS Design</a>
-              <a href="#social-proof" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">Results</a>
+              <a href="/iphone-examples.html" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">Live Examples</a>
               <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">Pricing</a>
               <button className="bg-pink-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-pink-700 transition-colors text-sm lg:text-base">
                 Start Free Trial
@@ -963,7 +968,7 @@ app.get('/', (c) => {
             <div className="flex flex-col space-y-3">
               <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors py-2">Features</a>
               <a href="/mobile-ui.html" className="text-gray-600 hover:text-gray-900 transition-colors py-2">iOS Design</a>
-              <a href="#social-proof" className="text-gray-600 hover:text-gray-900 transition-colors py-2">Results</a>
+              <a href="/iphone-examples.html" className="text-gray-600 hover:text-gray-900 transition-colors py-2">Live Examples</a>
               <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors py-2">Pricing</a>
               <button className="bg-pink-600 text-white px-4 py-3 rounded-lg font-medium hover:bg-pink-700 transition-colors w-full">
                 Start Free Trial
