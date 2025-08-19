@@ -956,6 +956,18 @@ app.get('/dashboard.html', (c) => {
   return c.html(dashboardHtml)
 })
 
+// Subscription Boxes
+app.get('/subscription-boxes.html', async (c) => {
+  const { subscriptionBoxesHtml } = await import('./pages/subscription-boxes');
+  return c.html(subscriptionBoxesHtml);
+})
+
+// In-App Purchases
+app.get('/in-app-purchases.html', async (c) => {
+  const { inAppPurchasesHtml } = await import('./pages/in-app-purchases');
+  return c.html(inAppPurchasesHtml);
+})
+
 // Analytics API Routes
 app.route('/api/analytics', analyticsApi)
 
