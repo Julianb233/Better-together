@@ -30,11 +30,11 @@ export const mobileUIHtml = `<!DOCTYPE html>
     </script>
     <style>
         .iphone-frame {
-            width: 280px;
-            height: 580px;
+            width: 300px;
+            height: 620px;
             background: #1c1c1e;
             border-radius: 45px;
-            padding: 10px;
+            padding: 12px;
             position: relative;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
@@ -51,10 +51,10 @@ export const mobileUIHtml = `<!DOCTYPE html>
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 130px;
-            height: 25px;
+            width: 140px;
+            height: 28px;
             background: #000;
-            border-radius: 0 0 15px 15px;
+            border-radius: 0 0 16px 16px;
             z-index: 20;
         }
         .screen-content {
@@ -64,19 +64,20 @@ export const mobileUIHtml = `<!DOCTYPE html>
             right: 0;
             bottom: 0;
             background: #f8fafc;
-            padding-top: 30px;
+            padding-top: 35px;
             overflow: hidden;
+            font-size: 11px;
         }
         .status-bar {
             position: absolute;
-            top: 8px;
-            left: 20px;
-            right: 20px;
-            height: 20px;
+            top: 10px;
+            left: 22px;
+            right: 22px;
+            height: 18px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 12px;
+            font-size: 10px;
             font-weight: 600;
             color: #000;
             z-index: 21;
@@ -85,27 +86,30 @@ export const mobileUIHtml = `<!DOCTYPE html>
             height: 100%;
             display: flex;
             flex-direction: column;
+            font-size: 11px;
         }
         .mock-input {
             background: #f1f5f9;
             border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 12px 16px;
-            font-size: 14px;
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 10px;
         }
         .chat-bubble-user {
             background: #007AFF;
             color: white;
             margin-left: auto;
             margin-right: 0;
-            border-radius: 18px 18px 4px 18px;
+            border-radius: 12px 12px 3px 12px;
+            max-width: 70%;
         }
         .chat-bubble-ai {
             background: #e5e7eb;
             color: #1f2937;
             margin-right: auto;
             margin-left: 0;
-            border-radius: 18px 18px 18px 4px;
+            border-radius: 12px 12px 12px 3px;
+            max-width: 75%;
         }
         .tab-active {
             color: #007AFF;
@@ -116,6 +120,52 @@ export const mobileUIHtml = `<!DOCTYPE html>
         @keyframes heartbeat {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.1); }
+        }
+        .mobile-text-xs { font-size: 8px; }
+        .mobile-text-sm { font-size: 10px; }
+        .mobile-text-base { font-size: 11px; }
+        .mobile-text-lg { font-size: 12px; }
+        .mobile-text-xl { font-size: 14px; }
+        .mobile-text-2xl { font-size: 16px; }
+        .mobile-text-3xl { font-size: 18px; }
+        .mobile-text-4xl { font-size: 20px; }
+        
+        .mobile-h1 { font-size: 14px; font-weight: bold; }
+        .mobile-h2 { font-size: 12px; font-weight: bold; }
+        .mobile-h3 { font-size: 11px; font-weight: 600; }
+        .mobile-p { font-size: 9px; }
+        .mobile-small { font-size: 8px; }
+        
+        .mobile-px-1 { padding-left: 2px; padding-right: 2px; }
+        .mobile-px-2 { padding-left: 4px; padding-right: 4px; }
+        .mobile-px-3 { padding-left: 6px; padding-right: 6px; }
+        .mobile-px-4 { padding-left: 8px; padding-right: 8px; }
+        .mobile-px-6 { padding-left: 12px; padding-right: 12px; }
+        .mobile-py-1 { padding-top: 2px; padding-bottom: 2px; }
+        .mobile-py-2 { padding-top: 4px; padding-bottom: 4px; }
+        .mobile-py-3 { padding-top: 6px; padding-bottom: 6px; }
+        .mobile-py-4 { padding-top: 8px; padding-bottom: 8px; }
+        
+        .mobile-mb-1 { margin-bottom: 2px; }
+        .mobile-mb-2 { margin-bottom: 4px; }
+        .mobile-mb-3 { margin-bottom: 6px; }
+        .mobile-mb-4 { margin-bottom: 8px; }
+        .mobile-mb-6 { margin-bottom: 12px; }
+        
+        .mobile-w-6 { width: 12px; }
+        .mobile-h-6 { height: 12px; }
+        .mobile-w-8 { width: 16px; }
+        .mobile-h-8 { height: 16px; }
+        .mobile-w-10 { width: 20px; }
+        .mobile-h-10 { height: 20px; }
+        
+        .mobile-rounded { border-radius: 4px; }
+        .mobile-rounded-lg { border-radius: 6px; }
+        .mobile-rounded-xl { border-radius: 8px; }
+        .mobile-rounded-full { border-radius: 50%; }
+        
+        .waitlist-form {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
     </style>
 </head>
@@ -200,24 +250,24 @@ export const mobileUIHtml = `<!DOCTYPE html>
                             <div class="screen-content">
                                 <div class="app-interface bg-gradient-to-br from-primary-500 to-purple-600 text-white relative">
                                     <div class="absolute inset-0 bg-black opacity-10"></div>
-                                    <div class="relative z-10 flex flex-col items-center justify-center h-full px-8">
-                                        <div class="text-6xl mb-6 heart-beat">💕</div>
-                                        <h1 class="text-2xl font-bold mb-4 text-center">Welcome to Better Together</h1>
-                                        <p class="text-lg text-center text-white opacity-90 mb-12">
+                                    <div class="relative z-10 flex flex-col items-center justify-center h-full mobile-px-6">
+                                        <div class="mobile-text-4xl mobile-mb-4 heart-beat">💕</div>
+                                        <h1 class="mobile-text-xl font-bold mobile-mb-3 text-center">Welcome to Better Together</h1>
+                                        <p class="mobile-text-sm text-center text-white opacity-90 mobile-mb-6">
                                             Your AI relationship coach that grows with your love story
                                         </p>
-                                        <div class="w-full space-y-4">
-                                            <button class="w-full bg-white text-primary-600 py-4 rounded-full font-semibold text-lg">
+                                        <div class="w-full space-y-2">
+                                            <button class="w-full bg-white text-primary-600 mobile-py-3 mobile-rounded-lg font-semibold mobile-text-sm">
                                                 Start Your Journey
                                             </button>
-                                            <button class="w-full border-2 border-white text-white py-4 rounded-full font-semibold text-lg">
+                                            <button class="w-full border border-white text-white mobile-py-3 mobile-rounded-lg font-semibold mobile-text-sm">
                                                 I Have an Account
                                             </button>
                                         </div>
-                                        <div class="flex space-x-2 mt-8">
-                                            <div class="w-2 h-2 bg-white rounded-full"></div>
-                                            <div class="w-2 h-2 bg-white opacity-50 rounded-full"></div>
-                                            <div class="w-2 h-2 bg-white opacity-50 rounded-full"></div>
+                                        <div class="flex space-x-1 mt-4">
+                                            <div class="w-1.5 h-1.5 bg-white mobile-rounded-full"></div>
+                                            <div class="w-1.5 h-1.5 bg-white opacity-50 mobile-rounded-full"></div>
+                                            <div class="w-1.5 h-1.5 bg-white opacity-50 mobile-rounded-full"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -245,43 +295,39 @@ export const mobileUIHtml = `<!DOCTYPE html>
                             </div>
                             <div class="screen-content">
                                 <div class="app-interface bg-white">
-                                    <div class="px-6 py-4 border-b border-gray-100">
+                                    <div class="mobile-px-4 mobile-py-3 border-b border-gray-100">
                                         <div class="flex items-center justify-between">
-                                            <button class="text-primary-600 font-medium">Back</button>
-                                            <h1 class="text-lg font-semibold">Tell us about you</h1>
-                                            <span class="text-primary-600 font-medium">2/4</span>
+                                            <button class="text-primary-600 mobile-text-sm font-medium">Back</button>
+                                            <h1 class="mobile-h1">Tell us about you</h1>
+                                            <span class="text-primary-600 mobile-text-sm font-medium">2/4</span>
                                         </div>
                                     </div>
-                                    <div class="flex-1 px-6 py-8">
-                                        <div class="text-center mb-8">
-                                            <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                                <i class="fas fa-camera text-gray-500 text-xl"></i>
+                                    <div class="flex-1 mobile-px-4 mobile-py-4">
+                                        <div class="text-center mobile-mb-4">
+                                            <div class="mobile-w-10 mobile-h-10 bg-gray-200 mobile-rounded-full mx-auto mobile-mb-2 flex items-center justify-center">
+                                                <i class="fas fa-camera text-gray-500 mobile-text-xs"></i>
                                             </div>
-                                            <button class="text-primary-600 font-medium">Add Photo</button>
+                                            <button class="text-primary-600 mobile-text-xs font-medium">Add Photo</button>
                                         </div>
-                                        <div class="space-y-4">
+                                        <div class="space-y-3">
                                             <div>
-                                                <label class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                                                <label class="block mobile-text-xs font-medium text-gray-700 mobile-mb-1">Your Name</label>
                                                 <input type="text" class="mock-input w-full" placeholder="Enter your name" value="Sarah">
                                             </div>
                                             <div>
-                                                <label class="block text-sm font-medium text-gray-700 mb-2">Your Age</label>
+                                                <label class="block mobile-text-xs font-medium text-gray-700 mobile-mb-1">Your Age</label>
                                                 <input type="text" class="mock-input w-full" placeholder="Enter your age" value="28">
                                             </div>
                                             <div>
-                                                <label class="block text-sm font-medium text-gray-700 mb-2">Love Language</label>
+                                                <label class="block mobile-text-xs font-medium text-gray-700 mobile-mb-1">Love Language</label>
                                                 <select class="mock-input w-full">
                                                     <option>Words of Affirmation</option>
-                                                    <option>Quality Time</option>
-                                                    <option>Physical Touch</option>
-                                                    <option>Acts of Service</option>
-                                                    <option>Receiving Gifts</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="px-6 py-4">
-                                        <button class="w-full bg-primary-600 text-white py-4 rounded-full font-semibold">
+                                    <div class="mobile-px-4 mobile-py-3">
+                                        <button class="w-full bg-primary-600 text-white mobile-py-3 mobile-rounded-lg mobile-text-sm font-semibold">
                                             Continue
                                         </button>
                                     </div>
@@ -384,72 +430,72 @@ export const mobileUIHtml = `<!DOCTYPE html>
                             <div class="screen-content">
                                 <div class="app-interface bg-gray-50">
                                     <!-- Header -->
-                                    <div class="px-6 py-4 bg-white">
-                                        <div class="flex items-center justify-between mb-4">
+                                    <div class="mobile-px-4 mobile-py-3 bg-white">
+                                        <div class="flex items-center justify-between mobile-mb-3">
                                             <div>
-                                                <h1 class="text-xl font-bold text-gray-900">Good Morning, Sarah!</h1>
-                                                <p class="text-sm text-gray-600">Tuesday, Aug 19, 2025</p>
+                                                <h1 class="mobile-text-lg font-bold text-gray-900">Good Morning, Sarah!</h1>
+                                                <p class="mobile-text-xs text-gray-600">Tuesday, Aug 19, 2025</p>
                                             </div>
-                                            <div class="flex items-center space-x-3">
-                                                <button class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
-                                                    <i class="fas fa-bell text-gray-600 text-xs"></i>
+                                            <div class="flex items-center space-x-2">
+                                                <button class="mobile-w-6 mobile-h-6 bg-gray-100 mobile-rounded-full flex items-center justify-center">
+                                                    <i class="fas fa-bell text-gray-600" style="font-size: 8px;"></i>
                                                 </button>
-                                                <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
-                                                    <span class="text-sm">👩‍🦰</span>
+                                                <div class="mobile-w-6 mobile-h-6 bg-primary-100 mobile-rounded-full flex items-center justify-center">
+                                                    <span style="font-size: 8px;">👩‍🦰</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- Connection Status -->
-                                        <div class="flex items-center justify-between bg-primary-50 p-4 rounded-xl">
+                                        <div class="flex items-center justify-between bg-primary-50 mobile-px-3 mobile-py-2 mobile-rounded-lg">
                                             <div class="flex items-center">
-                                                <div class="flex -space-x-2 mr-3">
-                                                    <div class="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center border-2 border-white">
-                                                        <span class="text-white text-xs">👩‍🦰</span>
+                                                <div class="flex -space-x-1 mr-2">
+                                                    <div class="mobile-w-6 mobile-h-6 bg-primary-500 mobile-rounded-full flex items-center justify-center border border-white">
+                                                        <span class="text-white" style="font-size: 7px;">👩‍🦰</span>
                                                     </div>
-                                                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border-2 border-white">
-                                                        <span class="text-white text-xs">👨</span>
+                                                    <div class="mobile-w-6 mobile-h-6 bg-blue-500 mobile-rounded-full flex items-center justify-center border border-white">
+                                                        <span class="text-white" style="font-size: 7px;">👨</span>
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <p class="text-sm font-semibold text-gray-900">Connected with Mike</p>
-                                                    <p class="text-xs text-gray-600">12 day streak</p>
+                                                    <p class="mobile-text-xs font-semibold text-gray-900">Connected with Mike</p>
+                                                    <p class="mobile-small text-gray-600">12 day streak</p>
                                                 </div>
                                             </div>
-                                            <div class="text-2xl">💕</div>
+                                            <div class="mobile-text-lg">💕</div>
                                         </div>
                                     </div>
                                     
                                     <!-- Quick Actions -->
-                                    <div class="px-6 py-4">
-                                        <h2 class="text-lg font-semibold text-gray-900 mb-4">Today's Focus</h2>
-                                        <div class="grid grid-cols-2 gap-3">
-                                            <button class="bg-white p-4 rounded-xl text-left">
-                                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mb-2">
-                                                    <i class="fas fa-comments text-blue-600 text-sm"></i>
+                                    <div class="mobile-px-4 mobile-py-3">
+                                        <h2 class="mobile-h2 text-gray-900 mobile-mb-3">Today's Focus</h2>
+                                        <div class="grid grid-cols-2 gap-2">
+                                            <button class="bg-white mobile-px-3 mobile-py-3 mobile-rounded-lg text-left">
+                                                <div class="mobile-w-6 mobile-h-6 bg-blue-100 mobile-rounded flex items-center justify-center mobile-mb-1">
+                                                    <i class="fas fa-comments text-blue-600 mobile-text-xs"></i>
                                                 </div>
-                                                <p class="font-medium text-gray-900 text-sm">AI Coach</p>
-                                                <p class="text-xs text-gray-600">Get guidance</p>
+                                                <p class="font-medium text-gray-900 mobile-text-xs">AI Coach</p>
+                                                <p class="mobile-small text-gray-600">Get guidance</p>
                                             </button>
-                                            <button class="bg-white p-4 rounded-xl text-left">
-                                                <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mb-2">
-                                                    <i class="fas fa-calendar text-green-600 text-sm"></i>
+                                            <button class="bg-white mobile-px-3 mobile-py-3 mobile-rounded-lg text-left">
+                                                <div class="mobile-w-6 mobile-h-6 bg-green-100 mobile-rounded flex items-center justify-center mobile-mb-1">
+                                                    <i class="fas fa-calendar text-green-600 mobile-text-xs"></i>
                                                 </div>
-                                                <p class="font-medium text-gray-900 text-sm">Plan Date</p>
-                                                <p class="text-xs text-gray-600">Schedule time</p>
+                                                <p class="font-medium text-gray-900 mobile-text-xs">Plan Date</p>
+                                                <p class="mobile-small text-gray-600">Schedule time</p>
                                             </button>
-                                            <button class="bg-white p-4 rounded-xl text-left">
-                                                <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mb-2">
-                                                    <i class="fas fa-heart text-purple-600 text-sm"></i>
+                                            <button class="bg-white mobile-px-3 mobile-py-3 mobile-rounded-lg text-left">
+                                                <div class="mobile-w-6 mobile-h-6 bg-purple-100 mobile-rounded flex items-center justify-center mobile-mb-1">
+                                                    <i class="fas fa-heart text-purple-600 mobile-text-xs"></i>
                                                 </div>
-                                                <p class="font-medium text-gray-900 text-sm">Check-in</p>
-                                                <p class="text-xs text-gray-600">Share feelings</p>
+                                                <p class="font-medium text-gray-900 mobile-text-xs">Check-in</p>
+                                                <p class="mobile-small text-gray-600">Share feelings</p>
                                             </button>
-                                            <button class="bg-white p-4 rounded-xl text-left">
-                                                <div class="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center mb-2">
-                                                    <i class="fas fa-lightbulb text-yellow-600 text-sm"></i>
+                                            <button class="bg-white mobile-px-3 mobile-py-3 mobile-rounded-lg text-left">
+                                                <div class="mobile-w-6 mobile-h-6 bg-yellow-100 mobile-rounded flex items-center justify-center mobile-mb-1">
+                                                    <i class="fas fa-lightbulb text-yellow-600 mobile-text-xs"></i>
                                                 </div>
-                                                <p class="font-medium text-gray-900 text-sm">Suggestions</p>
-                                                <p class="text-xs text-gray-600">New ideas</p>
+                                                <p class="font-medium text-gray-900 mobile-text-xs">Suggestions</p>
+                                                <p class="mobile-small text-gray-600">New ideas</p>
                                             </button>
                                         </div>
                                     </div>
@@ -1270,15 +1316,77 @@ export const mobileUIHtml = `<!DOCTYPE html>
                 Ready to Experience Better Together?
             </h2>
             <p class="text-xl text-primary-100 mb-8">
-                Join the waitlist to be first to download when we launch on the App Store
+                Join the waitlist to be first to download when we launch
             </p>
-            <div class="flex justify-center space-x-4">
-                <button class="bg-white text-primary-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg">
-                    <i class="fas fa-mobile-alt mr-2"></i>Join iOS Waitlist
-                </button>
-                <button class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-600 transition-colors font-semibold text-lg">
-                    <i class="fas fa-android mr-2"></i>Android Coming Soon
-                </button>
+            
+            <!-- Waitlist Form -->
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 mb-8 max-w-md mx-auto">
+                <h3 class="text-2xl font-bold text-white mb-6">Join the Waitlist</h3>
+                <form class="space-y-4">
+                    <div>
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg border-0 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                    </div>
+                    <div class="text-left">
+                        <label class="text-white text-sm font-medium mb-3 block">Preferred Platform:</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center text-white text-sm">
+                                <input type="radio" name="platform" value="ios" class="mr-3 text-primary-600" checked>
+                                <i class="fab fa-apple mr-2"></i>
+                                iOS (iPhone/iPad) - Coming Q2 2025
+                            </label>
+                            <label class="flex items-center text-white text-sm">
+                                <input type="radio" name="platform" value="android" class="mr-3 text-primary-600">
+                                <i class="fab fa-android mr-2"></i>
+                                Android - Coming Q3 2025
+                            </label>
+                            <label class="flex items-center text-white text-sm">
+                                <input type="radio" name="platform" value="both" class="mr-3 text-primary-600">
+                                <i class="fas fa-mobile-alt mr-2"></i>
+                                Both Platforms
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-white text-primary-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg">
+                        <i class="fas fa-rocket mr-2"></i>Join Waitlist
+                    </button>
+                </form>
+                <p class="text-primary-100 text-xs mt-4">
+                    Be the first to know when Better Together launches. No spam, just love.
+                </p>
+            </div>
+
+            <!-- Platform Features -->
+            <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6">
+                    <div class="flex items-center justify-center mb-4">
+                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <i class="fab fa-apple text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">iOS App</h4>
+                    <ul class="text-primary-100 text-sm space-y-1">
+                        <li>• Native iOS design & animations</li>
+                        <li>• Siri integration for quick check-ins</li>
+                        <li>• Apple Watch companion app</li>
+                        <li>• iMessage integration</li>
+                        <li>• iOS 15+ required</li>
+                    </ul>
+                </div>
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6">
+                    <div class="flex items-center justify-center mb-4">
+                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <i class="fab fa-android text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-semibold text-white mb-2">Android App</h4>
+                    <ul class="text-primary-100 text-sm space-y-1">
+                        <li>• Material Design 3 interface</li>
+                        <li>• Google Assistant integration</li>
+                        <li>• Wear OS companion app</li>
+                        <li>• Smart home integrations</li>
+                        <li>• Android 8+ required</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
