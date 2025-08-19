@@ -3,6 +3,8 @@ import { cors } from 'hono/cors'
 import { serveStatic } from 'hono/cloudflare-workers'
 import { renderer } from './renderer'
 import type { Env } from './types'
+import { dashboardHtml } from './pages/dashboard'
+import analyticsApi from './api/analytics'
 import {
   generateId, 
   getCurrentDate, 
@@ -943,6 +945,14 @@ app.get('/become-sponsor.html', (c) => {
   return c.html(becomeSponsorHtml)
 })
 
+// Analytics Dashboard
+app.get('/dashboard.html', (c) => {
+  return c.html(dashboardHtml)
+})
+
+// Analytics API Routes
+app.route('/api/analytics', analyticsApi)
+
 // =============================================================================
 // HOME PAGE
 // =============================================================================
@@ -963,6 +973,7 @@ app.get('/', (c) => {
               <a href="/mobile-ui.html" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">iOS Design</a>
               <a href="/iphone-examples.html" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">Live Examples</a>
               <a href="/member-rewards.html" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">Member Rewards</a>
+              <a href="/dashboard.html" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">Analytics</a>
               <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">Pricing</a>
               <button className="bg-pink-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-pink-700 transition-colors text-sm lg:text-base">
                 Start Free Trial
@@ -981,6 +992,7 @@ app.get('/', (c) => {
               <a href="/mobile-ui.html" className="text-gray-600 hover:text-gray-900 transition-colors py-2">iOS Design</a>
               <a href="/iphone-examples.html" className="text-gray-600 hover:text-gray-900 transition-colors py-2">Live Examples</a>
               <a href="/member-rewards.html" className="text-gray-600 hover:text-gray-900 transition-colors py-2">Member Rewards</a>
+              <a href="/dashboard.html" className="text-gray-600 hover:text-gray-900 transition-colors py-2">Analytics</a>
               <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors py-2">Pricing</a>
               <button className="bg-pink-600 text-white px-4 py-3 rounded-lg font-medium hover:bg-pink-700 transition-colors w-full">
                 Start Free Trial
