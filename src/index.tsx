@@ -35,8 +35,23 @@ app.use(renderer)
 // AUTHENTICATION & USER MANAGEMENT
 // =============================================================================
 
+// Database availability check helper
+const checkDatabase = (c: any) => {
+  if (!c.env?.DB) {
+    return c.json({ 
+      message: 'Database functionality is currently unavailable in this demo deployment.',
+      demo: true,
+      note: 'Full functionality available in development environment with D1 database'
+    }, 503)
+  }
+  return null
+}
+
 // Create new user account
 app.post('/api/users', async (c) => {
+  const dbCheck = checkDatabase(c)
+  if (dbCheck) return dbCheck
+  
   try {
     const { email, name, nickname, phone_number, timezone, love_language_primary, love_language_secondary } = await c.req.json()
     
