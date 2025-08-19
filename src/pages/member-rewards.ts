@@ -83,7 +83,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                                 <i class="fas fa-calendar-check text-white text-2xl"></i>
                             </div>
                             <h3 class="text-lg font-semibold text-gray-900">Stay Connected</h3>
-                            <p class="text-gray-600 text-sm">Complete daily check-ins and build your relationship streak</p>
+                            <p class="text-gray-600 text-sm">Have daily best friend chats and build your relationship streak</p>
                         </div>
                         <div class="space-y-3">
                             <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto">
@@ -137,7 +137,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                     </div>
                     <h3 class="text-xl font-semibold mb-4 text-gray-900">Use the App Together</h3>
                     <p class="text-gray-600">
-                        Complete check-ins, plan activities, and engage with your AI coach to build your relationship streak and engagement score.
+                        Have daily best friend chats, plan activities, and engage with your AI coach to build your relationship streak and engagement score.
                     </p>
                 </div>
                 
