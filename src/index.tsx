@@ -975,14 +975,16 @@ app.get('/', (c) => {
               <span className="ml-2 text-lg sm:text-xl font-bold text-gray-900">Better Together</span>
             </div>
             <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-              <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">Features</a>
-              <a href="/mobile-ui.html" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">iOS Design</a>
-              <a href="/iphone-examples.html" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">Live Examples</a>
-              <a href="/member-rewards.html" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">Member Rewards</a>
-              <a href="/dashboard.html" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">Analytics</a>
-              <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors text-sm lg:text-base">Pricing</a>
-              <button className="bg-pink-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-pink-700 transition-colors text-sm lg:text-base">
-                Start Free Trial
+              <a href="#features" className="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">Features</a>
+              <a href="/mobile-ui.html" className="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">iOS Design</a>
+              <a href="/iphone-examples.html" className="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">Live Examples</a>
+              <a href="/member-rewards.html" className="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">Rewards</a>
+              <a href="#pricing" className="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">Pricing</a>
+              <button className="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:from-pink-700 hover:to-purple-700 transform hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base">
+                <span className="flex items-center">
+                  <i className="fas fa-heart mr-2 animate-pulse"></i>
+                  Start Free Trial
+                </span>
               </button>
             </div>
             <div className="md:hidden">
@@ -992,87 +994,114 @@ app.get('/', (c) => {
             </div>
           </div>
           {/* Mobile Menu */}
-          <div id="mobileMenu" className="hidden md:hidden pb-4">
-            <div className="flex flex-col space-y-3">
-              <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors py-2">Features</a>
-              <a href="/mobile-ui.html" className="text-gray-600 hover:text-gray-900 transition-colors py-2">iOS Design</a>
-              <a href="/iphone-examples.html" className="text-gray-600 hover:text-gray-900 transition-colors py-2">Live Examples</a>
-              <a href="/member-rewards.html" className="text-gray-600 hover:text-gray-900 transition-colors py-2">Member Rewards</a>
-              <a href="/dashboard.html" className="text-gray-600 hover:text-gray-900 transition-colors py-2">Analytics</a>
-              <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors py-2">Pricing</a>
-              <button className="bg-pink-600 text-white px-4 py-3 rounded-lg font-medium hover:bg-pink-700 transition-colors w-full">
-                Start Free Trial
+          <div id="mobileMenu" className="hidden md:hidden pb-4 transform transition-all duration-300">
+            <div className="flex flex-col space-y-3 bg-gradient-to-b from-white to-pink-50 p-4 rounded-lg shadow-lg">
+              <a href="#features" className="text-gray-600 hover:text-pink-600 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-pink-50 font-medium">
+                <i className="fas fa-heart mr-3 text-pink-500"></i>Features
+              </a>
+              <a href="/mobile-ui.html" className="text-gray-600 hover:text-pink-600 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-pink-50 font-medium">
+                <i className="fas fa-mobile-alt mr-3 text-purple-500"></i>iOS Design
+              </a>
+              <a href="/iphone-examples.html" className="text-gray-600 hover:text-pink-600 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-pink-50 font-medium">
+                <i className="fas fa-play-circle mr-3 text-blue-500"></i>Live Examples
+              </a>
+              <a href="/member-rewards.html" className="text-gray-600 hover:text-pink-600 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-pink-50 font-medium">
+                <i className="fas fa-gift mr-3 text-green-500"></i>Rewards
+              </a>
+              <a href="#pricing" className="text-gray-600 hover:text-pink-600 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-pink-50 font-medium">
+                <i className="fas fa-tag mr-3 text-yellow-500"></i>Pricing
+              </a>
+              <button className="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-6 py-4 rounded-full font-semibold hover:from-pink-700 hover:to-purple-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 w-full mt-4">
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-heart mr-2 animate-pulse"></i>
+                  Start Free Trial
+                </span>
               </button>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section - Mobile Responsive & Cognitive Bias Optimized */}
+      {/* Hero Section - Enhanced Animations & Mobile Responsive */}
       <section className="relative bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 py-12 sm:py-16 lg:py-20 overflow-hidden">
-        {/* Background Elements */}
+        {/* Animated Background Elements */}
         <div className="absolute inset-0 bg-white bg-opacity-50"></div>
-        <div className="absolute top-10 left-4 sm:left-10 text-pink-200 text-4xl sm:text-6xl opacity-20">💕</div>
-        <div className="absolute bottom-10 right-4 sm:right-10 text-purple-200 text-3xl sm:text-4xl opacity-20">💫</div>
+        <div className="absolute top-10 left-4 sm:left-10 text-pink-200 text-4xl sm:text-6xl opacity-30 animate-bounce">💕</div>
+        <div className="absolute bottom-10 right-4 sm:right-10 text-purple-200 text-3xl sm:text-4xl opacity-30 animate-pulse">💫</div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-pink-100 text-8xl opacity-10 animate-spin" style="animation-duration: 20s;">✨</div>
+        
+        {/* Floating Hearts Animation */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 text-pink-300 text-2xl opacity-40 animate-bounce" style="animation-delay: 0s; animation-duration: 3s;">💖</div>
+          <div className="absolute top-32 right-20 text-purple-300 text-xl opacity-40 animate-bounce" style="animation-delay: 1s; animation-duration: 4s;">💕</div>
+          <div className="absolute bottom-40 left-20 text-blue-300 text-lg opacity-40 animate-bounce" style="animation-delay: 2s; animation-duration: 5s;">💘</div>
+          <div className="absolute bottom-20 right-32 text-pink-300 text-xl opacity-40 animate-bounce" style="animation-delay: 1.5s; animation-duration: 3.5s;">💝</div>
+        </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             {/* Social Proof Badge - Authority Bias */}
-            <div className="mb-6 sm:mb-8">
-              <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-pink-100 rounded-full text-pink-800 text-xs sm:text-sm font-medium mb-4 sm:mb-6 animate-pulse">
-                <i className="fas fa-crown mr-2"></i>
+            <div className="mb-6 sm:mb-8 animate-fade-in-up">
+              <div className="inline-flex items-center px-4 sm:px-6 py-3 bg-gradient-to-r from-pink-100 to-purple-100 rounded-full text-pink-800 text-xs sm:text-sm font-bold mb-4 sm:mb-6 animate-pulse shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <i className="fas fa-crown mr-2 text-yellow-500 animate-pulse"></i>
                 #1 AI Relationship Platform • Trusted by 50,000+ Couples
+                <div className="ml-3 w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
               </div>
             </div>
             
             {/* Headlines - Loss Aversion + Urgency */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight px-2 animate-fade-in-up" style="animation-delay: 0.2s;">
               Stop Letting Your Relationship 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600 block sm:inline"> Drift Apart</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 block sm:inline animate-pulse"> Drift Apart</span>
             </h1>
             
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-700 mb-6 sm:mb-8 px-2">
-              Your AI Coach Plans, Schedules & Grows Your Love—Automatically
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-700 mb-6 sm:mb-8 px-2 animate-fade-in-up" style="animation-delay: 0.4s;">
+              Your AI Coach Plans, Schedules & Grows Your Love—
+              <span className="text-pink-600 font-bold">Automatically</span>
             </h2>
             
             {/* Value Proposition - Anchoring Effect */}
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-10 max-w-4xl mx-auto leading-relaxed px-4">
-              While other couples spend <strong className="text-red-600">$300+/month</strong> on therapy and still struggle, you get 24/7 personalized relationship coaching, automatic date planning, and proven growth strategies for just <strong className="text-green-600">pennies per day</strong>. 
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-10 max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in-up" style="animation-delay: 0.6s;">
+              While other couples spend <strong className="text-red-600 animate-pulse">$300+/month</strong> on therapy and still struggle, you get 24/7 personalized relationship coaching, automatic date planning, and proven growth strategies for just <strong className="text-green-600 font-bold animate-pulse">pennies per day</strong>. 
             </p>
             
-            {/* CTAs - Scarcity + Social Proof */}
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mb-8 px-4">
-              <button className="w-full sm:w-auto bg-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-pink-700 transition-all transform hover:scale-105 shadow-lg text-sm sm:text-base group">
-                <i className="fas fa-rocket mr-2 group-hover:animate-bounce"></i>
-                Start Your 7-Day Free Trial
+            {/* CTAs - Enhanced with Animations */}
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mb-8 px-4 animate-fade-in-up" style="animation-delay: 0.8s;">
+              <button className="w-full sm:w-auto bg-gradient-to-r from-pink-600 to-purple-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold hover:from-pink-700 hover:to-purple-700 transition-all transform hover:scale-110 hover:shadow-2xl text-sm sm:text-base group relative overflow-hidden animate-glow">
+                <span className="relative z-10">
+                  <i className="fas fa-heart mr-2 group-hover:animate-bounce"></i>
+                  Start Your 7-Day Free Trial
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
-              <button className="w-full sm:w-auto bg-white text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold border border-gray-300 hover:bg-gray-50 transition-colors shadow-md text-sm sm:text-base">
-                <i className="fas fa-play mr-2"></i>
+              <button className="w-full sm:w-auto bg-white text-gray-700 px-8 sm:px-10 py-4 sm:py-5 rounded-full font-semibold border-2 border-pink-200 hover:border-pink-400 hover:bg-pink-50 hover:text-pink-700 transition-all transform hover:scale-105 hover:shadow-lg text-sm sm:text-base group hover-lift">
+                <i className="fas fa-play mr-2 group-hover:text-pink-600 transition-colors"></i>
                 Watch 2-Min Demo
               </button>
             </div>
 
-            {/* Limited Time Offer - Urgency Bias */}
-            <div className="mb-8 px-4">
-              <div className="inline-flex items-center bg-red-50 border border-red-200 rounded-lg px-4 py-2 text-red-700 text-xs sm:text-sm font-medium animate-pulse">
-                <i className="fas fa-fire mr-2 text-red-500"></i>
-                Early Access: 50% OFF First 3 Months (247 spots left)
+            {/* Limited Time Offer - Enhanced Urgency */}
+            <div className="mb-8 px-4 animate-scale-in" style="animation-delay: 1s;">
+              <div className="inline-flex items-center bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-200 rounded-full px-6 py-3 text-red-700 text-xs sm:text-sm font-bold animate-glow shadow-lg">
+                <i className="fas fa-fire mr-2 text-red-500 animate-pulse"></i>
+                Early Access: 50% OFF First 3 Months 
+                <span className="ml-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs animate-bounce">247 spots left</span>
               </div>
             </div>
             
-            {/* Trust Signals - Reciprocity + Authority */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 text-xs sm:text-sm text-gray-500 px-4">
-              <div className="flex items-center justify-center sm:justify-start">
-                <i className="fas fa-check-circle text-green-500 mr-2"></i>
-                No Credit Card Required
+            {/* Trust Signals - Enhanced with Animations */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 text-xs sm:text-sm text-gray-600 px-4 animate-slide-in-bottom" style="animation-delay: 1.2s;">
+              <div className="flex items-center justify-center sm:justify-start hover-lift p-3 rounded-lg hover:bg-green-50 transition-all">
+                <i className="fas fa-check-circle text-green-500 mr-2 text-lg"></i>
+                <span className="font-semibold">No Credit Card Required</span>
               </div>
-              <div className="flex items-center justify-center">
-                <i className="fas fa-shield-alt text-blue-500 mr-2"></i>
-                Bank-Level Security
+              <div className="flex items-center justify-center hover-lift p-3 rounded-lg hover:bg-blue-50 transition-all">
+                <i className="fas fa-shield-alt text-blue-500 mr-2 text-lg"></i>
+                <span className="font-semibold">Bank-Level Security</span>
               </div>
-              <div className="flex items-center justify-center sm:justify-end">
-                <i className="fas fa-medal text-purple-500 mr-2"></i>
-                30-Day Guarantee
+              <div className="flex items-center justify-center sm:justify-end hover-lift p-3 rounded-lg hover:bg-purple-50 transition-all">
+                <i className="fas fa-medal text-purple-500 mr-2 text-lg"></i>
+                <span className="font-semibold">30-Day Guarantee</span>
               </div>
             </div>
 
@@ -1960,17 +1989,38 @@ app.get('/', (c) => {
         </div>
       </footer>
 
-      {/* Mobile JavaScript */}
+      {/* Enhanced Mobile JavaScript with Animations */}
       <script>
         {`
           document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
+            // Enhanced Mobile menu toggle with animations
             const mobileMenuButton = document.getElementById('mobileMenuButton');
             const mobileMenu = document.getElementById('mobileMenu');
             
             if (mobileMenuButton && mobileMenu) {
               mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                  mobileMenu.classList.remove('hidden');
+                  mobileMenu.style.transform = 'translateY(-10px)';
+                  mobileMenu.style.opacity = '0';
+                  setTimeout(() => {
+                    mobileMenu.style.transform = 'translateY(0)';
+                    mobileMenu.style.opacity = '1';
+                  }, 10);
+                } else {
+                  mobileMenu.style.transform = 'translateY(-10px)';
+                  mobileMenu.style.opacity = '0';
+                  setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                  }, 300);
+                }
+                
+                // Animate hamburger to X
+                const icon = this.querySelector('i');
+                if (icon) {
+                  icon.style.transform = isHidden ? 'rotate(90deg)' : 'rotate(0deg)';
+                }
               });
             }
 
@@ -1979,15 +2029,67 @@ app.get('/', (c) => {
             if (mobileLinks) {
               mobileLinks.forEach(link => {
                 link.addEventListener('click', function() {
-                  mobileMenu.classList.add('hidden');
+                  mobileMenu.style.transform = 'translateY(-10px)';
+                  mobileMenu.style.opacity = '0';
+                  setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                  }, 300);
                 });
               });
             }
 
-            // Close mobile menu on window resize
-            window.addEventListener('resize', function() {
-              if (window.innerWidth >= 768 && mobileMenu) {
-                mobileMenu.classList.add('hidden');
+            // Enhanced button interactions
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+              // Add ripple effect
+              button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = button.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                  ripple.remove();
+                }, 600);
+              });
+              
+              // Touch-friendly sizing on mobile
+              if (window.innerWidth <= 768) {
+                button.style.minHeight = '44px';
+              }
+            });
+
+            // Enhanced scroll animations
+            const observerOptions = {
+              threshold: 0.1,
+              rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.style.opacity = '1';
+                  entry.target.style.transform = 'translateY(0)';
+                }
+              });
+            }, observerOptions);
+            
+            // Observe animated elements
+            const animatedElements = document.querySelectorAll('[class*="animate-"]');
+            animatedElements.forEach(el => {
+              // Set initial state for scroll animations
+              if (!el.style.animationDelay) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                observer.observe(el);
               }
             });
 
@@ -1999,22 +2101,75 @@ app.get('/', (c) => {
                 const targetId = this.getAttribute('href').substring(1);
                 const target = document.getElementById(targetId);
                 if (target) {
-                  target.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
+                  // Add scroll offset for fixed header
+                  const headerHeight = 80;
+                  const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                  
+                  window.scrollTo({ 
+                    top: targetPosition,
+                    behavior: 'smooth'
                   });
                 }
               });
             });
 
-            // Add touch-friendly button sizes on mobile
-            if (window.innerWidth <= 768) {
-              const buttons = document.querySelectorAll('button');
-              buttons.forEach(button => {
-                button.style.minHeight = '44px';
+            // Parallax effect for background elements
+            window.addEventListener('scroll', function() {
+              const scrolled = window.pageYOffset;
+              const parallax = document.querySelectorAll('[class*="animate-float"]');
+              
+              parallax.forEach((element, index) => {
+                const speed = (index + 1) * 0.5;
+                element.style.transform = 'translateY(' + (scrolled * speed) + 'px)';
               });
-            }
+            });
+
+            // Close mobile menu on resize
+            window.addEventListener('resize', function() {
+              if (window.innerWidth >= 768 && mobileMenu) {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuButton?.querySelector('i');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+              }
+            });
+
+            // Add loading states to CTA buttons
+            const ctaButtons = document.querySelectorAll('button[class*="bg-gradient"]');
+            ctaButtons.forEach(button => {
+              button.addEventListener('click', function() {
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Getting Started...';
+                this.disabled = true;
+                
+                // Simulate loading (remove in production)
+                setTimeout(() => {
+                  this.innerHTML = originalText;
+                  this.disabled = false;
+                }, 2000);
+              });
+            });
           });
+          
+          // Add CSS for ripple effect
+          const style = document.createElement('style');
+          style.textContent = \`
+            .ripple {
+              position: absolute;
+              border-radius: 50%;
+              background: rgba(255, 255, 255, 0.6);
+              transform: scale(0);
+              animation: ripple 0.6s linear;
+              pointer-events: none;
+            }
+            
+            @keyframes ripple {
+              to {
+                transform: scale(4);
+                opacity: 0;
+              }
+            }
+          \`;
+          document.head.appendChild(style);
         `}
       </script>
     </div>

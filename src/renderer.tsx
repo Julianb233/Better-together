@@ -21,7 +21,164 @@ export const renderer = jsxRenderer(({ children }) => {
         <link href="/static/styles.css" rel="stylesheet" />
         
         <style>
-          {`body { font-family: 'Inter', sans-serif; }`}
+          {`
+            body { 
+              font-family: 'Inter', sans-serif; 
+            }
+            
+            /* Enhanced Animations */
+            @keyframes fade-in-up {
+              from {
+                opacity: 0;
+                transform: translateY(30px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            
+            @keyframes fade-in-left {
+              from {
+                opacity: 0;
+                transform: translateX(-30px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+            
+            @keyframes fade-in-right {
+              from {
+                opacity: 0;
+                transform: translateX(30px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+            
+            @keyframes slide-in-bottom {
+              from {
+                opacity: 0;
+                transform: translateY(50px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            
+            @keyframes scale-in {
+              from {
+                opacity: 0;
+                transform: scale(0.9);
+              }
+              to {
+                opacity: 1;
+                transform: scale(1);
+              }
+            }
+            
+            @keyframes float {
+              0%, 100% { transform: translateY(0px) rotate(0deg); }
+              50% { transform: translateY(-15px) rotate(5deg); }
+            }
+            
+            @keyframes glow {
+              0%, 100% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.3); }
+              50% { box-shadow: 0 0 40px rgba(236, 72, 153, 0.8); }
+            }
+            
+            @keyframes gradient-shift {
+              0% { background-position: 0% 50%; }
+              50% { background-position: 100% 50%; }
+              100% { background-position: 0% 50%; }
+            }
+            
+            /* Animation Classes */
+            .animate-fade-in-up {
+              animation: fade-in-up 0.8s ease-out forwards;
+            }
+            
+            .animate-fade-in-left {
+              animation: fade-in-left 0.8s ease-out forwards;
+            }
+            
+            .animate-fade-in-right {
+              animation: fade-in-right 0.8s ease-out forwards;
+            }
+            
+            .animate-slide-in-bottom {
+              animation: slide-in-bottom 0.8s ease-out forwards;
+            }
+            
+            .animate-scale-in {
+              animation: scale-in 0.6s ease-out forwards;
+            }
+            
+            .animate-float {
+              animation: float 6s ease-in-out infinite;
+            }
+            
+            .animate-glow {
+              animation: glow 2s ease-in-out infinite alternate;
+            }
+            
+            .animate-gradient-shift {
+              background-size: 200% 200%;
+              animation: gradient-shift 3s ease infinite;
+            }
+            
+            /* Hover Effects */
+            .hover-lift {
+              transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            .hover-lift:hover {
+              transform: translateY(-5px) scale(1.02);
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            .hover-glow {
+              transition: all 0.3s ease;
+            }
+            
+            .hover-glow:hover {
+              box-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
+              transform: scale(1.05);
+            }
+            
+            /* Loading States */
+            .loading-spinner {
+              animation: spin 1s linear infinite;
+            }
+            
+            /* Smooth Scrolling */
+            html {
+              scroll-behavior: smooth;
+            }
+            
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar {
+              width: 8px;
+            }
+            
+            ::-webkit-scrollbar-track {
+              background: #f1f1f1;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+              background: linear-gradient(to bottom, #ec4899, #8b5cf6);
+              border-radius: 10px;
+            }
+            
+            ::-webkit-scrollbar-thumb:hover {
+              background: linear-gradient(to bottom, #db2777, #7c3aed);
+            }
+          `}
         </style>
       </head>
       <body class="antialiased">{children}</body>
