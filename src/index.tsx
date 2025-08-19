@@ -1128,6 +1128,327 @@ app.get('/', (c) => {
         </div>
       </section>
 
+      {/* How It Works */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              How Better Together Works
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              A simple 4-step process to transform your relationship into a thriving partnership
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8 mb-16">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                1
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Create Profiles</h3>
+              <p className="text-gray-600">
+                Set up detailed profiles with love languages, preferences, and relationship goals. Invite your partner to join your journey.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                2
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Daily Check-ins</h3>
+              <p className="text-gray-600">
+                Complete quick daily assessments tracking mood, connection levels, gratitude, and relationship satisfaction.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                3
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Set Goals & Activities</h3>
+              <p className="text-gray-600">
+                Create shared goals, plan date nights, take on challenges, and track your progress together as a team.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                4
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Grow Together</h3>
+              <p className="text-gray-600">
+                Watch your relationship health score improve, earn achievements, and build lasting intimacy through consistent actions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comprehensive Features */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Complete Feature Set
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Every tool you need to build a thriving, data-driven relationship
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Enhanced User Profiles */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-user-circle text-pink-600 text-xl"></i>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">Enhanced User Profiles</h3>
+              </div>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• Primary & secondary love languages</li>
+                <li>• Relationship preferences & goals</li>
+                <li>• Profile photos & nicknames</li>
+                <li>• Timezone & contact information</li>
+                <li>• Custom preference settings</li>
+              </ul>
+            </div>
+
+            {/* Shared Calendar */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-calendar-heart text-purple-600 text-xl"></i>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">Shared Calendar</h3>
+              </div>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• Important dates & anniversaries</li>
+                <li>• Recurring celebrations</li>
+                <li>• Custom milestones</li>
+                <li>• Smart reminders</li>
+                <li>• Birthday & holiday tracking</li>
+              </ul>
+            </div>
+
+            {/* Goal Tracking */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-bullseye text-blue-600 text-xl"></i>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">Goal Tracking</h3>
+              </div>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• Weekly, monthly & milestone goals</li>
+                <li>• Progress tracking & visualization</li>
+                <li>• Target dates & completion celebrations</li>
+                <li>• Custom goal categories</li>
+                <li>• Achievement notifications</li>
+              </ul>
+            </div>
+
+            {/* Daily Check-ins */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-clipboard-check text-green-600 text-xl"></i>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">Daily Check-ins</h3>
+              </div>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• Connection score (1-10 scale)</li>
+                <li>• Mood & satisfaction tracking</li>
+                <li>• Gratitude notes & highlights</li>
+                <li>• Support needs communication</li>
+                <li>• Streak tracking & rewards</li>
+              </ul>
+            </div>
+
+            {/* Activity Logs */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-heart-circle-plus text-yellow-600 text-xl"></i>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">Activity Logs</h3>
+              </div>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• Date night planning & tracking</li>
+                <li>• Activity satisfaction ratings</li>
+                <li>• Location & cost tracking</li>
+                <li>• Photo memories</li>
+                <li>• Activity type categorization</li>
+              </ul>
+            </div>
+
+            {/* Gamified System */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-gamepad text-indigo-600 text-xl"></i>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">Gamified System</h3>
+              </div>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• Relationship challenges</li>
+                <li>• Achievement badges & rewards</li>
+                <li>• Streak counters</li>
+                <li>• Progress celebrations</li>
+                <li>• Motivation through gamification</li>
+              </ul>
+            </div>
+
+            {/* Analytics Dashboard */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-chart-pie text-red-600 text-xl"></i>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">Analytics Dashboard</h3>
+              </div>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• Relationship health scoring</li>
+                <li>• Trend analysis & insights</li>
+                <li>• Communication frequency</li>
+                <li>• Goal completion rates</li>
+                <li>• Activity satisfaction trends</li>
+              </ul>
+            </div>
+
+            {/* Smart Notifications */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-bell text-cyan-600 text-xl"></i>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">Smart Notifications</h3>
+              </div>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• Daily check-in reminders</li>
+                <li>• Important date alerts</li>
+                <li>• Achievement notifications</li>
+                <li>• Goal progress updates</li>
+                <li>• Partner activity alerts</li>
+              </ul>
+            </div>
+
+            {/* Privacy & Security */}
+            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
+                  <i className="fas fa-shield-halved text-gray-600 text-xl"></i>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">Privacy & Security</h3>
+              </div>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• End-to-end data encryption</li>
+                <li>• Private relationship data</li>
+                <li>• Secure authentication</li>
+                <li>• GDPR compliant</li>
+                <li>• Data export options</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Challenges & Activities */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Relationship Challenges & Activities
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Proven challenges designed by relationship psychologists to strengthen your bond
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg p-6 border border-green-200">
+              <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+                <i className="fas fa-seedling text-white text-xl"></i>
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">7-Day Gratitude Challenge</h3>
+              <p className="text-sm text-gray-600 mb-3">Express daily appreciation for your partner</p>
+              <div className="flex items-center justify-between">
+                <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Beginner</span>
+                <span className="text-green-600 font-medium">7 days</span>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-6 border border-blue-200">
+              <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+                <i className="fas fa-clock text-white text-xl"></i>
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">30-Day Quality Time</h3>
+              <p className="text-sm text-gray-600 mb-3">Dedicated time together every day</p>
+              <div className="flex items-center justify-between">
+                <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Intermediate</span>
+                <span className="text-blue-600 font-medium">30 days</span>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg p-6 border border-purple-200">
+              <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+                <i className="fas fa-comments text-white text-xl"></i>
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">Deep Conversations</h3>
+              <p className="text-sm text-gray-600 mb-3">Meaningful dialogue starters</p>
+              <div className="flex items-center justify-between">
+                <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Advanced</span>
+                <span className="text-purple-600 font-medium">Ongoing</span>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-lg p-6 border border-pink-200">
+              <div className="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center mb-4">
+                <i className="fas fa-heart-pulse text-white text-xl"></i>
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">Weekly Date Nights</h3>
+              <p className="text-sm text-gray-600 mb-3">Regular romantic connections</p>
+              <div className="flex items-center justify-between">
+                <span className="px-2 py-1 bg-pink-100 text-pink-800 text-xs rounded-full">Intermediate</span>
+                <span className="text-pink-600 font-medium">Weekly</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i className="fas fa-trophy text-white text-2xl"></i>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Achievement System</h3>
+              <p className="text-gray-600">
+                Earn badges for milestones like "Week Strong" (7-day streak), "Communication Champion", and "Goal Getter" to celebrate your progress.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i className="fas fa-fire text-white text-2xl"></i>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Streak Tracking</h3>
+              <p className="text-gray-600">
+                Build momentum with daily check-in streaks, goal completion chains, and activity consistency that strengthens your relationship habits.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i className="fas fa-star text-white text-2xl"></i>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Progress Rewards</h3>
+              <p className="text-gray-600">
+                Unlock new challenges, celebrate relationship milestones, and get personalized insights as you grow stronger together.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section id="pricing" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
