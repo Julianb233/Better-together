@@ -1,4 +1,6 @@
 // Become a Partner - Premium Business Partnership Portal
+import { navigationHtml } from '../components/navigation.js';
+
 export const becomeSponsorHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -617,12 +619,7 @@ export const becomeSponsorHtml = `<!DOCTYPE html>
                             <td class="px-6 py-4 text-center bg-yellow-50"><i class="fas fa-check-double text-purple-600"></i></td>
                             <td class="px-6 py-4 text-center"><i class="fas fa-crown text-yellow-500"></i></td>
                         </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-6 py-4 font-semibold text-gray-900">API Integration</td>
-                            <td class="px-6 py-4 text-center">Basic</td>
-                            <td class="px-6 py-4 text-center bg-yellow-50 font-semibold text-purple-600">Advanced</td>
-                            <td class="px-6 py-4 text-center">Custom + White-label</td>
-                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -749,10 +746,7 @@ export const becomeSponsorHtml = `<!DOCTYPE html>
                                     <i class="fas fa-check text-green-500 mr-3"></i>
                                     <span class="text-sm">White-label integration options</span>
                                 </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check text-green-500 mr-3"></i>
-                                    <span class="text-sm">Full API access + custom development</span>
-                                </div>
+
                                 <div class="flex items-center">
                                     <i class="fas fa-check text-green-500 mr-3"></i>
                                     <span class="text-sm">Strategic partnership team</span>

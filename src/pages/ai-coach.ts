@@ -1,4 +1,6 @@
 // AI Coach feature page HTML content
+import { navigationHtml } from '../components/navigation.js';
+
 export const aiCoachHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,25 +29,7 @@ export const aiCoachHtml = `<!DOCTYPE html>
     </script>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="/" class="flex items-center">
-                    <span class="text-2xl">💕</span>
-                    <span class="ml-2 text-xl font-bold text-gray-900">Better Together</span>
-                </a>
-                <div class="flex items-center space-x-6">
-                    <a href="/ai-coach.html" class="text-primary-600 font-medium">AI Coach</a>
-                    <a href="/smart-scheduling.html" class="text-gray-600 hover:text-gray-900">Smart Scheduling</a>
-                    <a href="/intelligent-suggestions.html" class="text-gray-600 hover:text-gray-900">Suggestions</a>
-                    <a href="/" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">
-                        Get Started
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    ${navigationHtml}
 
     <!-- Hero Section -->
     <div class="bg-gradient-to-br from-primary-50 to-purple-50 py-20">

@@ -1226,8 +1226,8 @@ app.get('/', (c) => {
                   <i className="fas fa-comments text-blue-600"></i>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Daily Check-ins</h4>
-                  <p className="text-gray-600">Build consistency with quick daily assessments that track mood, connection, and relationship wellness.</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">Daily Best Friend Chats</h4>
+                  <p className="text-gray-600">Simple conversations like talking with your best friend—your AI coach learns how you each show love naturally, then helps your partner express appreciation the way you actually want to receive it.</p>
                 </div>
               </div>
               
@@ -1302,9 +1302,9 @@ app.get('/', (c) => {
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
                 2
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">Daily Check-ins</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Chat Like Best Friends</h3>
               <p className="text-gray-600">
-                Complete quick daily assessments tracking mood, connection levels, gratitude, and relationship satisfaction.
+                Have casual daily conversations with your AI coach—just like texting your best friend. It learns how you naturally show love and how your partner wants to receive it.
               </p>
             </div>
             
@@ -1352,16 +1352,16 @@ app.get('/', (c) => {
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center mr-4">
-                    <i className="fas fa-comments text-white text-xl"></i>
+                    <i class="fas fa-comment-heart text-white text-xl"></i>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900">Natural Conversation</h3>
+                  <h3 className="text-xl font-semibold text-gray-900">Talk Like Best Friends</h3>
                 </div>
                 <p className="text-gray-600 mb-4">
-                  "Hey, plan a romantic evening for Sarah next Friday. She loves Italian food and we haven't been on a date in 2 weeks."
+                  "I keep buying Sarah flowers but she seems more excited when I help with the dishes. Am I missing something?"
                 </p>
                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg">
                   <p className="text-sm text-indigo-800">
-                    <strong>AI Response:</strong> "Perfect! I found a highly-rated Italian restaurant 15 minutes from home. I've scheduled dinner for 7 PM and added a note about her love for tiramisu. Should I also book the jazz bar you both enjoyed for after dinner?"
+                    <strong>AI Coach:</strong> "Exactly! Sarah's love language is Acts of Service—she feels most loved when you do helpful things, not gifts. I'll remind you about little ways to help her daily. You're already showing love, just not in her 'language' yet!"
                   </p>
                 </div>
               </div>

@@ -1,4 +1,6 @@
 // Smart Scheduling comprehensive feature page
+import { navigationHtml } from '../components/navigation.js';
+
 export const smartSchedulingHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,27 +29,7 @@ export const smartSchedulingHtml = `<!DOCTYPE html>
     </script>
 </head>
 <body class="bg-gray-50 overflow-x-hidden">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-14 sm:h-16">
-                <a href="/" class="flex items-center">
-                    <span class="text-xl sm:text-2xl">💕</span>
-                    <span class="ml-2 text-lg sm:text-xl font-bold text-gray-900">Better Together</span>
-                </a>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="/ai-coach.html" class="text-gray-600 hover:text-gray-900">AI Coach</a>
-                    <a href="/smart-scheduling.html" class="text-primary-600 font-medium">Smart Scheduling</a>
-                    <a href="/intelligent-suggestions.html" class="text-gray-600 hover:text-gray-900">Suggestions</a>
-                    <a href="/mobile-ui.html" class="text-gray-600 hover:text-gray-900">Mobile Design</a>
-                    <a href="/" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">
-                        Get Started
-                    </a>
-                </div>
-                <div class="md:hidden">
-                    <button class="text-gray-600 hover:text-gray-900 p-2" id="mobileMenuButton">
-                        <i class="fas fa-bars text-lg"></i>
-                    </button>
+    ${navigationHtml}
                 </div>
             </div>
             <!-- Mobile Menu -->
@@ -572,32 +554,6 @@ export const smartSchedulingHtml = `<!DOCTYPE html>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobileMenuButton');
-            const mobileMenu = document.getElementById('mobileMenu');
-            
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Close mobile menu when clicking on links
-            const mobileLinks = mobileMenu?.querySelectorAll('a');
-            if (mobileLinks) {
-                mobileLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        mobileMenu.classList.add('hidden');
-                    });
-                });
-            }
-
-            // Responsive behavior
-            window.addEventListener('resize', function() {
-                if (window.innerWidth >= 768 && mobileMenu) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
 
             // Touch-friendly buttons on mobile
             if (window.innerWidth <= 768) {

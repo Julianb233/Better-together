@@ -1,4 +1,6 @@
 // iPhone interaction examples showing real user scenarios
+import { navigationHtml } from '../components/navigation.js';
+
 export const iphoneExamplesHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,45 +62,7 @@ export const iphoneExamplesHtml = `<!DOCTYPE html>
     </style>
 </head>
 <body class="bg-gray-50 overflow-x-hidden">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-14 sm:h-16">
-                <a href="/" class="flex items-center">
-                    <span class="text-xl sm:text-2xl">💕</span>
-                    <span class="ml-2 text-lg sm:text-xl font-bold text-gray-900">Better Together</span>
-                </a>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="/ai-coach.html" class="text-gray-600 hover:text-gray-900">AI Coach</a>
-                    <a href="/smart-scheduling.html" class="text-gray-600 hover:text-gray-900">Smart Scheduling</a>
-                    <a href="/intelligent-suggestions.html" class="text-gray-600 hover:text-gray-900">Suggestions</a>
-                    <a href="/mobile-ui.html" class="text-gray-600 hover:text-gray-900">Mobile Design</a>
-                    <a href="/iphone-examples.html" class="text-primary-600 font-medium">Live Examples</a>
-                    <a href="/" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors">
-                        Get Started
-                    </a>
-                </div>
-                <div class="md:hidden">
-                    <button class="text-gray-600 hover:text-gray-900 p-2" id="mobileMenuButton">
-                        <i class="fas fa-bars text-lg"></i>
-                    </button>
-                </div>
-            </div>
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="hidden md:hidden pb-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="/ai-coach.html" class="text-gray-600 hover:text-gray-900 transition-colors py-2">AI Coach</a>
-                    <a href="/smart-scheduling.html" class="text-gray-600 hover:text-gray-900 transition-colors py-2">Smart Scheduling</a>
-                    <a href="/intelligent-suggestions.html" class="text-gray-600 hover:text-gray-900 transition-colors py-2">Suggestions</a>
-                    <a href="/mobile-ui.html" class="text-gray-600 hover:text-gray-900 transition-colors py-2">Mobile Design</a>
-                    <a href="/iphone-examples.html" class="text-primary-600 font-medium py-2">Live Examples</a>
-                    <a href="/" class="bg-primary-600 text-white px-4 py-3 rounded-lg hover:bg-primary-700 transition-colors w-full text-center">
-                        Get Started
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    ${navigationHtml}
 
     <!-- Hero Section -->
     <div class="bg-gradient-to-br from-blue-50 to-purple-50 py-12 sm:py-16 lg:py-20">
