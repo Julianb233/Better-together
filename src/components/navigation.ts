@@ -114,4 +114,4 @@ export const navigationHtml = `
         });
     });
 </script>
-`;`;
+`;
