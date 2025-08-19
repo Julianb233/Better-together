@@ -30,22 +30,6 @@ export const intelligentSuggestionsHtml = `<!DOCTYPE html>
 </head>
 <body class="bg-gray-50 overflow-x-hidden">
     ${navigationHtml}
-                </div>
-            </div>
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="hidden md:hidden pb-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="/ai-coach.html" class="text-gray-600 hover:text-gray-900 transition-colors py-2">AI Coach</a>
-                    <a href="/smart-scheduling.html" class="text-gray-600 hover:text-gray-900 transition-colors py-2">Smart Scheduling</a>
-                    <a href="/intelligent-suggestions.html" class="text-primary-600 font-medium py-2">Suggestions</a>
-                    <a href="/mobile-ui.html" class="text-gray-600 hover:text-gray-900 transition-colors py-2">Mobile Design</a>
-                    <a href="/" class="bg-primary-600 text-white px-4 py-3 rounded-lg hover:bg-primary-700 transition-colors w-full text-center">
-                        Get Started
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
     <!-- Hero Section -->
     <div class="bg-gradient-to-br from-purple-50 to-pink-50 py-12 sm:py-16 lg:py-20">

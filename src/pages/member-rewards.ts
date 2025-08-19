@@ -1,4 +1,6 @@
 // Member Rewards & Savings - Exclusive Benefits for Better Together Users
+import { navigationHtml } from '../components/navigation.js';
+
 export const memberRewardsHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,63 +51,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Consistent Navigation - Better Together Branding -->
-    <nav class="bg-white shadow-sm border-b sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-14 sm:h-16">
-                <div class="flex items-center">
-                    <a href="/" class="flex items-center hover:scale-105 transition-transform duration-300">
-                        <span class="text-xl sm:text-2xl">💕</span>
-                        <span class="ml-2 text-lg sm:text-xl font-bold text-gray-900">Better Together</span>
-                    </a>
-                </div>
-                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    <a href="/#features" class="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">Features</a>
-                    <a href="/mobile-ui.html" class="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">iOS Design</a>
-                    <a href="/iphone-examples.html" class="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">Live Examples</a>
-                    <a href="/member-rewards.html" class="text-pink-600 font-bold text-sm lg:text-base border-b-2 border-pink-600">Rewards</a>
-                    <a href="/#pricing" class="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">Pricing</a>
-                    <button class="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:from-pink-700 hover:to-purple-700 transform hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base">
-                        <span class="flex items-center">
-                            <i class="fas fa-heart mr-2 animate-pulse"></i>
-                            Start Free Trial
-                        </span>
-                    </button>
-                </div>
-                <div class="md:hidden">
-                    <button class="text-gray-600 hover:text-gray-900 p-2" id="mobileMenuButton">
-                        <i class="fas fa-bars text-lg"></i>
-                    </button>
-                </div>
-            </div>
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="hidden md:hidden pb-4 transform transition-all duration-300">
-                <div class="flex flex-col space-y-3 bg-gradient-to-b from-white to-pink-50 p-4 rounded-lg shadow-lg">
-                    <a href="/#features" class="text-gray-600 hover:text-pink-600 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-pink-50 font-medium">
-                        <i class="fas fa-heart mr-3 text-pink-500"></i>Features
-                    </a>
-                    <a href="/mobile-ui.html" class="text-gray-600 hover:text-pink-600 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-pink-50 font-medium">
-                        <i class="fas fa-mobile-alt mr-3 text-purple-500"></i>iOS Design
-                    </a>
-                    <a href="/iphone-examples.html" class="text-gray-600 hover:text-pink-600 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-pink-50 font-medium">
-                        <i class="fas fa-play-circle mr-3 text-blue-500"></i>Live Examples
-                    </a>
-                    <a href="/member-rewards.html" class="text-pink-600 font-bold py-3 px-4 rounded-lg bg-pink-100">
-                        <i class="fas fa-gift mr-3 text-pink-600"></i>Rewards
-                    </a>
-                    <a href="/#pricing" class="text-gray-600 hover:text-pink-600 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-pink-50 font-medium">
-                        <i class="fas fa-tag mr-3 text-yellow-500"></i>Pricing
-                    </a>
-                    <button class="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-6 py-4 rounded-full font-semibold hover:from-pink-700 hover:to-purple-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 w-full mt-4">
-                        <span class="flex items-center justify-center">
-                            <i class="fas fa-heart mr-2 animate-pulse"></i>
-                            Start Free Trial
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    ${navigationHtml}
 
     <!-- Hero Section -->
     <section class="gradient-bg py-16 sm:py-20">
@@ -880,16 +826,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
     <!-- Interactive JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu functionality
-            const mobileMenuButton = document.getElementById('mobileMenuButton');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            
-            if (mobileMenuButton) {
-                mobileMenuButton.addEventListener('click', function() {
-                    // Mobile menu toggle logic would go here
-                    console.log('Mobile menu clicked');
-                });
-            }
+
 
             // Smooth scrolling for anchor links
             const anchorLinks = document.querySelectorAll('a[href^="#"]');
