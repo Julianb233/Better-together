@@ -225,7 +225,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                         <div class="space-y-3 text-left">
                             <div class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span class="text-sm">10-15% off local dining</span>
+                                <span class="text-sm">Up to 15% off local dining</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
@@ -233,7 +233,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span class="text-sm">Monthly experience suggestions</span>
+                                <span class="text-sm">50 bonus reward credits monthly</span>
                             </div>
                         </div>
                         <div class="mt-6 p-3 bg-orange-50 rounded-lg">
@@ -253,7 +253,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                         <div class="space-y-3 text-left">
                             <div class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span class="text-sm">20-25% off dining & activities</span>
+                                <span class="text-sm">Up to 25% off dining & activities</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
@@ -261,7 +261,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span class="text-sm">Priority booking access</span>
+                                <span class="text-sm">100 bonus reward credits monthly</span>
                             </div>
                         </div>
                         <div class="mt-6 p-3 bg-gray-50 rounded-lg">
@@ -286,7 +286,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                         <div class="space-y-3 text-left">
                             <div class="flex items-center">
                                 <i class="fas fa-check text-yellow-200 mr-3"></i>
-                                <span class="text-sm">30-40% off premium experiences</span>
+                                <span class="text-sm">Up to 40% off premium experiences</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check text-yellow-200 mr-3"></i>
@@ -294,7 +294,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check text-yellow-200 mr-3"></i>
-                                <span class="text-sm">Personalized concierge service</span>
+                                <span class="text-sm">200 bonus reward credits monthly</span>
                             </div>
                         </div>
                         <div class="mt-6 p-3 bg-white bg-opacity-20 rounded-lg">
@@ -314,7 +314,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                         <div class="space-y-3 text-left">
                             <div class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span class="text-sm">40-60% off luxury experiences</span>
+                                <span class="text-sm">Up to 60% off luxury experiences</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
@@ -322,7 +322,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span class="text-sm">VIP relationship coaching</span>
+                                <span class="text-sm">500 bonus reward credits monthly</span>
                             </div>
                         </div>
                         <div class="mt-6 p-3 bg-purple-50 rounded-lg">
@@ -356,20 +356,20 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                         <h3 class="text-xl font-semibold text-gray-900">Date Night Dining</h3>
                     </div>
                     <p class="text-gray-600 mb-4">
-                        Save 20-35% at partner restaurants perfect for meaningful conversations and romantic evenings together.
+                        Save up to 35% at partner restaurants perfect for meaningful conversations and romantic evenings together.
                     </p>
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Local Fine Dining</span>
-                            <span class="text-pink-600 font-semibold">25% OFF</span>
+                            <span class="text-pink-600 font-semibold">UP TO 25% OFF</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Wine & Dine Experiences</span>
-                            <span class="text-pink-600 font-semibold">30% OFF</span>
+                            <span class="text-pink-600 font-semibold">UP TO 30% OFF</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Cooking Classes</span>
-                            <span class="text-pink-600 font-semibold">35% OFF</span>
+                            <span class="text-pink-600 font-semibold">UP TO 35% OFF</span>
                         </div>
                     </div>
                     <div class="mt-6 p-3 bg-white rounded-lg border border-pink-200">
@@ -391,11 +391,11 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Boutique Hotels</span>
-                            <span class="text-purple-600 font-semibold">40% OFF</span>
+                            <span class="text-purple-600 font-semibold">UP TO 40% OFF</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Couples Spa Retreats</span>
-                            <span class="text-purple-600 font-semibold">45% OFF</span>
+                            <span class="text-purple-600 font-semibold">UP TO 45% OFF</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Adventure Packages</span>
@@ -421,7 +421,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Custom Jewelry</span>
-                            <span class="text-blue-600 font-semibold">30% OFF</span>
+                            <span class="text-blue-600 font-semibold">UP TO 30% OFF</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Personalized Art</span>
@@ -451,7 +451,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Dance Lessons</span>
-                            <span class="text-green-600 font-semibold">30% OFF</span>
+                            <span class="text-green-600 font-semibold">UP TO 30% OFF</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Wine Tours</span>
@@ -481,7 +481,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Home Decor</span>
-                            <span class="text-yellow-600 font-semibold">25% OFF</span>
+                            <span class="text-yellow-600 font-semibold">UP TO 25% OFF</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Wellness Products</span>
@@ -511,7 +511,7 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Event Venues</span>
-                            <span class="text-red-600 font-semibold">20% OFF</span>
+                            <span class="text-red-600 font-semibold">UP TO 20% OFF</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-600">Photography</span>
@@ -630,6 +630,126 @@ export const memberRewardsHtml = `<!DOCTYPE html>
         </div>
     </section>
 
+    <!-- Reward Credits System -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Reward Credits: Your Flexible Savings Currency
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Earn credits through app activity or purchase additional credits to unlock even more savings on experiences you love.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <!-- How Credits Work -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">How Reward Credits Work</h3>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-coins text-pink-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Earn Through Activity</h4>
+                            <p class="text-gray-600">Complete check-ins, reach relationship milestones, and engage with your partner to earn credits automatically.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-purple-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Purchase Additional Credits</h4>
+                            <p class="text-gray-600">Buy credit packs to unlock more savings opportunities and access premium partner deals.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-ticket-alt text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Redeem for Savings</h4>
+                            <p class="text-gray-600">Use credits to unlock exclusive discounts at partner locations or enhance your existing member tier benefits.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-lg border border-pink-200">
+                        <h4 class="font-semibold text-gray-900 mb-2">💡 Pro Tip</h4>
+                        <p class="text-gray-600">Credits never expire! Save them up for special occasions or use them regularly to maximize your relationship experiences.</p>
+                    </div>
+                </div>
+
+                <!-- Credit Packages -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Credit Packages</h3>
+                    
+                    <!-- Starter Pack -->
+                    <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-pink-300 transition-colors">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="text-lg font-semibold text-gray-900">Starter Pack</h4>
+                            <div class="text-2xl font-bold text-gray-900">$9.99</div>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">100 Reward Credits</span>
+                                <span class="font-medium text-gray-900">$0.10 each</span>
+                            </div>
+                            <div class="text-sm text-gray-500">Perfect for date night upgrades</div>
+                        </div>
+                        <button class="w-full bg-gray-100 text-gray-800 py-2 rounded-lg font-medium hover:bg-gray-200 transition-colors">
+                            Purchase Credits
+                        </button>
+                    </div>
+
+                    <!-- Popular Pack -->
+                    <div class="bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg p-6 transform scale-105 relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                            <div class="bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-sm font-bold">
+                                Best Value
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="text-lg font-semibold">Value Pack</h4>
+                            <div class="text-2xl font-bold">$24.99</div>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between">
+                                <span class="text-pink-100">300 Reward Credits</span>
+                                <span class="font-medium">$0.08 each</span>
+                            </div>
+                            <div class="text-sm text-pink-100">Great for weekend getaways</div>
+                        </div>
+                        <button class="w-full bg-white text-pink-600 py-2 rounded-lg font-medium hover:bg-pink-50 transition-colors">
+                            Purchase Credits
+                        </button>
+                    </div>
+
+                    <!-- Premium Pack -->
+                    <div class="bg-white border-2 border-purple-200 rounded-lg p-6 hover:border-purple-300 transition-colors">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="text-lg font-semibold text-gray-900">Premium Pack</h4>
+                            <div class="text-2xl font-bold text-gray-900">$49.99</div>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">750 Reward Credits</span>
+                                <span class="font-medium text-gray-900">$0.07 each</span>
+                            </div>
+                            <div class="text-sm text-gray-500">Ideal for luxury experiences</div>
+                        </div>
+                        <button class="w-full bg-purple-600 text-white py-2 rounded-lg font-medium hover:bg-purple-700 transition-colors">
+                            Purchase Credits
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-16 bg-gradient-to-br from-pink-600 to-purple-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
@@ -710,11 +830,11 @@ export const memberRewardsHtml = `<!DOCTYPE html>
                 </div>
                 
                 <div>
-                    <h5 className="font-semibold text-white mb-4">Legal</h5>
+                    <h5 className="font-semibold text-white mb-4">Business</h5>
                     <ul className="space-y-2">
-                        <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
-                        <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Member Agreement</a></li>
+                        <li><a href="/become-sponsor.html" className="text-gray-400 hover:text-white transition-colors">Become a Partner</a></li>
+                        <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Partner Portal</a></li>
+                        <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
             </div>

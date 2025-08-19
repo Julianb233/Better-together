@@ -913,6 +913,7 @@ import { smartSchedulingHtml } from './pages/smart-scheduling'
 import { intelligentSuggestionsHtml } from './pages/intelligent-suggestions'
 import { iphoneExamplesHtml } from './pages/iphone-examples'
 import { memberRewardsHtml } from './pages/member-rewards'
+import { becomeSponsorHtml } from './pages/become-sponsor'
 
 app.get('/ai-coach.html', (c) => {
   return c.html(aiCoachHtml)
@@ -936,6 +937,10 @@ app.get('/iphone-examples.html', (c) => {
 
 app.get('/member-rewards.html', (c) => {
   return c.html(memberRewardsHtml)
+})
+
+app.get('/become-sponsor.html', (c) => {
+  return c.html(becomeSponsorHtml)
 })
 
 // =============================================================================
@@ -1919,12 +1924,12 @@ app.get('/', (c) => {
             </div>
             
             <div>
-              <h5 className="font-semibold text-white mb-4">Company</h5>
+              <h5 className="font-semibold text-white mb-4">Business</h5>
               <ul className="space-y-2">
+                <li><a href="/become-sponsor.html" className="text-gray-400 hover:text-white transition-colors">Become a Partner</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Partner Portal</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Press Kit</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
           </div>
