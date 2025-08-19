@@ -974,6 +974,12 @@ app.get('/intimacy-challenges.html', async (c) => {
   return c.html(intimacyChallengesHtml);
 })
 
+// Premium Pricing - Annual-First Strategy
+app.get('/premium-pricing.html', async (c) => {
+  const { premiumPricingHtml } = await import('./pages/premium-pricing');
+  return c.html(premiumPricingHtml);
+})
+
 // Analytics API Routes
 app.route('/api/analytics', analyticsApi)
 
@@ -997,11 +1003,11 @@ app.get('/', (c) => {
               <a href="/mobile-ui.html" className="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">iOS Design</a>
               <a href="/iphone-examples.html" className="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">Live Examples</a>
               <a href="/member-rewards.html" className="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">Rewards</a>
-              <a href="#pricing" className="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">Pricing</a>
+              <a href="/premium-pricing.html" className="text-gray-600 hover:text-pink-600 transition-all duration-300 text-sm lg:text-base font-medium hover:scale-105">Premium</a>
               <button className="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:from-pink-700 hover:to-purple-700 transform hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm lg:text-base">
                 <span className="flex items-center">
-                  <i className="fas fa-heart mr-2 animate-pulse"></i>
-                  Start Free Trial
+                  <i className="fas fa-crown mr-2 animate-pulse"></i>
+                  Get Premium Access
                 </span>
               </button>
             </div>
@@ -1026,13 +1032,13 @@ app.get('/', (c) => {
               <a href="/member-rewards.html" className="text-gray-600 hover:text-pink-600 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-pink-50 font-medium">
                 <i className="fas fa-gift mr-3 text-green-500"></i>Rewards
               </a>
-              <a href="#pricing" className="text-gray-600 hover:text-pink-600 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-pink-50 font-medium">
-                <i className="fas fa-tag mr-3 text-yellow-500"></i>Pricing
+              <a href="/premium-pricing.html" className="text-gray-600 hover:text-pink-600 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-pink-50 font-medium">
+                <i className="fas fa-crown mr-3 text-yellow-500"></i>Premium
               </a>
               <button className="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-6 py-4 rounded-full font-semibold hover:from-pink-700 hover:to-purple-700 transform hover:scale-105 hover:shadow-xl transition-all duration-300 w-full mt-4">
                 <span className="flex items-center justify-center">
-                  <i className="fas fa-heart mr-2 animate-pulse"></i>
-                  Start Free Trial
+                  <i className="fas fa-crown mr-2 animate-pulse"></i>
+                  Get Premium Access
                 </span>
               </button>
             </div>
@@ -1087,8 +1093,8 @@ app.get('/', (c) => {
             <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mb-8 px-4 animate-fade-in-up" style="animation-delay: 0.8s;">
               <button className="w-full sm:w-auto bg-gradient-to-r from-pink-600 to-purple-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold hover:from-pink-700 hover:to-purple-700 transition-all transform hover:scale-110 hover:shadow-2xl text-sm sm:text-base group relative overflow-hidden animate-glow">
                 <span className="relative z-10">
-                  <i className="fas fa-heart mr-2 group-hover:animate-bounce"></i>
-                  Start Your 7-Day Free Trial
+                  <i className="fas fa-crown mr-2 group-hover:animate-bounce"></i>
+                  Get Premium Access Now
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
@@ -1100,18 +1106,18 @@ app.get('/', (c) => {
 
             {/* Limited Time Offer - Enhanced Urgency */}
             <div className="mb-8 px-4 animate-scale-in" style="animation-delay: 1s;">
-              <div className="inline-flex items-center bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-200 rounded-full px-6 py-3 text-red-700 text-xs sm:text-sm font-bold animate-glow shadow-lg">
-                <i className="fas fa-fire mr-2 text-red-500 animate-pulse"></i>
-                Early Access: 50% OFF First 3 Months 
-                <span className="ml-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs animate-bounce">247 spots left</span>
+              <div className="inline-flex items-center bg-gradient-to-r from-emerald-50 to-green-50 border-2 border-emerald-200 rounded-full px-6 py-3 text-emerald-700 text-xs sm:text-sm font-bold animate-glow shadow-lg">
+                <i className="fas fa-crown mr-2 text-emerald-500 animate-pulse"></i>
+                Premium-Only Platform: Save 33% with Annual Billing
+                <span className="ml-2 bg-emerald-500 text-white px-2 py-1 rounded-full text-xs animate-bounce">$240/year</span>
               </div>
             </div>
             
             {/* Trust Signals - Enhanced with Animations */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 text-xs sm:text-sm text-gray-600 px-4 animate-slide-in-bottom" style="animation-delay: 1.2s;">
-              <div className="flex items-center justify-center sm:justify-start hover-lift p-3 rounded-lg hover:bg-green-50 transition-all">
-                <i className="fas fa-check-circle text-green-500 mr-2 text-lg"></i>
-                <span className="font-semibold">No Credit Card Required</span>
+              <div className="flex items-center justify-center sm:justify-start hover-lift p-3 rounded-lg hover:bg-emerald-50 transition-all">
+                <i className="fas fa-crown text-emerald-500 mr-2 text-lg"></i>
+                <span className="font-semibold">Premium Features Only</span>
               </div>
               <div className="flex items-center justify-center hover-lift p-3 rounded-lg hover:bg-blue-50 transition-all">
                 <i className="fas fa-shield-alt text-blue-500 mr-2 text-lg"></i>
@@ -1190,7 +1196,7 @@ app.get('/', (c) => {
               <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6">
                 <i className="fas fa-robot text-white text-2xl"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">AI Relationship Assistant</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">AI Relationship Assistant <span className="text-xs bg-pink-100 text-pink-800 px-2 py-1 rounded-full">Premium</span></h3>
               <p className="text-gray-600 leading-relaxed">
                 Talk naturally to your AI coach that understands your relationship, suggests personalized experiences, and automatically schedules meaningful activities in both partners' calendars.
               </p>
@@ -1200,7 +1206,7 @@ app.get('/', (c) => {
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-6">
                 <i className="fas fa-calendar-plus text-white text-2xl"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">Smart Scheduling</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Smart Scheduling <span className="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Premium</span></h3>
               <p className="text-gray-600 leading-relaxed">
                 AI automatically finds optimal times, suggests location-based experiences, and adds personalized activities to your partner's calendar with thoughtful reminders and context.
               </p>
@@ -1210,7 +1216,7 @@ app.get('/', (c) => {
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
                 <i className="fas fa-lightbulb text-white text-2xl"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">Intelligent Suggestions</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Intelligent Suggestions <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Premium</span></h3>
               <p className="text-gray-600 leading-relaxed">
                 Get personalized recommendations for date ideas, conversation topics, gifts, and growth opportunities based on your relationship patterns and love languages.
               </p>
@@ -1244,7 +1250,7 @@ app.get('/', (c) => {
                   <i className="fas fa-comments text-blue-600"></i>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Daily Best Friend Chats</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">Daily Best Friend Chats <span className="text-xs bg-pink-100 text-pink-800 px-2 py-1 rounded-full">Premium</span></h4>
                   <p className="text-gray-600">Simple conversations like talking with your best friend—your AI coach learns how you each show love naturally, then helps your partner express appreciation the way you actually want to receive it.</p>
                 </div>
               </div>
@@ -1795,128 +1801,132 @@ app.get('/', (c) => {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Pricing Section - Premium Only */}
       <section id="pricing" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="inline-flex items-center px-6 py-3 bg-red-100 text-red-800 rounded-full text-sm font-semibold mb-6">
+              <i className="fas fa-crown mr-2"></i>
+              Premium-Only Platform • No Free Tier
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Choose Your Relationship Journey
+              Annual-First Pricing Strategy
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Start free and upgrade when you're ready to unlock the full potential of your relationship.
+              Save 33% with annual billing. All features included. Per-user pricing scales with your relationship needs.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Free Plan */}
-            <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 relative">
-              <div className="text-center">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Starter</h3>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold text-gray-900">$0</span>
-                  <span className="text-gray-600">/month</span>
-                </div>
-                <ul className="space-y-3 mb-8 text-left">
-                  <li className="flex items-center">
-                    <i className="fas fa-check text-green-500 mr-3"></i>
-                    <span className="text-gray-600">3 check-ins per week</span>
-                  </li>
-                  <li className="flex items-center">
-                    <i className="fas fa-check text-green-500 mr-3"></i>
-                    <span className="text-gray-600">2 active goals</span>
-                  </li>
-                  <li className="flex items-center">
-                    <i className="fas fa-check text-green-500 mr-3"></i>
-                    <span className="text-gray-600">1 challenge participation</span>
-                  </li>
-                  <li className="flex items-center">
-                    <i className="fas fa-check text-green-500 mr-3"></i>
-                    <span className="text-gray-600">Basic analytics</span>
-                  </li>
-                </ul>
-                <button className="w-full bg-gray-100 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
-                  Get Started Free
-                </button>
-              </div>
-            </div>
-
-            {/* Premium Plan */}
-            <div className="bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl p-8 relative text-white transform scale-105">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Annual Plan (Recommended) */}
+            <div className="bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl p-8 relative text-white transform scale-105">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <div className="bg-yellow-400 text-yellow-900 px-4 py-1 rounded-full text-sm font-medium">
-                  Most Popular
+                  RECOMMENDED
                 </div>
               </div>
               <div className="text-center">
-                <h3 className="text-xl font-semibold mb-2">Premium</h3>
+                <h3 className="text-2xl font-semibold mb-2">Annual Premium</h3>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold">$19.99</span>
-                  <span className="text-pink-200">/month</span>
+                  <span className="text-5xl font-bold">$240</span>
+                  <span className="text-emerald-200">/year</span>
+                  <div className="text-lg text-emerald-100 mt-2">
+                    Just $20/month per user
+                  </div>
+                </div>
+                <div className="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-lg mb-6">
+                  <span className="font-bold">Save $120 per year!</span>
                 </div>
                 <ul className="space-y-3 mb-8 text-left">
                   <li className="flex items-center">
-                    <i className="fas fa-check text-pink-200 mr-3"></i>
-                    <span>Unlimited check-ins</span>
+                    <i className="fas fa-crown text-yellow-300 mr-3"></i>
+                    <span>VIP AI Coach Access</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-check text-pink-200 mr-3"></i>
-                    <span>Unlimited goals & activities</span>
+                    <i className="fas fa-heart text-rose-300 mr-3"></i>
+                    <span>Premium Intimacy Challenges</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-check text-pink-200 mr-3"></i>
-                    <span>All challenges & custom ones</span>
+                    <i className="fas fa-calendar-alt text-blue-300 mr-3"></i>
+                    <span>Smart Scheduling Pro</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-check text-pink-200 mr-3"></i>
-                    <span>Advanced analytics & trends</span>
+                    <i className="fas fa-gamepad text-purple-300 mr-3"></i>
+                    <span>All Relationship Games</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-check text-pink-200 mr-3"></i>
-                    <span>Priority support</span>
+                    <i className="fas fa-box-heart text-pink-300 mr-3"></i>
+                    <span>Monthly Surprise Box</span>
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-gift text-green-300 mr-3"></i>
+                    <span>$50 Partner Gifting Credits</span>
                   </li>
                 </ul>
-                <button className="w-full bg-white text-pink-600 py-3 rounded-lg font-semibold hover:bg-pink-50 transition-colors">
-                  Start Premium Trial
+                <button className="w-full bg-white text-emerald-600 py-4 rounded-lg font-semibold hover:bg-emerald-50 transition-colors text-lg">
+                  Start Annual Premium
                 </button>
               </div>
             </div>
 
-            {/* Annual Plan */}
-            <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 relative">
+            {/* Monthly Plan */}
+            <div className="bg-white rounded-2xl border-2 border-gray-300 p-8 relative">
               <div className="absolute -top-3 -right-3">
-                <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                  Save 17%
+                <div className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
+                  33% More
                 </div>
               </div>
               <div className="text-center">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Annual</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-2">Monthly Premium</h3>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold text-gray-900">$199</span>
-                  <span className="text-gray-600">/year</span>
+                  <span className="text-5xl font-bold text-gray-900">$30</span>
+                  <span className="text-gray-600">/month</span>
+                  <div className="text-lg text-gray-600 mt-2">
+                    Per user • Cancel anytime
+                  </div>
+                </div>
+                <div className="bg-red-50 text-red-700 px-4 py-2 rounded-lg mb-6">
+                  <span className="font-bold">$120 more annually</span>
                 </div>
                 <ul className="space-y-3 mb-8 text-left">
                   <li className="flex items-center">
-                    <i className="fas fa-check text-green-500 mr-3"></i>
-                    <span className="text-gray-600">Everything in Premium</span>
+                    <i className="fas fa-check text-gray-500 mr-3"></i>
+                    <span className="text-gray-600">Basic AI Coach Access</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-check text-green-500 mr-3"></i>
-                    <span className="text-gray-600">Exclusive annual challenges</span>
+                    <i className="fas fa-check text-gray-500 mr-3"></i>
+                    <span className="text-gray-600">Standard Intimacy Challenges</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-check text-green-500 mr-3"></i>
-                    <span className="text-gray-600">1 coaching session/year</span>
+                    <i className="fas fa-check text-gray-500 mr-3"></i>
+                    <span className="text-gray-600">Smart Scheduling Basic</span>
                   </li>
                   <li className="flex items-center">
-                    <i className="fas fa-check text-green-500 mr-3"></i>
-                    <span className="text-gray-600">Anniversary planning tools</span>
+                    <i className="fas fa-check text-gray-500 mr-3"></i>
+                    <span className="text-gray-600">Core Relationship Games</span>
+                  </li>
+                  <li className="flex items-center text-gray-400">
+                    <i className="fas fa-times text-red-500 mr-3"></i>
+                    <span>No Monthly Surprise Box</span>
+                  </li>
+                  <li className="flex items-center text-gray-400">
+                    <i className="fas fa-times text-red-500 mr-3"></i>
+                    <span>No Gifting Credits</span>
                   </li>
                 </ul>
-                <button className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                  Choose Annual
+                <button className="w-full bg-gray-600 text-white py-4 rounded-lg font-semibold hover:bg-gray-700 transition-colors text-lg">
+                  Start Monthly Plan
                 </button>
               </div>
             </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <a href="/premium-pricing.html" className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-semibold">
+              <i className="fas fa-gift mr-2"></i>
+              View Partner Gifting Options & Couples Packages
+              <i className="fas fa-arrow-right ml-2"></i>
+            </a>
           </div>
         </div>
       </section>
@@ -1932,8 +1942,8 @@ app.get('/', (c) => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <button className="w-full sm:w-auto bg-white text-pink-600 px-8 py-4 rounded-lg font-semibold hover:bg-pink-50 transition-all transform hover:scale-105 shadow-lg">
-              <i className="fas fa-heart mr-2"></i>
-              Start Your Free Journey
+              <i className="fas fa-crown mr-2"></i>
+              Get Premium Access
             </button>
             <button className="w-full sm:w-auto bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-pink-600 transition-colors">
               <i className="fas fa-play mr-2"></i>
