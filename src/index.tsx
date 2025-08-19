@@ -4,6 +4,7 @@ import { serveStatic } from 'hono/cloudflare-workers'
 import { renderer } from './renderer'
 import type { Env } from './types'
 import { dashboardHtml } from './pages/dashboard'
+import { loginHtml } from './pages/login'
 import analyticsApi from './api/analytics'
 import {
   generateId, 
@@ -943,6 +944,11 @@ app.get('/member-rewards.html', (c) => {
 
 app.get('/become-sponsor.html', (c) => {
   return c.html(becomeSponsorHtml)
+})
+
+// Analytics Login  
+app.get('/login.html', (c) => {
+  return c.html(loginHtml)
 })
 
 // Analytics Dashboard

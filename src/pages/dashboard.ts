@@ -213,9 +213,14 @@ export const dashboardHtml = `<!DOCTYPE html>
                     <a href="/become-sponsor.html" class="text-gray-300 hover:text-white transition-colors font-medium">Partners</a>
                     <a href="/member-rewards.html" class="text-gray-300 hover:text-white transition-colors font-medium">Members</a>
                     <a href="/" class="text-gray-300 hover:text-white transition-colors font-medium">App Home</a>
-                    <button class="liquid-glass-accent text-white px-4 py-2 rounded-lg font-semibold liquid-hover liquid-press">
-                        <i class="fas fa-user-shield mr-2"></i>Admin
-                    </button>
+                    <div class="flex items-center space-x-3">
+                        <div class="liquid-glass px-3 py-2 rounded-lg">
+                            <span class="text-sm text-gray-300" id="userInfo">Admin User</span>
+                        </div>
+                        <button id="logoutBtn" class="liquid-glass text-gray-300 px-4 py-2 rounded-lg font-semibold liquid-hover liquid-press">
+                            <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -645,6 +650,31 @@ export const dashboardHtml = `<!DOCTYPE html>
 
         // Initialize Dashboard
         document.addEventListener('DOMContentLoaded', function() {
+            // Check authentication (demo purposes - in production use proper auth)
+            const isAuthenticated = localStorage.getItem('bt_authenticated') === 'true';
+            if (!isAuthenticated && !window.location.search.includes('demo=true')) {
+                // Redirect to login page
+                window.location.href = '/login.html';
+                return;
+            }
+            
+            // Display user info
+            const user = JSON.parse(localStorage.getItem('bt_user') || '{}');
+            const userInfo = document.getElementById('userInfo');
+            if (userInfo && user.name) {
+                userInfo.textContent = user.name;
+            }
+            
+            // Logout functionality
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    localStorage.removeItem('bt_authenticated');
+                    localStorage.removeItem('bt_user');
+                    window.location.href = '/login.html';
+                });
+            }
+            
             initializeCharts();
             startRealTimeUpdates();
             updateLastUpdatedTime();
