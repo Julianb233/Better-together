@@ -894,112 +894,436 @@ app.put('/api/notifications/:notificationId/read', async (c) => {
 
 app.get('/', (c) => {
   return c.render(
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
-      <div className="container mx-auto px-4 py-8">
-        <header className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-800 mb-4">
-            <span className="text-pink-600">💕</span> Better Together
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Transform your relationship into your greatest success story through intelligent connection tracking and shared goal achievement.
-          </p>
-        </header>
-
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          <div className="bg-white rounded-xl shadow-lg p-6 text-center">
-            <div className="text-4xl mb-4">📊</div>
-            <h3 className="text-xl font-semibold mb-3 text-gray-800">Relationship Analytics</h3>
-            <p className="text-gray-600">Track connection scores, satisfaction levels, and relationship health with data-driven insights.</p>
-          </div>
-          
-          <div className="bg-white rounded-xl shadow-lg p-6 text-center">
-            <div className="text-4xl mb-4">🎯</div>
-            <h3 className="text-xl font-semibold mb-3 text-gray-800">Shared Goals</h3>
-            <p className="text-gray-600">Set and achieve relationship goals together, from weekly date nights to major milestones.</p>
-          </div>
-          
-          <div className="bg-white rounded-xl shadow-lg p-6 text-center">
-            <div className="text-4xl mb-4">🏆</div>
-            <h3 className="text-xl font-semibold mb-3 text-gray-800">Gamified Growth</h3>
-            <p className="text-gray-600">Earn achievements, complete challenges, and unlock new levels of intimacy together.</p>
+    <div className="min-h-screen">
+      {/* Navigation */}
+      <nav className="bg-white shadow-sm border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <span className="text-2xl">💕</span>
+              <span className="ml-2 text-xl font-bold text-gray-900">Better Together</span>
+            </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
+              <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
+              <a href="/api" className="text-gray-600 hover:text-gray-900 transition-colors">API</a>
+              <button className="bg-pink-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-pink-700 transition-colors">
+                Start Free Trial
+              </button>
+            </div>
+            <div className="md:hidden">
+              <button className="text-gray-600 hover:text-gray-900">
+                <i className="fas fa-bars"></i>
+              </button>
+            </div>
           </div>
         </div>
+      </nav>
 
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Key Features</h2>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <div className="text-2xl">💝</div>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="mb-8">
+              <div className="inline-flex items-center px-4 py-2 bg-pink-100 rounded-full text-pink-800 text-sm font-medium mb-6">
+                <i className="fas fa-heart mr-2"></i>
+                Relationship Intelligence Platform
+              </div>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              Transform Your Relationship Into Your
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600"> Greatest Success Story</span>
+            </h1>
+            
+            <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+              The only platform that combines relationship psychology, intelligent tracking, and gamified challenges to help couples build stronger, more connected relationships through data-driven insights.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <button className="w-full sm:w-auto bg-pink-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-pink-700 transition-all transform hover:scale-105 shadow-lg">
+                <i className="fas fa-rocket mr-2"></i>
+                Start Your Journey Free
+              </button>
+              <button className="w-full sm:w-auto bg-white text-gray-700 px-8 py-4 rounded-lg font-semibold border border-gray-300 hover:bg-gray-50 transition-colors shadow-md">
+                <i className="fas fa-play mr-2"></i>
+                Watch Demo
+              </button>
+            </div>
+            
+            <div className="mt-10 flex justify-center items-center space-x-8 text-sm text-gray-500">
+              <div className="flex items-center">
+                <i className="fas fa-check-circle text-green-500 mr-2"></i>
+                No Credit Card Required
+              </div>
+              <div className="flex items-center">
+                <i className="fas fa-users text-blue-500 mr-2"></i>
+                For All Couples
+              </div>
+              <div className="flex items-center">
+                <i className="fas fa-shield-alt text-purple-500 mr-2"></i>
+                Privacy Protected
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-pink-600">87%</div>
+              <div className="text-gray-600">Improved Communication</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-purple-600">94%</div>
+              <div className="text-gray-600">Relationship Satisfaction</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-blue-600">15+</div>
+              <div className="text-gray-600">Days Average Streak</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-green-600">98%</div>
+              <div className="text-gray-600">Would Recommend</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features */}
+      <section id="features" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Everything You Need for Relationship Success
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Science-backed features designed to strengthen your connection and build lasting love.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6">
+                <i className="fas fa-chart-line text-white text-2xl"></i>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Relationship Analytics</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Track connection scores, satisfaction levels, and relationship health with comprehensive data-driven insights and trend analysis.
+              </p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-6">
+                <i className="fas fa-target text-white text-2xl"></i>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Shared Goals</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Set and achieve meaningful relationship goals together, from daily habits to major milestones, with progress tracking and celebrations.
+              </p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
+                <i className="fas fa-trophy text-white text-2xl"></i>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Gamified Growth</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Complete challenges, earn achievements, and unlock new levels of intimacy with our psychology-based gamification system.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center">
+                  <i className="fas fa-heart text-pink-600"></i>
+                </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">Love Language Integration</h4>
-                  <p className="text-gray-600">Store and display each partner's love language for better communication.</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">Love Language Integration</h4>
+                  <p className="text-gray-600">Understand and speak each other's love language with personalized insights and recommendations.</p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-3">
-                <div className="text-2xl">📅</div>
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <i className="fas fa-calendar-check text-purple-600"></i>
+                </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">Important Dates Manager</h4>
-                  <p className="text-gray-600">Never miss anniversaries, birthdays, or special moments again.</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">Smart Reminders</h4>
+                  <p className="text-gray-600">Never miss important dates, anniversaries, or special moments with intelligent notifications.</p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-3">
-                <div className="text-2xl">✅</div>
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <i className="fas fa-comments text-blue-600"></i>
+                </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">Daily Check-ins</h4>
-                  <p className="text-gray-600">Track relationship wellness with quick daily connection assessments.</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">Daily Check-ins</h4>
+                  <p className="text-gray-600">Build consistency with quick daily assessments that track mood, connection, and relationship wellness.</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                  <i className="fas fa-medal text-green-600"></i>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Achievement System</h4>
+                  <p className="text-gray-600">Celebrate milestones together with meaningful badges and rewards that strengthen your bond.</p>
                 </div>
               </div>
             </div>
             
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <div className="text-2xl">🎯</div>
-                <div>
-                  <h4 className="font-semibold text-gray-800">Challenge System</h4>
-                  <p className="text-gray-600">Complete relationship-building challenges like "7-Day Gratitude" or "Weekly Date Nights."</p>
+            <div className="relative">
+              <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl p-8">
+                <div className="bg-white rounded-xl p-6 shadow-lg mb-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <h5 className="font-semibold text-gray-900">Relationship Health</h5>
+                    <span className="text-2xl font-bold text-green-600">87%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-3">
+                    <div className="bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full" style={{width: '87%'}}></div>
+                  </div>
+                  <div className="flex justify-between text-sm text-gray-600 mt-2">
+                    <span>Connection: 9.2/10</span>
+                    <span>12-day streak</span>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <div className="text-2xl">📱</div>
-                <div>
-                  <h4 className="font-semibold text-gray-800">Activity Tracking</h4>
-                  <p className="text-gray-600">Plan, track, and rate your shared activities and date nights.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <div className="text-2xl">🏅</div>
-                <div>
-                  <h4 className="font-semibold text-gray-800">Achievement System</h4>
-                  <p className="text-gray-600">Unlock badges and celebrate relationship milestones together.</p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white rounded-lg p-4 shadow-md">
+                    <div className="text-2xl mb-2">🎯</div>
+                    <div className="text-sm font-medium text-gray-900">Active Goals</div>
+                    <div className="text-lg font-bold text-purple-600">3</div>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 shadow-md">
+                    <div className="text-2xl mb-2">🏆</div>
+                    <div className="text-sm font-medium text-gray-900">Achievements</div>
+                    <div className="text-lg font-bold text-pink-600">8</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div className="text-center bg-pink-100 rounded-xl p-8">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">Ready to Grow Together?</h2>
-          <p className="text-lg text-gray-600 mb-6">Start building your stronger relationship today with Better Together.</p>
-          <div className="space-x-4">
-            <button className="bg-pink-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-pink-700 transition-colors">
-              Start Free Trial
+      {/* Pricing Section */}
+      <section id="pricing" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Choose Your Relationship Journey
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Start free and upgrade when you're ready to unlock the full potential of your relationship.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Free Plan */}
+            <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 relative">
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Starter</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold text-gray-900">$0</span>
+                  <span className="text-gray-600">/month</span>
+                </div>
+                <ul className="space-y-3 mb-8 text-left">
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-3"></i>
+                    <span className="text-gray-600">3 check-ins per week</span>
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-3"></i>
+                    <span className="text-gray-600">2 active goals</span>
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-3"></i>
+                    <span className="text-gray-600">1 challenge participation</span>
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-3"></i>
+                    <span className="text-gray-600">Basic analytics</span>
+                  </li>
+                </ul>
+                <button className="w-full bg-gray-100 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                  Get Started Free
+                </button>
+              </div>
+            </div>
+
+            {/* Premium Plan */}
+            <div className="bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl p-8 relative text-white transform scale-105">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <div className="bg-yellow-400 text-yellow-900 px-4 py-1 rounded-full text-sm font-medium">
+                  Most Popular
+                </div>
+              </div>
+              <div className="text-center">
+                <h3 className="text-xl font-semibold mb-2">Premium</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold">$19.99</span>
+                  <span className="text-pink-200">/month</span>
+                </div>
+                <ul className="space-y-3 mb-8 text-left">
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-pink-200 mr-3"></i>
+                    <span>Unlimited check-ins</span>
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-pink-200 mr-3"></i>
+                    <span>Unlimited goals & activities</span>
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-pink-200 mr-3"></i>
+                    <span>All challenges & custom ones</span>
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-pink-200 mr-3"></i>
+                    <span>Advanced analytics & trends</span>
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-pink-200 mr-3"></i>
+                    <span>Priority support</span>
+                  </li>
+                </ul>
+                <button className="w-full bg-white text-pink-600 py-3 rounded-lg font-semibold hover:bg-pink-50 transition-colors">
+                  Start Premium Trial
+                </button>
+              </div>
+            </div>
+
+            {/* Annual Plan */}
+            <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 relative">
+              <div className="absolute -top-3 -right-3">
+                <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                  Save 17%
+                </div>
+              </div>
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Annual</h3>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold text-gray-900">$199</span>
+                  <span className="text-gray-600">/year</span>
+                </div>
+                <ul className="space-y-3 mb-8 text-left">
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-3"></i>
+                    <span className="text-gray-600">Everything in Premium</span>
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-3"></i>
+                    <span className="text-gray-600">Exclusive annual challenges</span>
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-3"></i>
+                    <span className="text-gray-600">1 coaching session/year</span>
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-3"></i>
+                    <span className="text-gray-600">Anniversary planning tools</span>
+                  </li>
+                </ul>
+                <button className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                  Choose Annual
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-pink-600 to-purple-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Transform Your Relationship?
+          </h2>
+          <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+            Join thousands of couples who are building stronger, more connected relationships with Better Together.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <button className="w-full sm:w-auto bg-white text-pink-600 px-8 py-4 rounded-lg font-semibold hover:bg-pink-50 transition-all transform hover:scale-105 shadow-lg">
+              <i className="fas fa-heart mr-2"></i>
+              Start Your Free Journey
             </button>
-            <button className="bg-white text-pink-600 px-8 py-3 rounded-lg font-semibold border-2 border-pink-600 hover:bg-pink-50 transition-colors">
-              View Demo
+            <button className="w-full sm:w-auto bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-pink-600 transition-colors">
+              <i className="fas fa-play mr-2"></i>
+              Watch How It Works
             </button>
           </div>
         </div>
+      </section>
 
-        <footer className="text-center mt-12 text-gray-500">
-          <p>&copy; 2025 Better Together - Built with 💕 for couples who want to thrive</p>
-        </footer>
-      </div>
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-300 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <span className="text-2xl">💕</span>
+                <span className="ml-2 text-xl font-bold text-white">Better Together</span>
+              </div>
+              <p className="text-gray-400 leading-relaxed">
+                Transforming relationships through intelligent connection tracking and shared growth experiences.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <i className="fab fa-facebook"></i>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+            
+            <div>
+              <h5 className="font-semibold text-white mb-4">Product</h5>
+              <ul className="space-y-2">
+                <li><a href="#features" className="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                <li><a href="#pricing" className="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                <li><a href="/api" className="text-gray-400 hover:text-white transition-colors">API Docs</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Changelog</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h5 className="font-semibold text-white mb-4">Support</h5>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h5 className="font-semibold text-white mb-4">Company</h5>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Press Kit</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+            <p className="text-gray-400">
+              &copy; 2025 Better Together. Built with 💕 for couples who want to thrive together.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 })
