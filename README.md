@@ -4,10 +4,10 @@
 **Better Together** is a comprehensive relationship platform that combines AI-powered coaching, smart scheduling, and personalized suggestions to help couples build stronger connections. Built with modern edge computing technology, it provides intelligent relationship management with mobile-first responsive design.
 
 **Live URLs:**
+- **Consumer Homepage**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev
 - **Production**: https://9aea53d0.better-together.pages.dev
-- **Development**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev
-- **Analytics Dashboard**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev/dashboard.html
-- **GitHub**: https://github.com/username/better-together
+- **Analytics Dashboard**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev/login.html
+- **GitHub**: https://github.com/Julianb233/Better-together
 
 ## 🎯 Key Features
 
