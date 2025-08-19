@@ -909,6 +909,8 @@ app.put('/api/notifications/:notificationId/read', async (c) => {
 
 import { aiCoachHtml } from './pages/ai-coach'
 import { mobileUIHtml } from './pages/mobile-ui'
+import { smartSchedulingHtml } from './pages/smart-scheduling'
+import { intelligentSuggestionsHtml } from './pages/intelligent-suggestions'
 
 app.get('/ai-coach.html', (c) => {
   return c.html(aiCoachHtml)
@@ -919,49 +921,11 @@ app.get('/mobile-ui.html', (c) => {
 })
 
 app.get('/smart-scheduling.html', (c) => {
-  const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Scheduling - Better Together</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-50 min-h-screen">
-    <div class="text-center py-20">
-        <h1 class="text-4xl font-bold text-gray-800 mb-4">Smart Scheduling</h1>
-        <p class="text-xl text-gray-600 mb-8">AI-powered scheduling for couples coming soon!</p>
-        <a href="/" class="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">
-            <i class="fas fa-arrow-left mr-2"></i>Back to Home
-        </a>
-    </div>
-</body>
-</html>`;
-  return c.html(html)
+  return c.html(smartSchedulingHtml)
 })
 
 app.get('/intelligent-suggestions.html', (c) => {
-  const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intelligent Suggestions - Better Together</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-50 min-h-screen">
-    <div class="text-center py-20">
-        <h1 class="text-4xl font-bold text-gray-800 mb-4">Intelligent Suggestions</h1>
-        <p class="text-xl text-gray-600 mb-8">AI-powered relationship suggestions coming soon!</p>
-        <a href="/" class="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">
-            <i class="fas fa-arrow-left mr-2"></i>Back to Home
-        </a>
-    </div>
-</body>
-</html>`;
-  return c.html(html)
+  return c.html(intelligentSuggestionsHtml)
 })
 
 // =============================================================================
