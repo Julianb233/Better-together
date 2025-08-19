@@ -6,6 +6,7 @@
 **Live URLs:**
 - **Production**: https://9aea53d0.better-together.pages.dev
 - **Development**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev
+- **Analytics Dashboard**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev/dashboard.html
 - **GitHub**: https://github.com/username/better-together
 
 ## 🎯 Key Features
@@ -17,7 +18,10 @@
 - **📱 iPhone User Examples**: Interactive demos showing real couples using the app with authentic conversations
 - **📱 Mobile UI Design**: Complete mobile mockups with iOS-specific design patterns
 - **🏠 Professional Homepage**: Modern landing page with cognitive bias optimization and mobile responsiveness
-- **🗄️ Complete Backend API**: 20+ endpoints for full relationship management
+- **📊 Enterprise Analytics Dashboard**: Professional business intelligence platform with iOS 26 liquid glass design
+- **💼 Partner Portal**: Business partnership application with ROI calculator and tier system
+- **🎁 Member Rewards System**: Credit-based rewards program with 4-tier membership progression
+- **🗄️ Complete Backend API**: 25+ endpoints for full relationship management and analytics
 - **📊 Database Schema**: Comprehensive SQLite/D1 database with 14 tables
 - **🎮 Gamified System**: Relationship challenges, achievement badges, streak counters
 
@@ -27,6 +31,9 @@
 3. **Intelligent Suggestions** (`/intelligent-suggestions.html`): Personalized recommendations, budget-aware suggestions, personality matching
 4. **Mobile UI Design** (`/mobile-ui.html`): iPhone mockups, iOS design patterns, mobile responsiveness
 5. **iPhone Examples** (`/iphone-examples.html`): Real user scenarios, interactive demos, authentic conversations
+6. **Analytics Dashboard** (`/dashboard.html`): Enterprise business intelligence with real-time metrics, feature tracking, partner analytics
+7. **Member Rewards** (`/member-rewards.html`): Credit system, tier progression, partner discounts across 6 categories
+8. **Partner Portal** (`/become-sponsor.html`): Business partnership application with ROI calculator and demo booking
 
 ### 🚀 Navigation Structure
 ```
@@ -37,6 +44,9 @@ Homepage (/)
 ├── Intelligent Suggestions (/intelligent-suggestions.html)
 ├── iOS Design (/mobile-ui.html)
 ├── Live Examples (/iphone-examples.html)
+├── Member Rewards (/member-rewards.html)
+├── Analytics Dashboard (/dashboard.html)
+├── Partner Portal (/become-sponsor.html)
 └── Pricing Section
 ```
 
@@ -50,11 +60,15 @@ Homepage (/)
 - **Activities**: Date night planning with satisfaction ratings, location/cost tracking, memories
 - **Challenges**: Psychology-based relationship challenges with difficulty levels
 - **Achievements**: Gamification badges with milestone celebrations
+- **Analytics**: Real-time metrics tracking user engagement, partner performance, revenue data
+- **Partners**: Business partner integration with categories, performance metrics, revenue tracking
+- **Member Rewards**: Credit system with tier progression (Bronze→Silver→Gold→Platinum)
 
 ### Storage Services
 - **Primary Database**: Cloudflare D1 (SQLite-based)
 - **Development**: Local SQLite with hot reload
 - **Schema**: 14 tables with comprehensive indexing
+- **Analytics API**: Real-time data endpoints for dashboard visualization
 
 ## 🎮 User Guide
 
@@ -69,6 +83,9 @@ Homepage (/)
 - **📅 Smart Scheduling Demo**: Watch AI automatically plan and book date nights
 - **💡 Personalization Demo**: See AI adapt to different personality types and budgets
 - **📱 iPhone Interactions**: Interactive demos showing real user scenarios
+- **📊 Analytics Dashboard**: Professional business intelligence with live metrics and interactive charts
+- **💼 Partner Portal**: Business partnership ROI calculator and application system
+- **🎁 Member Rewards**: Credit system with tier progression and partner discounts
 - **🏠 Mobile Responsive**: All pages optimized for iPhone and mobile devices
 
 ### Real User Scenarios
