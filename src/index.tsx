@@ -5,6 +5,9 @@ import { renderer } from './renderer'
 import type { Env } from './types'
 import { dashboardHtml } from './pages/dashboard'
 import { loginHtml } from './pages/login'
+import { paywallHtml } from './pages/paywall'
+import { loginSystemHtml } from './pages/login-system'
+import { userPortalHtml } from './pages/user-portal'
 import analyticsApi from './api/analytics'
 import {
   generateId, 
@@ -982,6 +985,25 @@ app.get('/premium-pricing.html', async (c) => {
 
 // Analytics API Routes
 app.route('/api/analytics', analyticsApi)
+
+// =============================================================================
+// AUTHENTICATION & USER PORTAL
+// =============================================================================
+
+// Login System
+app.get('/login', (c) => {
+  return c.html(loginSystemHtml)
+})
+
+// User Portal/Dashboard
+app.get('/portal', (c) => {
+  return c.html(userPortalHtml)
+})
+
+// Paywall with new pricing tiers
+app.get('/paywall', (c) => {
+  return c.html(paywallHtml)
+})
 
 // =============================================================================
 // HOME PAGE

@@ -4,20 +4,33 @@
 **Better Together** is a comprehensive relationship platform that combines AI-powered coaching, smart scheduling, and personalized suggestions to help couples build stronger connections. Built with modern edge computing technology, it provides intelligent relationship management with mobile-first responsive design.
 
 **Live URLs:**
-- **Consumer Homepage**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev
-- **Premium Pricing**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev/premium-pricing.html
-- **Production**: https://9aea53d0.better-together.pages.dev
-- **Analytics Dashboard**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev/login.html
-- **GitHub**: https://github.com/Julianb233/Better-together
+- **Consumer Homepage**: https://3000-iwgovbj19v271xeyoyu20-6532622b.e2b.dev
+- **🔥 Paywall with Pricing Tiers**: https://3000-iwgovbj19v271xeyoyu20-6532622b.e2b.dev/paywall
+- **🔐 Login System**: https://3000-iwgovbj19v271xeyoyu20-6532622b.e2b.dev/login
+- **📊 User Portal/Dashboard**: https://3000-iwgovbj19v271xeyoyu20-6532622b.e2b.dev/portal
+- **Premium Pricing**: https://3000-iwgovbj19v271xeyoyu20-6532622b.e2b.dev/premium-pricing.html
+- **Analytics Dashboard**: https://3000-iwgovbj19v271xeyoyu20-6532622b.e2b.dev/login.html
+- **GitHub Repository**: https://github.com/Julianb233/Better-together
 
 ## 🎯 Key Features
 
 ### ✅ Currently Implemented
+
+#### **💳 Complete User Management System (NEW - LIVE)**
+- **🔐 Full Authentication System**: Login, register, forgot password with social auth options
+- **📊 User Portal/Dashboard**: Complete relationship dashboard with analytics and quick actions
+- **🚀 Paywall with Pricing Tiers**: "Growing Together" ($39/month) and "Growing Together+" ($69/month)
+- **📋 Feature Comparison Table**: Comprehensive side-by-side plan comparison
+- **🎨 Clean Hero Design**: Conversion-optimized, less busy layout emphasizing free trial
+- **📱 Mobile-First Experience**: Touch-optimized across all user interfaces
+- **🔄 Subscription Management**: Full trial tracking, conversion, and billing system
+- **✨ Marketing Psychology**: Risk reversal, social proof, urgency elements for conversion
+
+#### **🧠 AI-Powered Features**
 - **🤖 AI Relationship Assistant**: Complete conversational AI coaching page with natural language examples
 - **📅 Smart Scheduling**: Comprehensive scheduling system with live demos, calendar integration, and automatic booking
 - **💡 Intelligent Suggestions**: Personalized recommendations based on personality, budget, and relationship patterns
 - **📱 iPhone User Examples**: Interactive demos showing real couples using the app with authentic conversations
-- **📱 Mobile UI Design**: Complete mobile mockups with iOS-specific design patterns
 - **🏠 Professional Homepage**: Modern landing page with cognitive bias optimization and mobile responsiveness
 - **📊 Enterprise Analytics Dashboard**: Professional business intelligence platform with iOS 26 liquid glass design
 - **💼 Partner Portal**: Business partnership application with ROI calculator and tier system
