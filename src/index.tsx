@@ -8,10 +8,11 @@ import { loginHtml } from './pages/login'
 import { paywallHtml } from './pages/paywall'
 import { loginSystemHtml } from './pages/login-system'
 import { userPortalHtml } from './pages/user-portal'
+import { intakeQuizHtml } from './pages/intake-quiz'
 import analyticsApi from './api/analytics'
 import {
-  generateId, 
-  getCurrentDate, 
+  generateId,
+  getCurrentDate,
   getCurrentDateTime,
   isValidEmail,
   getUserByEmail,
@@ -23,7 +24,16 @@ import {
   getUpcomingDates,
   checkAchievements,
   sendNotification,
-  calculateAnalytics
+  calculateAnalytics,
+  calculateConnectionCompassScores,
+  determinePrimaryStyles,
+  calculateStylePercentages,
+  generateConnectionInsights,
+  calculateCompatibilityScore,
+  generateCompatibilityReport,
+  processIntakeProfile,
+  generateExperienceRecommendations,
+  CONNECTION_STYLES
 } from './utils'
 
 const app = new Hono<{ Bindings: Env }>()
@@ -752,6 +762,537 @@ app.get('/api/challenges/participation/:relationshipId', async (c) => {
 })
 
 // =============================================================================
+// QUIZ SYSTEM
+// =============================================================================
+
+// Get all available quizzes
+app.get('/api/quizzes', async (c) => {
+  const dbCheck = checkDatabase(c)
+  if (dbCheck) return dbCheck
+
+  try {
+    const results = await c.env.DB.prepare(`
+      SELECT * FROM quizzes
+      WHERE is_active = 1
+      ORDER BY display_order ASC
+    `).all()
+
+    return c.json({ quizzes: results.results || [] })
+  } catch (error) {
+    console.error('Get quizzes error:', error)
+    return c.json({ error: 'Failed to get quizzes' }, 500)
+  }
+})
+
+// Get quiz with all questions and options
+app.get('/api/quizzes/:quizId', async (c) => {
+  const dbCheck = checkDatabase(c)
+  if (dbCheck) return dbCheck
+
+  try {
+    const quizId = c.req.param('quizId')
+
+    // Get quiz details
+    const quiz = await c.env.DB.prepare(
+      'SELECT * FROM quizzes WHERE id = ? OR slug = ?'
+    ).bind(quizId, quizId).first()
+
+    if (!quiz) {
+      return c.json({ error: 'Quiz not found' }, 404)
+    }
+
+    // Get all questions for this quiz
+    const questions = await c.env.DB.prepare(`
+      SELECT * FROM quiz_questions
+      WHERE quiz_id = ?
+      ORDER BY order_num ASC
+    `).bind(quiz.id).all()
+
+    // Get options for each question
+    const questionsWithOptions = await Promise.all(
+      (questions.results || []).map(async (question: any) => {
+        const options = await c.env.DB.prepare(`
+          SELECT * FROM quiz_options
+          WHERE question_id = ?
+          ORDER BY order_num ASC
+        `).bind(question.id).all()
+
+        return {
+          ...question,
+          options: options.results || []
+        }
+      })
+    )
+
+    return c.json({
+      quiz,
+      questions: questionsWithOptions
+    })
+  } catch (error) {
+    console.error('Get quiz error:', error)
+    return c.json({ error: 'Failed to get quiz' }, 500)
+  }
+})
+
+// Start a new quiz response
+app.post('/api/quizzes/:quizId/start', async (c) => {
+  const dbCheck = checkDatabase(c)
+  if (dbCheck) return dbCheck
+
+  try {
+    const quizId = c.req.param('quizId')
+    const { user_id, relationship_id } = await c.req.json()
+
+    if (!user_id) {
+      return c.json({ error: 'User ID is required' }, 400)
+    }
+
+    // Get quiz details
+    const quiz = await c.env.DB.prepare(
+      'SELECT * FROM quizzes WHERE id = ? OR slug = ?'
+    ).bind(quizId, quizId).first()
+
+    if (!quiz) {
+      return c.json({ error: 'Quiz not found' }, 404)
+    }
+
+    // Count total questions
+    const questionCount = await c.env.DB.prepare(
+      'SELECT COUNT(*) as count FROM quiz_questions WHERE quiz_id = ?'
+    ).bind(quiz.id).first()
+
+    const responseId = generateId()
+    const now = getCurrentDateTime()
+
+    await c.env.DB.prepare(`
+      INSERT INTO quiz_responses (
+        id, relationship_id, user_id, quiz_id, started_at,
+        current_question_index, total_questions, is_completed,
+        time_spent_seconds, created_at, updated_at
+      )
+      VALUES (?, ?, ?, ?, ?, 0, ?, 0, 0, ?, ?)
+    `).bind(
+      responseId,
+      relationship_id || null,
+      user_id,
+      quiz.id,
+      now,
+      questionCount?.count || 0,
+      now,
+      now
+    ).run()
+
+    return c.json({
+      message: 'Quiz started successfully',
+      response_id: responseId,
+      quiz_id: quiz.id
+    }, 201)
+  } catch (error) {
+    console.error('Start quiz error:', error)
+    return c.json({ error: 'Failed to start quiz' }, 500)
+  }
+})
+
+// Submit quiz answer
+app.post('/api/quizzes/answers', async (c) => {
+  const dbCheck = checkDatabase(c)
+  if (dbCheck) return dbCheck
+
+  try {
+    const {
+      response_id,
+      question_id,
+      option_ids,
+      answer_text,
+      answer_numeric,
+      answer_data
+    } = await c.req.json()
+
+    if (!response_id || !question_id) {
+      return c.json({ error: 'Response ID and question ID are required' }, 400)
+    }
+
+    const now = getCurrentDateTime()
+
+    // Handle multiple option selections (for multiple choice questions)
+    if (option_ids && Array.isArray(option_ids)) {
+      for (const optionId of option_ids) {
+        const answerId = generateId()
+        await c.env.DB.prepare(`
+          INSERT INTO quiz_answers (
+            id, response_id, question_id, option_id, answered_at, created_at
+          )
+          VALUES (?, ?, ?, ?, ?, ?)
+        `).bind(answerId, response_id, question_id, optionId, now, now).run()
+      }
+    }
+    // Handle single option selection
+    else if (option_ids && option_ids.length > 0) {
+      const answerId = generateId()
+      await c.env.DB.prepare(`
+        INSERT INTO quiz_answers (
+          id, response_id, question_id, option_id, answered_at, created_at
+        )
+        VALUES (?, ?, ?, ?, ?, ?)
+      `).bind(answerId, response_id, question_id, option_ids[0], now, now).run()
+    }
+    // Handle ranking/complex answer data
+    else if (answer_data) {
+      const answerId = generateId()
+      await c.env.DB.prepare(`
+        INSERT INTO quiz_answers (
+          id, response_id, question_id, answer_data, answered_at, created_at
+        )
+        VALUES (?, ?, ?, ?, ?, ?)
+      `).bind(answerId, response_id, question_id, JSON.stringify(answer_data), now, now).run()
+    }
+    // Handle text or numeric answers
+    else {
+      const answerId = generateId()
+      await c.env.DB.prepare(`
+        INSERT INTO quiz_answers (
+          id, response_id, question_id, answer_text, answer_numeric, answered_at, created_at
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+      `).bind(answerId, response_id, question_id, answer_text || null, answer_numeric || null, now, now).run()
+    }
+
+    // Update response progress
+    await c.env.DB.prepare(`
+      UPDATE quiz_responses
+      SET current_question_index = current_question_index + 1, updated_at = ?
+      WHERE id = ?
+    `).bind(now, response_id).run()
+
+    return c.json({ message: 'Answer submitted successfully' })
+  } catch (error) {
+    console.error('Submit answer error:', error)
+    return c.json({ error: 'Failed to submit answer' }, 500)
+  }
+})
+
+// Complete quiz and generate results
+app.post('/api/quizzes/:responseId/complete', async (c) => {
+  const dbCheck = checkDatabase(c)
+  if (dbCheck) return dbCheck
+
+  try {
+    const responseId = c.req.param('responseId')
+    const { time_spent_seconds } = await c.req.json()
+
+    const now = getCurrentDateTime()
+
+    // Mark response as completed
+    await c.env.DB.prepare(`
+      UPDATE quiz_responses
+      SET is_completed = 1, completed_at = ?, time_spent_seconds = ?, updated_at = ?
+      WHERE id = ?
+    `).bind(now, time_spent_seconds || 0, now, responseId).run()
+
+    // Get response details to determine quiz type
+    const response = await c.env.DB.prepare(`
+      SELECT qr.*, q.slug, q.quiz_type
+      FROM quiz_responses qr
+      JOIN quizzes q ON qr.quiz_id = q.id
+      WHERE qr.id = ?
+    `).bind(responseId).first()
+
+    if (!response) {
+      return c.json({ error: 'Quiz response not found' }, 404)
+    }
+
+    // Process results based on quiz type
+    if (response.slug === 'connection-compass') {
+      // Calculate Connection Compass scores
+      const scores = await calculateConnectionCompassScores(c.env, responseId)
+      const { primary, secondary } = determinePrimaryStyles(scores)
+      const percentages = calculateStylePercentages(scores)
+      const insights = generateConnectionInsights(primary, secondary)
+
+      const totalPoints = Object.values(scores).reduce((sum, score) => sum + score, 0)
+
+      // Store Connection Compass results
+      const resultId = generateId()
+      await c.env.DB.prepare(`
+        INSERT INTO connection_compass_results (
+          id, response_id, user_id, relationship_id,
+          verbal_appreciation_score, focused_presence_score, thoughtful_gestures_score,
+          supportive_partnership_score, physical_connection_score, growth_championing_score,
+          primary_style, secondary_style, total_points, partner_visible, insights_text,
+          created_at, updated_at
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, ?)
+      `).bind(
+        resultId, responseId, response.user_id, response.relationship_id,
+        percentages.verbal_appreciation, percentages.focused_presence, percentages.thoughtful_gestures,
+        percentages.supportive_partnership, percentages.physical_connection, percentages.growth_championing,
+        primary, secondary, totalPoints, insights, now, now
+      ).run()
+
+      // Check if partner has completed - if so, generate compatibility report
+      if (response.relationship_id) {
+        const partnerResponse = await c.env.DB.prepare(`
+          SELECT id FROM quiz_responses
+          WHERE relationship_id = ? AND user_id != ? AND quiz_id = ? AND is_completed = 1
+        `).bind(response.relationship_id, response.user_id, response.quiz_id).first()
+
+        if (partnerResponse) {
+          // Generate compatibility report (will be implemented in separate endpoint)
+          console.log('Partner completed - compatibility report can be generated')
+        }
+      }
+    }
+    else if (response.slug === 'intake-quiz') {
+      // Process intake quiz profile
+      const profile = await processIntakeProfile(c.env, responseId)
+      const recommendations = generateExperienceRecommendations(profile)
+
+      // Store intake profile
+      const profileId = generateId()
+      await c.env.DB.prepare(`
+        INSERT INTO intake_profiles (
+          id, response_id, user_id, relationship_id,
+          relationship_status, relationship_stage_months, connection_goals,
+          primary_challenge, ideal_date_vibe, energy_level, budget_comfort,
+          planning_style, social_preference, growth_mindset, communication_quality,
+          love_expression, availability, recommended_experiences,
+          profile_completeness, last_updated, created_at, updated_at
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 100, ?, ?, ?)
+      `).bind(
+        profileId, responseId, response.user_id, response.relationship_id,
+        profile.relationshipStatus, profile.relationshipStageMonths, JSON.stringify(profile.connectionGoals),
+        profile.primaryChallenge, profile.idealDateVibe, profile.energyLevel, profile.budgetComfort,
+        profile.planningStyle, profile.socialPreference, profile.growthMindset, profile.communicationQuality,
+        profile.loveExpression, JSON.stringify(profile.availability), JSON.stringify(recommendations),
+        now, now, now
+      ).run()
+    }
+
+    return c.json({
+      message: 'Quiz completed successfully',
+      response_id: responseId
+    })
+  } catch (error) {
+    console.error('Complete quiz error:', error)
+    return c.json({ error: 'Failed to complete quiz' }, 500)
+  }
+})
+
+// Get quiz results
+app.get('/api/quizzes/:responseId/results', async (c) => {
+  const dbCheck = checkDatabase(c)
+  if (dbCheck) return dbCheck
+
+  try {
+    const responseId = c.req.param('responseId')
+
+    // Get response details
+    const response = await c.env.DB.prepare(`
+      SELECT qr.*, q.*, u.name as user_name
+      FROM quiz_responses qr
+      JOIN quizzes q ON qr.quiz_id = q.id
+      JOIN users u ON qr.user_id = u.id
+      WHERE qr.id = ?
+    `).bind(responseId).first()
+
+    if (!response) {
+      return c.json({ error: 'Quiz response not found' }, 404)
+    }
+
+    if (!response.is_completed) {
+      return c.json({ error: 'Quiz not yet completed' }, 400)
+    }
+
+    let results: any = { response }
+
+    // Get specific results based on quiz type
+    if (response.slug === 'connection-compass') {
+      const ccResult = await c.env.DB.prepare(`
+        SELECT * FROM connection_compass_results WHERE response_id = ?
+      `).bind(responseId).first()
+
+      if (ccResult) {
+        // Build full breakdown with style information
+        const styles = Object.keys(CONNECTION_STYLES)
+        const breakdown = styles.map(style => ({
+          style,
+          name: CONNECTION_STYLES[style as keyof typeof CONNECTION_STYLES].name,
+          icon: CONNECTION_STYLES[style as keyof typeof CONNECTION_STYLES].icon,
+          score: ccResult[`${style}_score` as keyof typeof ccResult] || 0,
+          description: CONNECTION_STYLES[style as keyof typeof CONNECTION_STYLES].description,
+          actionSteps: CONNECTION_STYLES[style as keyof typeof CONNECTION_STYLES].actionSteps
+        }))
+
+        results.connection_compass = {
+          ...ccResult,
+          breakdown
+        }
+      }
+    }
+    else if (response.slug === 'intake-quiz') {
+      const profile = await c.env.DB.prepare(`
+        SELECT * FROM intake_profiles WHERE response_id = ?
+      `).bind(responseId).first()
+
+      if (profile) {
+        results.intake_profile = {
+          ...profile,
+          connection_goals: profile.connection_goals ? JSON.parse(profile.connection_goals as string) : [],
+          availability: profile.availability ? JSON.parse(profile.availability as string) : [],
+          recommended_experiences: profile.recommended_experiences ? JSON.parse(profile.recommended_experiences as string) : []
+        }
+      }
+    }
+
+    return c.json(results)
+  } catch (error) {
+    console.error('Get quiz results error:', error)
+    return c.json({ error: 'Failed to get quiz results' }, 500)
+  }
+})
+
+// Get compatibility report for relationship
+app.get('/api/quizzes/compatibility/:relationshipId', async (c) => {
+  const dbCheck = checkDatabase(c)
+  if (dbCheck) return dbCheck
+
+  try {
+    const relationshipId = c.req.param('relationshipId')
+
+    // Get both partners' connection compass results
+    const results = await c.env.DB.prepare(`
+      SELECT ccr.*, qr.user_id, u.name as user_name
+      FROM connection_compass_results ccr
+      JOIN quiz_responses qr ON ccr.response_id = qr.id
+      JOIN users u ON qr.user_id = u.id
+      WHERE qr.relationship_id = ? AND qr.is_completed = 1
+      ORDER BY ccr.created_at ASC
+    `).bind(relationshipId).all()
+
+    if (!results.results || results.results.length < 2) {
+      return c.json({
+        message: 'Both partners need to complete the Connection Compass assessment',
+        completed_count: results.results?.length || 0,
+        required_count: 2
+      }, 400)
+    }
+
+    const user1Result = results.results[0] as any
+    const user2Result = results.results[1] as any
+
+    // Generate compatibility report
+    const reportContent = generateCompatibilityReport(
+      user1Result.user_name,
+      user2Result.user_name,
+      user1Result,
+      user2Result
+    )
+
+    const user1Scores = {
+      verbal_appreciation: user1Result.verbal_appreciation_score,
+      focused_presence: user1Result.focused_presence_score,
+      thoughtful_gestures: user1Result.thoughtful_gestures_score,
+      supportive_partnership: user1Result.supportive_partnership_score,
+      physical_connection: user1Result.physical_connection_score,
+      growth_championing: user1Result.growth_championing_score
+    }
+
+    const user2Scores = {
+      verbal_appreciation: user2Result.verbal_appreciation_score,
+      focused_presence: user2Result.focused_presence_score,
+      thoughtful_gestures: user2Result.thoughtful_gestures_score,
+      supportive_partnership: user2Result.supportive_partnership_score,
+      physical_connection: user2Result.physical_connection_score,
+      growth_championing: user2Result.growth_championing_score
+    }
+
+    const compatibility = calculateCompatibilityScore(user1Scores, user2Scores)
+
+    // Check if report already exists
+    const existingReport = await c.env.DB.prepare(`
+      SELECT * FROM compatibility_reports
+      WHERE relationship_id = ?
+      ORDER BY generated_at DESC
+      LIMIT 1
+    `).bind(relationshipId).first()
+
+    // Create or update report
+    if (!existingReport) {
+      const reportId = generateId()
+      const now = getCurrentDateTime()
+
+      await c.env.DB.prepare(`
+        INSERT INTO compatibility_reports (
+          id, relationship_id, user1_response_id, user2_response_id,
+          overall_compatibility_score, style_overlap_percentage,
+          complementary_styles, strengths, growth_areas,
+          communication_tips, recommended_activities,
+          generated_at, is_viewed, created_at, updated_at
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?)
+      `).bind(
+        reportId, relationshipId, user1Result.response_id, user2Result.response_id,
+        compatibility.overallScore, compatibility.styleOverlap,
+        JSON.stringify(compatibility.complementaryStyles),
+        JSON.stringify(reportContent.strengths),
+        JSON.stringify(reportContent.growthAreas),
+        JSON.stringify(reportContent.communicationTips),
+        JSON.stringify(reportContent.recommendedActivities),
+        now, now, now
+      ).run()
+    }
+
+    return c.json({
+      user1: {
+        name: user1Result.user_name,
+        primary_style: user1Result.primary_style,
+        secondary_style: user1Result.secondary_style,
+        scores: user1Scores
+      },
+      user2: {
+        name: user2Result.user_name,
+        primary_style: user2Result.primary_style,
+        secondary_style: user2Result.secondary_style,
+        scores: user2Scores
+      },
+      compatibility: {
+        overall_score: compatibility.overallScore,
+        style_overlap: compatibility.styleOverlap,
+        complementary_styles: compatibility.complementaryStyles
+      },
+      report: reportContent
+    })
+  } catch (error) {
+    console.error('Get compatibility report error:', error)
+    return c.json({ error: 'Failed to get compatibility report' }, 500)
+  }
+})
+
+// Get user's quiz history
+app.get('/api/users/:userId/quizzes', async (c) => {
+  const dbCheck = checkDatabase(c)
+  if (dbCheck) return dbCheck
+
+  try {
+    const userId = c.req.param('userId')
+
+    const results = await c.env.DB.prepare(`
+      SELECT qr.*, q.title, q.slug, q.icon
+      FROM quiz_responses qr
+      JOIN quizzes q ON qr.quiz_id = q.id
+      WHERE qr.user_id = ?
+      ORDER BY qr.started_at DESC
+    `).bind(userId).all()
+
+    return c.json({ quiz_history: results.results || [] })
+  } catch (error) {
+    console.error('Get user quiz history error:', error)
+    return c.json({ error: 'Failed to get quiz history' }, 500)
+  }
+})
+
+// =============================================================================
 // ANALYTICS & DASHBOARD
 // =============================================================================
 
@@ -998,6 +1539,11 @@ app.get('/login', (c) => {
 // User Portal/Dashboard
 app.get('/portal', (c) => {
   return c.html(userPortalHtml)
+})
+
+// Intake Quiz
+app.get('/intake-quiz.html', (c) => {
+  return c.html(intakeQuizHtml)
 })
 
 // Paywall with new pricing tiers

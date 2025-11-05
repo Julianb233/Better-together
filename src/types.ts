@@ -222,6 +222,196 @@ export interface DashboardData {
   checkin_streak: number
 }
 
+// Quiz System Types
+export interface Quiz {
+  id: string
+  title: string
+  slug: string
+  description?: string
+  quiz_type: 'intake' | 'assessment' | 'personality'
+  estimated_time_minutes: number
+  icon?: string
+  is_active: boolean
+  requires_partner: boolean
+  display_order: number
+  created_at: string
+  updated_at: string
+}
+
+export interface QuizQuestion {
+  id: string
+  quiz_id: string
+  question_text: string
+  question_subtitle?: string
+  question_type: 'single' | 'multiple' | 'scale' | 'ranking' | 'text'
+  section_name?: string
+  order_num: number
+  is_required: boolean
+  max_selections?: number
+  scale_min?: number
+  scale_max?: number
+  scale_labels?: string
+  metadata?: string
+  created_at: string
+}
+
+export interface QuizOption {
+  id: string
+  question_id: string
+  option_text: string
+  option_subtitle?: string
+  icon?: string
+  order_num: number
+  score_key?: string
+  score_value: number
+  metadata?: string
+  created_at: string
+}
+
+export interface QuizResponse {
+  id: string
+  relationship_id?: string
+  user_id: string
+  quiz_id: string
+  started_at: string
+  completed_at?: string
+  current_question_index: number
+  total_questions: number
+  is_completed: boolean
+  time_spent_seconds: number
+  created_at: string
+  updated_at: string
+}
+
+export interface QuizAnswer {
+  id: string
+  response_id: string
+  question_id: string
+  option_id?: string
+  answer_text?: string
+  answer_numeric?: number
+  answer_data?: string
+  answered_at: string
+  created_at: string
+}
+
+export interface ConnectionCompassResult {
+  id: string
+  response_id: string
+  user_id: string
+  relationship_id?: string
+  verbal_appreciation_score: number
+  focused_presence_score: number
+  thoughtful_gestures_score: number
+  supportive_partnership_score: number
+  physical_connection_score: number
+  growth_championing_score: number
+  primary_style: string
+  secondary_style: string
+  total_points: number
+  partner_visible: boolean
+  insights_text?: string
+  action_steps?: string
+  created_at: string
+  updated_at: string
+}
+
+export interface CompatibilityReport {
+  id: string
+  relationship_id: string
+  user1_response_id: string
+  user2_response_id: string
+  overall_compatibility_score?: number
+  style_overlap_percentage?: number
+  complementary_styles?: string
+  strengths?: string
+  growth_areas?: string
+  communication_tips?: string
+  recommended_activities?: string
+  generated_at: string
+  expires_at?: string
+  is_viewed: boolean
+  created_at: string
+  updated_at: string
+}
+
+export interface IntakeProfile {
+  id: string
+  response_id: string
+  user_id: string
+  relationship_id?: string
+  relationship_status?: string
+  relationship_stage_months?: number
+  connection_goals?: string
+  primary_challenge?: string
+  ideal_date_vibe?: string
+  energy_level?: string
+  budget_comfort?: string
+  planning_style?: string
+  social_preference?: string
+  growth_mindset?: string
+  communication_quality?: string
+  love_expression?: string
+  availability?: string
+  recommended_experiences?: string
+  communication_tips?: string
+  potential_growth_areas?: string
+  red_flags?: string
+  profile_completeness: number
+  last_updated: string
+  created_at: string
+  updated_at: string
+}
+
+// Quiz API Request/Response Types
+export interface StartQuizRequest {
+  user_id: string
+  relationship_id?: string
+  quiz_id: string
+}
+
+export interface SubmitQuizAnswerRequest {
+  response_id: string
+  question_id: string
+  option_ids?: string[]
+  answer_text?: string
+  answer_numeric?: number
+  answer_data?: any
+}
+
+export interface CompleteQuizRequest {
+  response_id: string
+  time_spent_seconds: number
+}
+
+export interface QuizResultsResponse {
+  quiz: Quiz
+  response: QuizResponse
+  connection_compass_result?: ConnectionCompassResult
+  intake_profile?: IntakeProfile
+  compatibility_report?: CompatibilityReport
+}
+
+export interface QuizWithQuestions extends Quiz {
+  questions: (QuizQuestion & { options: QuizOption[] })[]
+}
+
+export type ConnectionStyle =
+  | 'verbal_appreciation'
+  | 'focused_presence'
+  | 'thoughtful_gestures'
+  | 'supportive_partnership'
+  | 'physical_connection'
+  | 'growth_championing'
+
+export interface ConnectionStyleInfo {
+  key: ConnectionStyle
+  name: string
+  icon: string
+  description: string
+  actionSteps: string[]
+}
+
 // Cloudflare Environment Bindings
 export interface Env {
   DB: D1Database
