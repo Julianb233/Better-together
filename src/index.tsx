@@ -10,6 +10,8 @@ import { loginSystemHtml } from './pages/login-system'
 import { userPortalHtml } from './pages/user-portal'
 import { intakeQuizHtml } from './pages/intake-quiz'
 import analyticsApi from './api/analytics'
+import calendarApi from './api/calendar-matching'
+import enhancedCalendarApi from './api/calendar-matching-enhanced'
 import {
   generateId,
   getCurrentDate,
@@ -1526,6 +1528,12 @@ app.get('/premium-pricing.html', async (c) => {
 
 // Analytics API Routes
 app.route('/api/analytics', analyticsApi)
+
+// Calendar Matching & Date Suggestions API Routes
+app.route('/api/calendar', calendarApi)
+
+// Enhanced Calendar Matching API Routes (with learning, context, weather, booking, etc.)
+app.route('/api/calendar', enhancedCalendarApi)
 
 // =============================================================================
 // AUTHENTICATION & USER PORTAL
