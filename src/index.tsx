@@ -8,6 +8,7 @@ import { loginHtml } from './pages/login'
 import { paywallHtml } from './pages/paywall'
 import { loginSystemHtml } from './pages/login-system'
 import { userPortalHtml } from './pages/user-portal'
+import { intakeQuizHtml } from './pages/intake-quiz'
 import analyticsApi from './api/analytics'
 import {
   generateId,
@@ -1538,6 +1539,11 @@ app.get('/login', (c) => {
 // User Portal/Dashboard
 app.get('/portal', (c) => {
   return c.html(userPortalHtml)
+})
+
+// Intake Quiz
+app.get('/intake-quiz.html', (c) => {
+  return c.html(intakeQuizHtml)
 })
 
 // Paywall with new pricing tiers
