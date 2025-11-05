@@ -226,3 +226,192 @@ export interface DashboardData {
 export interface Env {
   DB: D1Database
 }
+
+// =============================================================================
+// Calendar Matching & Date Suggestions Types
+// =============================================================================
+
+export type InterestCategory =
+  | 'dining'
+  | 'adventure'
+  | 'relaxation'
+  | 'arts_culture'
+  | 'sports'
+  | 'entertainment'
+  | 'learning'
+  | 'travel'
+  | 'wellness'
+  | 'outdoors'
+  | 'gaming'
+  | 'music'
+  | 'other'
+
+export interface UserInterest {
+  id: string
+  user_id: string
+  category: InterestCategory
+  subcategory?: string
+  preference_level: number // 1-10
+  created_at: string
+  updated_at: string
+}
+
+export interface BudgetPreference {
+  id: string
+  relationship_id: string
+  budget_type: 'per_date' | 'weekly' | 'monthly' | 'special_occasion'
+  min_amount?: number
+  max_amount?: number
+  currency: string
+  preferences_note?: string
+  created_at: string
+  updated_at: string
+}
+
+export interface CalendarAvailability {
+  id: string
+  user_id: string
+  day_of_week: number // 0-6 (Sunday-Saturday)
+  start_time: string // "HH:MM"
+  end_time: string // "HH:MM"
+  is_recurring: boolean
+  specific_date?: string
+  availability_type: 'free' | 'busy' | 'preferred'
+  notes?: string
+  created_at: string
+  updated_at: string
+}
+
+export interface ExperienceCatalog {
+  id: string
+  experience_name: string
+  experience_type: InterestCategory
+  description?: string
+  location?: string
+  venue_name?: string
+  estimated_duration_minutes?: number
+  cost_min?: number
+  cost_max?: number
+  currency: string
+  rating?: number
+  tags?: string
+  best_time_of_day?: 'morning' | 'afternoon' | 'evening' | 'night' | 'any'
+  best_season?: 'spring' | 'summer' | 'fall' | 'winter' | 'any'
+  requires_booking: boolean
+  booking_url?: string
+  booking_lead_time_days: number
+  weather_dependent: boolean
+  outdoor_activity: boolean
+  physical_intensity?: 'low' | 'medium' | 'high'
+  is_active: boolean
+  created_at: string
+  updated_at: string
+}
+
+export interface DateSuggestion {
+  id: string
+  relationship_id: string
+  experience_id?: string
+  suggested_date: string
+  suggested_duration_minutes: number
+  estimated_cost?: number
+  suggestion_reason?: string
+  match_score?: number // 0-1
+  status: 'pending' | 'accepted' | 'rejected' | 'scheduled' | 'completed'
+  accepted_by_user_1: boolean
+  accepted_by_user_2: boolean
+  activity_id?: string
+  generated_at: string
+  expires_at?: string
+  created_at: string
+  updated_at: string
+}
+
+export interface CalendarSyncSettings {
+  id: string
+  user_id: string
+  provider: 'google' | 'outlook' | 'apple' | 'other'
+  sync_enabled: boolean
+  access_token_encrypted?: string
+  refresh_token_encrypted?: string
+  calendar_ids?: string
+  last_sync_at?: string
+  sync_frequency_minutes: number
+  auto_block_events: boolean
+  created_at: string
+  updated_at: string
+}
+
+export interface MutualFreeTime {
+  id: string
+  relationship_id: string
+  start_datetime: string
+  end_datetime: string
+  duration_minutes: number
+  confidence_score?: number // 0-1
+  is_preferred_time: boolean
+  last_computed_at: string
+}
+
+// API Request/Response Types for Calendar Matching
+export interface FindMutualSlotsRequest {
+  relationship_id: string
+  start_date: string
+  end_date: string
+  min_duration_minutes?: number
+}
+
+export interface FindMutualSlotsResponse {
+  relationship_id: string
+  date_range: {
+    start: string
+    end: string
+  }
+  mutual_free_slots: {
+    date: string
+    startTime: string
+    endTime: string
+    durationMinutes: number
+    startDatetime: Date
+    endDatetime: Date
+  }[]
+  total_slots: number
+}
+
+export interface GenerateSuggestionsRequest {
+  relationship_id: string
+  start_date: string
+  end_date: string
+  min_duration_minutes?: number
+  budget_min?: number
+  budget_max?: number
+  max_suggestions?: number
+}
+
+export interface GenerateSuggestionsResponse {
+  relationship_id: string
+  date_range: {
+    start: string
+    end: string
+  }
+  suggestions: {
+    suggestionId?: string
+    experienceId: string
+    experienceName: string
+    experienceType: InterestCategory
+    description?: string
+    location?: string
+    venueName?: string
+    suggestedDate: string
+    suggestedDuration: number
+    estimatedCost: number
+    rating?: number
+    matchScore: number
+    suggestionReason: string
+    requiresBooking: boolean
+    bookingUrl?: string
+    bookingLeadTime: number
+  }[]
+  total_suggestions: number
+  mutual_slots_found: number
+}

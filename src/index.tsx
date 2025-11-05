@@ -9,6 +9,7 @@ import { paywallHtml } from './pages/paywall'
 import { loginSystemHtml } from './pages/login-system'
 import { userPortalHtml } from './pages/user-portal'
 import analyticsApi from './api/analytics'
+import calendarApi from './api/calendar-matching'
 import {
   generateId, 
   getCurrentDate, 
@@ -985,6 +986,9 @@ app.get('/premium-pricing.html', async (c) => {
 
 // Analytics API Routes
 app.route('/api/analytics', analyticsApi)
+
+// Calendar Matching & Date Suggestions API Routes
+app.route('/api/calendar', calendarApi)
 
 // =============================================================================
 // AUTHENTICATION & USER PORTAL
