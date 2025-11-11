@@ -4,9 +4,9 @@
 ---
 
 ## 🌟 **Live Professional Platform**
-**Production URL**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev
-**API Documentation**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev/api
-**Health Monitor**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev/api/challenges
+**Production URL**: https://www.bettertogetherapp.com
+**API Documentation**: https://www.bettertogetherapp.com/api
+**Health Monitor**: https://www.bettertogetherapp.com/api/challenges
 
 ---
 

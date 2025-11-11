@@ -4,12 +4,12 @@
 **Better Together** is a comprehensive relationship platform that combines AI-powered coaching, smart scheduling, and personalized suggestions to help couples build stronger connections. Built with modern edge computing technology, it provides intelligent relationship management with mobile-first responsive design.
 
 **Live URLs:**
-- **Consumer Homepage**: https://3000-iwgovbj19v271xeyoyu20-6532622b.e2b.dev
-- **🔥 Paywall with Pricing Tiers**: https://3000-iwgovbj19v271xeyoyu20-6532622b.e2b.dev/paywall
-- **🔐 Login System**: https://3000-iwgovbj19v271xeyoyu20-6532622b.e2b.dev/login
-- **📊 User Portal/Dashboard**: https://3000-iwgovbj19v271xeyoyu20-6532622b.e2b.dev/portal
-- **Premium Pricing**: https://3000-iwgovbj19v271xeyoyu20-6532622b.e2b.dev/premium-pricing.html
-- **Analytics Dashboard**: https://3000-iwgovbj19v271xeyoyu20-6532622b.e2b.dev/login.html
+- **Consumer Homepage**: https://www.bettertogetherapp.com/
+- **🔥 Paywall with Pricing Tiers**: https://www.bettertogetherapp.com/paywall
+- **🔐 Login System**: https://www.bettertogetherapp.com/login
+- **📊 User Portal/Dashboard**: https://www.bettertogetherapp.com/portal
+- **Premium Pricing**: https://www.bettertogetherapp.com/premium-pricing.html
+- **Analytics Dashboard**: https://www.bettertogetherapp.com/login.html
 - **GitHub Repository**: https://github.com/Julianb233/Better-together
 
 ## 🎯 Key Features
@@ -128,7 +128,7 @@ Homepage (/)
 ## 🎮 User Guide
 
 ### Getting Started (Premium-Only)
-1. **Visit**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev
+1. **Visit**: https://www.bettertogetherapp.com
 2. **Choose Premium Plan**: Annual ($240/year) or Monthly ($30/month)
 3. **Explore Premium Features**: All relationship tools require premium access
 4. **Partner Gifting**: Gift subscriptions or get couples packages at `/premium-pricing.html`
@@ -198,8 +198,8 @@ Desktop: 1024px+ (Laptop, Monitor)
 ## 🚀 Deployment Status
 
 ### Current Status: ✅ LIVE
-- **Production Environment**: https://9aea53d0.better-together.pages.dev
-- **Development Environment**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev
+- **Production Environment**: https://www.bettertogetherapp.com
+- **Development Environment**: https://www.bettertogetherapp.com
 - **Premium Pricing Page**: ✅ Fully functional with partner gifting system
 - **All Feature Pages**: Fully functional and mobile-responsive
 - **Database**: Fully initialized with seed data
@@ -315,7 +315,7 @@ passion with Mike's tech interests. Saturday 2-5 PM, $60 total."
 **Last Updated**: August 19, 2025  
 **Version**: 3.0.0 (Premium-Only Platform with 9-Stream Revenue Model)  
 **Developer**: AI Acrobatics Team  
-**Live Demo**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev  
-**Premium Pricing**: https://3000-i2hx0m7w9etq0w3gctof5-6532622b.e2b.dev/premium-pricing.html
+**Live Demo**: https://www.bettertogetherapp.com  
+**Premium Pricing**: https://www.bettertogetherapp.com/premium-pricing.html
 
 Built with 💕 for couples who want to thrive together through premium intelligent technology.
