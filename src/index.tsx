@@ -1628,7 +1628,10 @@ app.get('/', (c) => {
         <div className="absolute inset-0 bg-white bg-opacity-50"></div>
         <div className="absolute top-10 left-4 sm:left-10 text-pink-200 text-4xl sm:text-6xl opacity-30 animate-bounce">💕</div>
         <div className="absolute bottom-10 right-4 sm:right-10 text-purple-200 text-3xl sm:text-4xl opacity-30 animate-pulse">💫</div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-pink-100 text-8xl opacity-10 animate-spin" style="animation-duration: 20s;">✨</div>
+        {/* Floating Circles Background */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-200 rounded-full opacity-20 blur-3xl animate-float" style="animation-duration: 8s;"></div>
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-pink-200 rounded-full opacity-20 blur-3xl animate-float" style="animation-duration: 12s; animation-delay: 2s;"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl animate-float" style="animation-duration: 10s; animation-delay: 4s;"></div>
         
         {/* Floating Hearts Animation */}
         <div className="absolute inset-0 pointer-events-none">
@@ -2501,7 +2504,7 @@ app.get('/', (c) => {
             <a href="/premium-pricing.html" className="inline-flex items-center text-pink-600 hover:text-pink-700 font-semibold">
               <i className="fas fa-gift mr-2"></i>
               Surprise Your Partner & View Couples Packages
-              <i className="fas fa-arrow-right ml-2"></i>
+
             </a>
           </div>
         </div>
@@ -2771,6 +2774,25 @@ app.get('/', (c) => {
                 transform: scale(4);
                 opacity: 0;
               }
+            }
+            
+            @keyframes float {
+              0%, 100% {
+                transform: translateY(0) translateX(0);
+              }
+              25% {
+                transform: translateY(-20px) translateX(10px);
+              }
+              50% {
+                transform: translateY(-10px) translateX(-10px);
+              }
+              75% {
+                transform: translateY(-30px) translateX(5px);
+              }
+            }
+            
+            .animate-float {
+              animation: float 8s ease-in-out infinite;
             }
           \`;
           document.head.appendChild(style);
