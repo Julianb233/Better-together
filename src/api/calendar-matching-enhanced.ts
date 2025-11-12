@@ -37,11 +37,8 @@ import {
 
 const enhancedCalendarApi = new Hono<{ Bindings: Env }>()
 
-// Import core calendar matching functions from original API
-import {
-  findMutualFreeTime,
-  generateId,
-} from '../api/calendar-matching'
+// Import utilities
+import { generateId } from '../utils'
 
 // =============================================================================
 // ENHANCED SUGGESTION GENERATION
