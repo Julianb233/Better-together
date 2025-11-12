@@ -1,0 +1,254 @@
+# LLM Training Configuration
+# Better Together - Relationship Intelligence Platform
+
+# Model Configuration
+model:
+  base_model: "meta-llama/Llama-3.1-70b-hf"  # Base model to fine-tune
+  model_type: "causal_lm"
+  cache_dir: "./cache"
+  
+  # Alternative models (uncomment to use)
+  # base_model: "mistralai/Mixtral-8x7B-v0.1"
+  # base_model: "Qwen/Qwen2.5-72B"
+
+# LoRA Configuration (Parameter-Efficient Fine-Tuning)
+lora:
+  r: 64                    # Rank - higher = more parameters but better performance
+  lora_alpha: 128          # Scaling factor (typically 2x rank)
+  target_modules:          # Which modules to apply LoRA to
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  lora_dropout: 0.05       # Dropout for LoRA layers
+  bias: "none"             # Bias training strategy
+  task_type: "CAUSAL_LM"
+  
+# Training Hyperparameters
+training:
+  # Basic settings
+  num_train_epochs: 3
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 4
+  gradient_accumulation_steps: 8
+  
+  # Optimization
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_steps: 100
+  max_grad_norm: 1.0
+  
+  # Learning rate schedule
+  lr_scheduler_type: "cosine"
+  
+  # Precision
+  fp16: true               # Use mixed precision training
+  bf16: false              # Use bfloat16 (if supported by hardware)
+  
+  # Optimizer
+  optim: "adamw_torch"
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_epsilon: 1.0e-8
+  
+  # Sequence length
+  max_seq_length: 2048     # Maximum sequence length
+  
+  # Logging and checkpointing
+  logging_steps: 10
+  save_steps: 500
+  save_total_limit: 3      # Keep only last 3 checkpoints
+  eval_steps: 500
+  evaluation_strategy: "steps"
+  
+  # Output
+  output_dir: "../checkpoints/better-together-llm-v1"
+  overwrite_output_dir: false
+  
+  # Distributed training
+  ddp_find_unused_parameters: false
+  
+  # Misc
+  seed: 42
+  dataloader_num_workers: 4
+  remove_unused_columns: false
+
+# Dataset Configuration
+dataset:
+  train_file: "../../processed_data/train_20251112.jsonl"
+  validation_file: "../../processed_data/val_20251112.jsonl"
+  test_file: "../../processed_data/test_20251112.jsonl"
+  
+  # Data splits (if not using pre-split files)
+  train_split: 0.90
+  val_split: 0.05
+  test_split: 0.05
+  
+  # Preprocessing
+  max_samples: null        # Limit dataset size for testing (null = use all)
+  shuffle: true
+  
+# Prompt Template
+prompt_template: |
+  ### Instruction:
+  {instruction}
+  
+  ### Context:
+  {input}
+  
+  ### Response:
+  {output}
+
+# Evaluation Configuration
+evaluation:
+  # Automated metrics
+  compute_metrics: true
+  metrics:
+    - "perplexity"
+    - "bleu"
+    - "rouge"
+    - "bertscore"
+  
+  # Human evaluation
+  human_eval_sample_size: 100
+  human_eval_frequency: "weekly"
+  
+  # Evaluation criteria
+  criteria:
+    empathy:
+      weight: 0.25
+      target: 4.2
+    helpfulness:
+      weight: 0.25
+      target: 4.0
+    accuracy:
+      weight: 0.25
+      target: 4.3
+    safety:
+      weight: 0.15
+      target: 5.0  # Must be perfect
+    personalization:
+      weight: 0.10
+      target: 3.8
+
+# Monitoring and Logging
+monitoring:
+  use_wandb: true
+  wandb_project: "better-together-llm"
+  wandb_entity: null       # Your W&B username/team
+  
+  use_tensorboard: true
+  tensorboard_dir: "../logs/tensorboard"
+  
+  log_model: true
+  log_predictions: true
+  log_prediction_frequency: 100
+
+# Safety and Ethics
+safety:
+  # Content filtering
+  filter_unsafe_content: true
+  safety_threshold: 0.9
+  
+  # Bias mitigation
+  check_bias: true
+  bias_threshold: 0.85
+  
+  # Human review
+  require_human_review_for:
+    - "abuse_scenarios"
+    - "mental_health_crisis"
+    - "safety_critical"
+  
+  # Red teaming
+  adversarial_testing: true
+  adversarial_test_frequency: "monthly"
+
+# Deployment Configuration
+deployment:
+  # A/B testing
+  enable_ab_testing: true
+  ab_test_duration_days: 14
+  ab_test_traffic_split: 0.1  # 10% to new model
+  
+  # Rollout strategy
+  rollout_strategy: "gradual"
+  rollout_stages:
+    - percentage: 10
+      duration_days: 3
+    - percentage: 25
+      duration_days: 3
+    - percentage: 50
+      duration_days: 4
+    - percentage: 100
+      duration_days: null
+  
+  # Rollback criteria
+  rollback_if:
+    satisfaction_drop: 0.5    # Rollback if satisfaction drops by 0.5 points
+    error_rate_increase: 0.05  # Rollback if error rate increases by 5%
+    safety_incidents: 1        # Rollback immediately on any safety incident
+
+# Continuous Learning
+continuous_learning:
+  enabled: true
+  
+  # Retraining schedule
+  retrain_frequency: "weekly"
+  min_new_examples: 1000     # Minimum new examples before retraining
+  
+  # Feedback integration
+  feedback_integration: true
+  feedback_weight: 0.3       # Weight of user feedback in quality scores
+  
+  # Data refresh
+  data_refresh_frequency: "daily"
+  stale_data_threshold_days: 730  # Archive data older than 2 years
+
+# Resource Management
+resources:
+  # GPU settings
+  gpu_memory_fraction: 0.9
+  use_gradient_checkpointing: true
+  
+  # CPU settings
+  num_workers: 4
+  
+  # Memory optimization
+  use_8bit: false            # Use 8-bit quantization
+  use_4bit: false            # Use 4-bit quantization (QLoRA)
+  
+  # Batch size optimization
+  auto_find_batch_size: false
+
+# Versioning
+versioning:
+  model_version: "1.0"
+  data_version: "1.0"
+  config_version: "1.0"
+  
+  # Version control
+  track_experiments: true
+  experiment_name: "better-together-llm-v1"
+  
+  # Model registry
+  register_model: true
+  model_registry: "local"    # Options: local, wandb, mlflow
+
+# Notes
+notes: |
+  This configuration is optimized for training a relationship intelligence LLM
+  on the Better Together platform. Adjust hyperparameters based on:
+  - Available compute resources
+  - Dataset size
+  - Desired training time
+  - Quality requirements
+  
+  For production deployment, ensure:
+  - Safety checks are enabled
+  - A/B testing is configured
+  - Monitoring is active
+  - Rollback criteria are set

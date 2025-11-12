@@ -1,0 +1,62 @@
+# Python dependencies for LLM training data pipeline
+# Better Together - Relationship Intelligence Platform
+
+# Core dependencies
+python>=3.11
+
+# Database connectivity
+psycopg2-binary>=2.9.9  # PostgreSQL (Neon)
+sqlalchemy>=2.0.23      # ORM for database operations
+
+# Data processing
+pandas>=2.1.4           # Data manipulation
+numpy>=1.26.2           # Numerical operations
+jsonlines>=4.0.0        # JSONL file handling
+
+# LLM and AI
+openai>=1.6.1           # OpenAI API for quality evaluation
+anthropic>=0.8.1        # Claude API (alternative)
+sentence-transformers>=2.2.2  # Semantic similarity for duplicate detection
+transformers>=4.36.2    # Hugging Face transformers
+torch>=2.1.2            # PyTorch for model training
+peft>=0.7.1             # Parameter-Efficient Fine-Tuning (LoRA)
+accelerate>=0.25.0      # Distributed training
+bitsandbytes>=0.41.3    # Quantization for efficient training
+datasets>=2.16.1        # Hugging Face datasets
+
+# Text processing
+nltk>=3.8.1             # Natural language toolkit
+spacy>=3.7.2            # NLP library
+regex>=2023.12.25       # Advanced regex
+
+# Evaluation metrics
+rouge-score>=0.1.2      # ROUGE metrics
+sacrebleu>=2.4.0        # BLEU score
+bert-score>=0.3.13      # BERTScore
+
+# Utilities
+tqdm>=4.66.1            # Progress bars
+python-dotenv>=1.0.0    # Environment variable management
+pyyaml>=6.0.1           # YAML configuration
+click>=8.1.7            # CLI framework
+
+# Monitoring and logging
+wandb>=0.16.2           # Weights & Biases for experiment tracking
+tensorboard>=2.15.1     # TensorBoard for visualization
+
+# Data validation
+pydantic>=2.5.3         # Data validation
+jsonschema>=4.20.0      # JSON schema validation
+
+# Testing
+pytest>=7.4.3           # Testing framework
+pytest-cov>=4.1.0       # Coverage reporting
+
+# Code quality
+black>=23.12.1          # Code formatting
+flake8>=7.0.0           # Linting
+mypy>=1.8.0             # Type checking
+
+# Optional: Model serving
+fastapi>=0.109.0        # API framework
+uvicorn>=0.27.0         # ASGI server
