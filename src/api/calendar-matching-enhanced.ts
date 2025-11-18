@@ -503,11 +503,230 @@ async function generateEnhancedSuggestions(
   env: Env,
   relationshipId: string,
   mutualSlots: any[],
-  options: any
+  options: {
+    maxSuggestions?: number
+    budgetMin?: number
+    budgetMax?: number
+    contextAdjustments?: any
+    useLearning?: boolean
+  }
 ) {
-  // This is a simplified version - in production would integrate fully with original logic
-  // For now, return mock suggestions structure
-  return []
+  const { maxSuggestions = 10, budgetMin, budgetMax, contextAdjustments, useLearning } = options
+
+  // Get relationship details
+  const relationship = await env.DB.prepare(`
+    SELECT user_1_id, user_2_id FROM relationships WHERE id = ? AND status = 'active'
+  `).bind(relationshipId).first()
+
+  if (!relationship) {
+    throw new Error('Relationship not found')
+  }
+
+  const user1Id = relationship.user_1_id as string
+  const user2Id = relationship.user_2_id as string
+
+  // Get both users' interests
+  const interests = await env.DB.prepare(`
+    SELECT user_id, category, subcategory, preference_level
+    FROM user_interests
+    WHERE user_id IN (?, ?)
+    ORDER BY preference_level DESC
+  `).bind(user1Id, user2Id).all()
+
+  // Calculate shared interests
+  const user1Interests = interests.results.filter((i: any) => i.user_id === user1Id)
+  const user2Interests = interests.results.filter((i: any) => i.user_id === user2Id)
+  const sharedInterests = findSharedInterests(user1Interests, user2Interests)
+
+  // Get budget preferences
+  const budgetPref = await env.DB.prepare(`
+    SELECT min_amount, max_amount FROM budget_preferences
+    WHERE relationship_id = ? AND budget_type = 'per_date'
+    ORDER BY created_at DESC LIMIT 1
+  `).bind(relationshipId).first()
+
+  const effectiveBudgetMin = budgetMin ?? (budgetPref?.min_amount as number) ?? 0
+  const effectiveBudgetMax = budgetMax ?? (budgetPref?.max_amount as number) ?? 999999
+
+  // Get experiences from catalog
+  let experienceQuery = `
+    SELECT * FROM experience_catalog
+    WHERE is_active = TRUE
+      AND cost_min <= ?
+      AND cost_max >= ?
+  `
+  const experienceParams: any[] = [effectiveBudgetMax, effectiveBudgetMin]
+
+  // Filter by shared interest categories if available
+  if (sharedInterests.length > 0) {
+    const categories = sharedInterests.map((i: any) => i.category)
+    const placeholders = categories.map(() => '?').join(',')
+    experienceQuery += ` AND experience_type IN (${placeholders})`
+    experienceParams.push(...categories)
+  }
+
+  experienceQuery += ' ORDER BY rating DESC LIMIT 50'
+
+  const experiences = await env.DB.prepare(experienceQuery)
+    .bind(...experienceParams)
+    .all()
+
+  // Score and match experiences with time slots
+  const suggestions: any[] = []
+
+  for (const experience of experiences.results) {
+    // Find suitable time slots
+    const suitableSlots = mutualSlots.filter((slot: any) => {
+      const durationMatches = slot.durationMinutes >= (experience.estimated_duration_minutes || 60)
+
+      // Check time of day preference
+      const slotHour = parseInt(slot.startTime.split(':')[0])
+      let timeMatches = true
+
+      if (experience.best_time_of_day === 'morning') timeMatches = slotHour >= 6 && slotHour < 12
+      else if (experience.best_time_of_day === 'afternoon') timeMatches = slotHour >= 12 && slotHour < 17
+      else if (experience.best_time_of_day === 'evening') timeMatches = slotHour >= 17 && slotHour < 21
+      else if (experience.best_time_of_day === 'night') timeMatches = slotHour >= 21 || slotHour < 6
+
+      return durationMatches && timeMatches
+    })
+
+    if (suitableSlots.length > 0) {
+      const bestSlot = suitableSlots[0]
+
+      // Calculate base match score
+      let matchScore = calculateMatchScore(
+        experience,
+        sharedInterests,
+        user1Interests,
+        user2Interests
+      )
+
+      // Apply learning adjustments
+      if (useLearning) {
+        matchScore = await getAdjustedMatchScore(
+          env,
+          relationshipId,
+          experience.experience_type as string,
+          matchScore
+        )
+      }
+
+      // Apply context adjustments
+      if (contextAdjustments) {
+        const experienceTags = experience.tags ? JSON.parse(experience.tags as string) : []
+        const contextResult = applyContextToScore(
+          matchScore,
+          experience.experience_type as string,
+          experienceTags,
+          experience.rating as number,
+          contextAdjustments
+        )
+        matchScore = contextResult.score
+      }
+
+      suggestions.push({
+        experienceId: experience.id,
+        experienceName: experience.experience_name,
+        experienceType: experience.experience_type,
+        description: experience.description,
+        location: experience.location,
+        venueName: experience.venue_name,
+        suggestedDate: bestSlot.startDatetime.toISOString(),
+        suggestedDuration: experience.estimated_duration_minutes || 120,
+        estimatedCost: ((experience.cost_min as number) + (experience.cost_max as number)) / 2,
+        rating: experience.rating,
+        matchScore,
+        suggestionReason: generateSuggestionReason(experience, sharedInterests, matchScore),
+        requiresBooking: experience.requires_booking,
+        bookingUrl: experience.booking_url,
+        bookingLeadTime: experience.booking_lead_time_days || 0,
+        outdoor_activity: experience.outdoor_activity,
+      })
+    }
+
+    if (suggestions.length >= maxSuggestions) break
+  }
+
+  // Sort by match score
+  suggestions.sort((a, b) => b.matchScore - a.matchScore)
+
+  return suggestions.slice(0, maxSuggestions)
+}
+
+// Helper functions (copied from calendar-matching.ts)
+function findSharedInterests(user1Interests: any[], user2Interests: any[]) {
+  const shared: any[] = []
+
+  for (const interest1 of user1Interests) {
+    const matchingInterest = user2Interests.find(
+      (i: any) => i.category === interest1.category
+    )
+
+    if (matchingInterest) {
+      shared.push({
+        category: interest1.category,
+        avgPreference: (interest1.preference_level + matchingInterest.preference_level) / 2
+      })
+    }
+  }
+
+  return shared.sort((a, b) => b.avgPreference - a.avgPreference)
+}
+
+function calculateMatchScore(
+  experience: any,
+  sharedInterests: any[],
+  user1Interests: any[],
+  user2Interests: any[]
+): number {
+  let score = 0.5 // Base score
+
+  // Boost for shared interests
+  const sharedMatch = sharedInterests.find((i: any) => i.category === experience.experience_type)
+  if (sharedMatch) {
+    score += (sharedMatch.avgPreference / 10) * 0.3 // Up to +0.3
+  }
+
+  // Partial boost if either user is interested
+  const user1Match = user1Interests.find((i: any) => i.category === experience.experience_type)
+  const user2Match = user2Interests.find((i: any) => i.category === experience.experience_type)
+
+  if (user1Match || user2Match) {
+    const maxPreference = Math.max(
+      user1Match?.preference_level || 0,
+      user2Match?.preference_level || 0
+    )
+    score += (maxPreference / 10) * 0.15 // Up to +0.15
+  }
+
+  // Boost for high ratings
+  if (experience.rating) {
+    score += (experience.rating / 5) * 0.05 // Up to +0.05
+  }
+
+  return Math.min(score, 1.0) // Cap at 1.0
+}
+
+function generateSuggestionReason(experience: any, sharedInterests: any[], matchScore: number): string {
+  const reasons: string[] = []
+
+  const sharedMatch = sharedInterests.find((i: any) => i.category === experience.experience_type)
+  if (sharedMatch) {
+    reasons.push(`Both of you love ${experience.experience_type} activities`)
+  }
+
+  if (experience.rating >= 4.5) {
+    reasons.push(`Highly rated (${experience.rating}⭐)`)
+  }
+
+  if (matchScore > 0.8) {
+    reasons.push('Perfect match for your interests')
+  } else if (matchScore > 0.6) {
+    reasons.push('Great match for your preferences')
+  }
+
+  return reasons.join(' • ') || 'Recommended experience for couples'
 }
 
 export default enhancedCalendarApi

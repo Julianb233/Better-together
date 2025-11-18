@@ -13,7 +13,7 @@ const calendarApi = new Hono<{ Bindings: Env }>()
  * Find mutual free time slots between two partners
  * Analyzes both calendars and returns time slots when both are available
  */
-async function findMutualFreeTime(
+export async function findMutualFreeTime(
   env: Env,
   relationshipId: string,
   startDate: Date,
@@ -884,7 +884,7 @@ calendarApi.put('/suggestions/:suggestionId', async (c) => {
 // UTILITY FUNCTIONS
 // =============================================================================
 
-function generateId(): string {
+export function generateId(): string {
   return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
 }
 
